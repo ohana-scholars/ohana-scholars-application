@@ -3,8 +3,9 @@
 
 /* Set up some CSS variables to theme the application. */
 :root {
-  --matr-navbar-bg: #ECECEC;
-  --matr-navbar-bg-rgb: 236, 236, 236;
+  --matr-navbar-bg: #00a8f3;
+  --matr-navbar-bg-rgb: 0, 168, 243;
+  color: white;
 }
 
 /* Change bootstrap variable values.
