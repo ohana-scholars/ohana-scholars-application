@@ -4,8 +4,7 @@
 /* Set up some CSS variables to theme the application. */
 :root {
   --matr-navbar-bg: #00a8f3;
-  --matr-navbar-bg-rgb: 0, 168, 243;
-  color: white;
+  --matr-navbar-bg-rgb: 0, 168, 243
 }
 
 /* Change bootstrap variable values.
