@@ -18,6 +18,7 @@ class StudentCollection {
       // classes: String, // ID to classes collection
       description: String,
       profilepic: String,
+      owner: String, // Email of user
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
