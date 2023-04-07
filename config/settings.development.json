@@ -12,7 +12,7 @@
   ],
 
   "defaultStudent:": [
-  { "name": "John Doe", "username": "johndoe", "description": "Test student", "profilepic": "https://preview.redd.it/help-me-find-the-origin-of-this-damn-dog-ive-looked-up-like-v0-zj7m5n0a2xx91.jpg?auto=webp&s=5f8f63acf583cf94e8e558f07e0d89ef6bf3d0f6"}
+  { "name": "John Doe", "username": "johndoe", "description": "Test student", "profilepic": "https://preview.redd.it/help-me-find-the-origin-of-this-damn-dog-ive-looked-up-like-v0-zj7m5n0a2xx91.jpg?auto=webp&s=5f8f63acf583cf94e8e558f07e0d89ef6bf3d0f6", "owner": "john@foo.com"}
 ]
 
 }

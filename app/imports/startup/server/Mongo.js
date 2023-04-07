@@ -21,13 +21,13 @@ if (Stuffs.collection.find().count() === 0) {
 // Initialize the database with a default data document.
 const addStudent = (data) => {
   console.log(`  Adding: ${data.name} (${data.owner})`);
-  Stuffs.collection.insert(data);
+  Student.collection.insert(data);
 };
 
-// Initialize the StuffsCollection if empty.
+// Initialize the StudentCollection if empty.
 if (Student.collection.find().count() === 0) {
-  if (Meteor.settings.defaultData) {
-    console.log('Creating default data.');
-    Meteor.settings.defaultData.forEach(data => addStudent(data));
+  if (Meteor.settings.defaultStudent) {
+    console.log('Creating student data.');
+    Meteor.settings.defaultStudent.forEach(data => addStudent(data));
   }
 }
