@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
+import { Courses } from '../../api/courses/Courses';
 
 /* eslint-disable no-console */
 
@@ -14,5 +15,19 @@ if (Stuffs.collection.find().count() === 0) {
   if (Meteor.settings.defaultData) {
     console.log('Creating default data.');
     Meteor.settings.defaultData.forEach(data => addData(data));
+  }
+}
+
+// Initialize the database with courses
+const addCourses = (course) => {
+  console.log(`  Adding: ${course.name}`);
+  Courses.collection.insert(course);
+};
+
+// Initialize the CoursesCollection if empty
+if (Courses.collection.find().count() === 0) {
+  if (Meteor.settings.courses) {
+    console.log('Adding Courses.');
+    Meteor.settings.courses.forEach(course => addCourses(course));
   }
 }
