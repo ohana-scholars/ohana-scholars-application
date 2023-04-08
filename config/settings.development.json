@@ -11,7 +11,7 @@
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
 
-  "defaultStudents": [
+  "students": [
     { "name": "John Doe", "username":  "John Doe", "description":  "Test student", "profilepic": "https://pbs.twimg.com/media/Fe7XVhoWAAANVb-.jpg", "owner": "john@foo.com" }
   ]
 }
