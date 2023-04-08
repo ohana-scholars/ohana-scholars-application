@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /**
- * The StudentCollection.
+ * The StudentCollection. It encapsulates state and variable values for stuff.
  */
 class StudentCollection {
   constructor() {
@@ -14,11 +14,11 @@ class StudentCollection {
     this.schema = new SimpleSchema({
       name: String,
       username: String,
-      // interests: String, // ID to interest collection
-      // classes: String, // ID to classes collection
       description: String,
       profilepic: String,
-      owner: String, // Email of user
+      // courses: String, // Add later when collections made
+      // interests: String,
+      owner: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

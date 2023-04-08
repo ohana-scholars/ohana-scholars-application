@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
-import { Courses } from '../../api/courses/Courses';
+import { Student } from '../../api/student/Student';
 
 /* eslint-disable no-console */
 
@@ -18,16 +18,16 @@ if (Stuffs.collection.find().count() === 0) {
   }
 }
 
-// Initialize the database with courses
-const addCourses = (course) => {
+// Initialize the database with students
+const addStudents = (course) => {
   console.log(`  Adding: ${course.name}`);
-  Courses.collection.insert(course);
+  Student.collection.insert(course);
 };
 
-// Initialize the CoursesCollection if empty
-if (Courses.collection.find().count() === 0) {
-  if (Meteor.settings.courses) {
-    console.log('Adding Courses.');
-    Meteor.settings.courses.forEach(course => addCourses(course));
+// Initialize the StudentsCollection if empty
+if (Student.collection.find().count() === 0) {
+  if (Meteor.settings.students) {
+    console.log('Adding Student.');
+    Meteor.settings.students.forEach(course => addStudents(course));
   }
 }
