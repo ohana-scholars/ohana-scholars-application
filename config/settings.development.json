@@ -11,8 +11,7 @@
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
 
-  "courses": [
-    { "subject": "ICS", "title":  "314", "name":  "Software Engineering I" },
-    { "subject":  "ICS", "title":  "311", "name":  "Algorithms" }
+  "sessions": [
+    { "name": "ICS314 Final Exam Study Group", "course":  "ICS314", "location":  "Hamilton Library Basement", "notes": "Bring your own laptop!", "picture": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg", "participants": ["john@foo.com", "admin@foo.com"] }
   ]
 }
