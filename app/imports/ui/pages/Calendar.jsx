@@ -8,13 +8,13 @@ const Calendar = () => (
     <FullCalendar
       plugins={[dayGridPlugin]}
       initialView="dayGridMonth"
-      // placeholder
+      // placeholder events to show what events will look like
       events={[
         { title: 'event 1', date: '2023-04-01' },
         { title: 'event 2', date: '2023-04-02' },
       ]}
     />
-    <Button>Add Session</Button>
+    <Button href="../sessions">Add Session</Button>
   </Container>
 );
 
