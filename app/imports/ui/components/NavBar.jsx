@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { NavLink } from 'react-router-dom';
 import { Roles } from 'meteor/alanning:roles';
-import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown, Image } from 'react-bootstrap';
 import { BoxArrowRight, PersonFill, PersonPlusFill } from 'react-bootstrap-icons';
 
 const NavBar = () => {
@@ -15,6 +15,7 @@ const NavBar = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
+        <Image src="/images/ohana-scholars-logo.png" width="75px" />
         <Navbar.Brand as={NavLink} to="/">
           <h2>Ohana Scholars</h2>
         </Navbar.Brand>
