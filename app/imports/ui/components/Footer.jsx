@@ -15,7 +15,7 @@ const Footer = () => (
         {' '}
         <br />
         <a href="https://ohana-scholars.github.io/">
-          GitHub Organization Site
+          Ohana Scholars Organization Site
         </a>
       </Col>
     </Container>

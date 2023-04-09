@@ -15,9 +15,9 @@ const NavBar = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Image src="/images/ohana-scholars-logo.png" width="75px" />
         <Navbar.Brand as={NavLink} to="/">
-          <h2>Ohana Scholars</h2>
+          <Image src="/images/ohana-scholars-logo.png" width="75px" alt="Ohana Scholars Logo" />
+          Ohana Scholars
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
