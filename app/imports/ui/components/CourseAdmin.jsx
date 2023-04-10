@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-/** Renders a single row in the List Courses table. See pages/ListCourses.jsx. */
-const Course = ({ course }) => (
+/** Renders a single row in the List Courses table. See pages/ListCoursesAdmin.jsx. */
+const CourseAdmin = ({ course }) => (
   <tr>
     <td>{course.subject} {course.title}</td>
     <td>{course.name}</td>
@@ -14,7 +14,7 @@ const Course = ({ course }) => (
 );
 
 // Require a document to be passed to this component.
-Course.propTypes = {
+CourseAdmin.propTypes = {
   course: PropTypes.shape({
     name: PropTypes.string,
     title: PropTypes.string,
@@ -23,4 +23,4 @@ Course.propTypes = {
   }).isRequired,
 };
 
-export default Course;
+export default CourseAdmin;
