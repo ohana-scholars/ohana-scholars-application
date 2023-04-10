@@ -1,7 +1,7 @@
 import React from 'react';
 import swal from 'sweetalert';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, HiddenField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -11,11 +11,11 @@ import { Courses } from '../../api/courses/Courses';
 
 const bridge = new SimpleSchema2Bridge(Courses.schema);
 
-/* Renders the EditStuff page for editing a single document. */
-const EditCourse = () => {
+/* Renders the EditCourse page for editing a single document. */
+const EditStuff = () => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const { _id } = useParams();
-  // console.log('EditStuff', _id);
+  // console.log('EditCourse', _id);
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
     // Get access to Stuff documents.
@@ -29,11 +29,11 @@ const EditCourse = () => {
       ready: rdy,
     };
   }, [_id]);
-  // console.log('EditStuff', doc, ready);
+  // console.log('EditCourse', doc, ready);
   // On successful submit, insert the data.
   const submit = (data) => {
-    const { subject, title, name } = data;
-    Courses.collection.update(_id, { $set: { subject, title, name } }, (error) => (error ?
+    const { name, title, subject } = data;
+    Courses.collection.update(_id, { $set: { name, title, subject } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Item updated successfully', 'success')));
   };
@@ -46,12 +46,13 @@ const EditCourse = () => {
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
             <Card>
               <Card.Body>
-                <TextField name="subject" />
-                <TextField name="title" />
+                <Row>
+                  <Col><TextField name="subject" /></Col>
+                  <Col><TextField name="title" /></Col>
+                </Row>
                 <TextField name="name" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
-                <HiddenField name="owner" />
               </Card.Body>
             </Card>
           </AutoForm>
@@ -61,4 +62,4 @@ const EditCourse = () => {
   ) : <LoadingSpinner />;
 };
 
-export default EditCourse;
+export default EditStuff;
