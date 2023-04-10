@@ -9,5 +9,9 @@
     { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
+  ],
+
+  "emails": [
+    { "sender": "john@foo.com", "receiver":  "314", "date":  "1/1/20023", "title": "Schedule Study Session", "body": "The study group session will be held at ", "timePlace": "1:00 PM in UH Manoa Hamilton Library." }
   ]
 }
