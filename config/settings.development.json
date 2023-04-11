@@ -22,5 +22,9 @@
 
   "sessions": [
     { "name": "ICS314 Final Exam Study Group", "course":  "ICS314", "location":  "Hamilton Library Basement", "notes": "Bring your own laptop!", "picture": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg", "participants": ["john@foo.com", "admin@foo.com"] }
+    ],
+  
+  "emails": [
+    { "sender": "john@foo.com", "receiver":  "314", "date":  "1/1/20023", "title": "Schedule Study Session", "body": "The study group session will be held at ", "timePlace": "1:00 PM in UH Manoa Hamilton Library." }
   ]
 }

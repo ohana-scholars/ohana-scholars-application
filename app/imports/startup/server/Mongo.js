@@ -3,6 +3,7 @@ import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Courses } from '../../api/courses/Courses';
 import { Student } from '../../api/student/Student';
 import { Sessions } from '../../api/sessions/Sessions';
+import { Emails } from '../../api/email/Email';
 
 /* eslint-disable no-console */
 
@@ -59,5 +60,18 @@ if (Sessions.collection.find().count() === 0) {
   if (Meteor.settings.sessions) {
     console.log('Adding Sessions.');
     Meteor.settings.sessions.forEach(session => addSessions(session));
+  }
+}
+
+const addEmail = (email) => {
+  console.log(`  Adding: ${email.title} (${email.sender})`);
+  Emails.collection.insert(email);
+};
+
+// Initialize the CoursesCollection if empty
+if (Emails.collection.find().count() === 0) {
+  if (Meteor.settings.emails) {
+    console.log('Adding Emails.');
+    Meteor.settings.emails.forEach(email => addEmail(email));
   }
 }
