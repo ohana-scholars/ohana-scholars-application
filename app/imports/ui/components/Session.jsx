@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Image, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Card, Image, ListGroup } from 'react-bootstrap';
 // import _ from 'underscore';
 // import { _ } from 'underscore';
 
@@ -21,7 +21,6 @@ const Session = ({ session }) => (
         <Card.Subtitle>Participants</Card.Subtitle>
         {session.participants}
         {session.participants.map(participant => <Card.Text key={participant._id} />)}
-        {session.participants.map(participant => <ListGroupItem key={participant._id} />)}
         {/* {session.participants.map((participant) => <Card.Text key={participant._id} />)} */}
       </ListGroup>
     </Card.Body>
