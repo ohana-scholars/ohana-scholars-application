@@ -5,7 +5,7 @@ import { Col, Container } from 'react-bootstrap';
 const Footer = () => (
   <footer className="mt-auto py-3 bg-light">
     <Container>
-      <Col className="text-center">
+      <Col id="footer" className="text-center">
         Department of Information and Computer Sciences
         {' '}
         <br />
@@ -14,9 +14,8 @@ const Footer = () => (
         Honolulu, HI 96822
         {' '}
         <br />
-        <a href="http://ics-software-engineering.github.io/meteor-application-template-react">
-          Template Home
-          Page
+        <a href="https://ohana-scholars.github.io/" target="_blank">
+          Ohana Scholars Organization Site
         </a>
       </Col>
     </Container>
