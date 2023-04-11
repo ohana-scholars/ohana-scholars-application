@@ -18,5 +18,9 @@
 
   "students": [
     { "name": "John Doe", "username":  "John Doe", "description":  "Test student", "profilepic": "https://pbs.twimg.com/media/Fe7XVhoWAAANVb-.jpg", "owner": "john@foo.com" }
+  ],
+
+  "sessions": [
+    { "name": "ICS314 Final Exam Study Group", "course":  "ICS314", "location":  "Hamilton Library Basement", "notes": "Bring your own laptop!", "picture": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg", "participants": ["john@foo.com", "admin@foo.com"] }
   ]
 }

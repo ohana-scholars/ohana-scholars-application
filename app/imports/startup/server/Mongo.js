@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Courses } from '../../api/courses/Courses';
 import { Student } from '../../api/student/Student';
+import { Sessions } from '../../api/sessions/Sessions';
 
 /* eslint-disable no-console */
 
@@ -44,5 +45,19 @@ if (Student.collection.find().count() === 0) {
   if (Meteor.settings.students) {
     console.log('Adding Student.');
     Meteor.settings.students.forEach(course => addStudents(course));
+  }
+}
+
+// Initialize the database with sessions
+const addSessions = (session) => {
+  console.log(`  Adding: ${session.name}`);
+  Sessions.collection.insert(session);
+};
+
+// Initialize the SessionsCollection if empty
+if (Sessions.collection.find().count() === 0) {
+  if (Meteor.settings.sessions) {
+    console.log('Adding Sessions.');
+    Meteor.settings.sessions.forEach(session => addSessions(session));
   }
 }
