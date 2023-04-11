@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Image, ListGroup } from 'react-bootstrap';
+import _ from 'underscore';
 
 /** Renders a session card. */
 const Session = ({ session }) => (
@@ -13,13 +14,14 @@ const Session = ({ session }) => (
     <Card.Body>
       <Card.Text>{session.notes}</Card.Text>
       <ListGroup variant="flush">
-        {session.participants.map((participant) => <Card.Text key={participant._id} />)}
+        {/* {session.participants.map((participant) => <Card.Text key={participant._id} />)} */}
+        {_.each(session.participants, <Card.Text>element</Card.Text>)}
       </ListGroup>
     </Card.Body>
   </Card>
 );
 
-// Require a document to be passed to this component.
+// Require a document to be passed to this component. (ESLint error below not our problem)
 // eslint-disable-next-line meteor/no-session
 Session.propTypes = {
   session: PropTypes.shape({
