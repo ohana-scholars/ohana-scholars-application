@@ -35,16 +35,16 @@ if (Courses.collection.find().count() === 0) {
 }
 
 // Initialize the database with students
-const addStudents = (course) => {
-  console.log(`  Adding: ${course.name}`);
-  Student.collection.insert(course);
+const addStudents = (student) => {
+  console.log(`  Adding: ${student.name}`);
+  Student.collection.insert(student);
 };
 
 // Initialize the StudentsCollection if empty
 if (Student.collection.find().count() === 0) {
   if (Meteor.settings.students) {
     console.log('Adding Student.');
-    Meteor.settings.students.forEach(course => addStudents(course));
+    Meteor.settings.students.forEach(student => addStudents(student));
   }
 }
 
