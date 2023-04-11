@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Courses } from '../../api/courses/Courses';
+import { Student } from '../../api/student/Student';
 
 /* eslint-disable no-console */
 
