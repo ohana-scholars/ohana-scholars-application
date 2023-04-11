@@ -15,7 +15,7 @@ class StudentCollection {
       name: String,
       username: String,
       description: String,
-      profilepic: String,
+      profilePictureLink: String,
       // courses: String, // Add later when collections made
       // interests: String,
       owner: String,
