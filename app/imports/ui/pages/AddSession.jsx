@@ -57,19 +57,25 @@ const AddSession = () => {
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={5}>
-          <Col className="text-center"><h2>Add Stuff</h2></Col>
+          <Col className="text-center"><h2>Add Session</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
                 <TextField name="name" />
                 <TextField name="course" />
                 <TextField name="location" />
-                <SelectField name="month" />
-                <SelectField name="day" />
+                <Row>
+                  <Col>
+                    <SelectField name="month" />
+                  </Col>
+                  <Col>
+                    <SelectField name="day" />
+                  </Col>
+                </Row>
                 <TextField name="time" />
                 <TextField name="notes" />
                 <TextField name="picture" />
-                <TextField name="participants" />
+                <TextField name="participants" placeholder="type email" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>

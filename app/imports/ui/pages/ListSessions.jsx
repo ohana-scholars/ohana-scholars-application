@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row, Button } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Sessions } from '../../api/sessions/Sessions';
@@ -35,7 +35,7 @@ const ListSessions = () => {
           </Row>
         </Col>
       </Row>
-      <Button href="../sessions">Add Session</Button>
+      <Button href="../add-sessions">Add Session</Button>
     </Container>
   ) : <LoadingSpinner />);
 };
