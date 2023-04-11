@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Image, ListGroup } from 'react-bootstrap';
-import _ from 'underscore';
+// import _ from 'underscore';
+// import { _ } from 'underscore';
 
 /** Renders a session card. */
 const Session = ({ session }) => (
@@ -14,8 +15,8 @@ const Session = ({ session }) => (
     <Card.Body>
       <Card.Text>{session.notes}</Card.Text>
       <ListGroup variant="flush">
+        {session.participants}
         {/* {session.participants.map((participant) => <Card.Text key={participant._id} />)} */}
-        {_.each(session.participants, <Card.Text>element</Card.Text>)}
       </ListGroup>
     </Card.Body>
   </Card>
@@ -30,7 +31,7 @@ Session.propTypes = {
     location: PropTypes.string,
     notes: PropTypes.string,
     picture: PropTypes.string,
-    participants: PropTypes.arrayOf(String),
+    participants: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
 };
 

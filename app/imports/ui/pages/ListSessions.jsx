@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Col, Container, Row, Table } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Sessions } from '../../api/sessions/Sessions';
@@ -30,17 +30,9 @@ const ListSessions = () => {
           <Col className="text-center">
             <h2>List Sessions</h2>
           </Col>
-          <Table striped bordered hover>
-            <thead>
-              <tr>
-                <th>Title</th>
-                <th>Name</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sessions.map((session) => <Session key={session._id} session={session} />)}
-            </tbody>
-          </Table>
+          <Row sm={1} md={2} lg={3} className="g-4">
+            {sessions.map((session, index) => (<Col key={index}><Session session={session} /></Col>))}
+          </Row>
         </Col>
       </Row>
     </Container>
