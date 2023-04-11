@@ -14,7 +14,7 @@ const Footer = () => (
         Honolulu, HI 96822
         {' '}
         <br />
-        <a href="https://ohana-scholars.github.io/" target="_blank">
+        <a href="https://ohana-scholars.github.io/" target="_blank" rel="noreferrer">
           Ohana Scholars Organization Site
         </a>
       </Col>
