@@ -11,6 +11,8 @@ const Session = ({ session }) => (
       <Image src={session.picture} width={75} />
       <Card.Title>{session.name}</Card.Title>
       <Card.Subtitle>{session.location}</Card.Subtitle>
+      <Card.Subtitle>Date: {session.month} {session.day}</Card.Subtitle>
+      <Card.Subtitle>Time: {session.time}</Card.Subtitle>
     </Card.Header>
     <Card.Body>
       <Card.Subtitle>Notes</Card.Subtitle>
@@ -18,6 +20,7 @@ const Session = ({ session }) => (
       <ListGroup variant="flush">
         <Card.Subtitle>Participants</Card.Subtitle>
         {session.participants}
+        {session.participants.map(participant => <Card.Text key={participant._id} />)}
         {session.participants.map(participant => <ListGroupItem key={participant._id} />)}
         {/* {session.participants.map((participant) => <Card.Text key={participant._id} />)} */}
       </ListGroup>
@@ -32,6 +35,9 @@ Session.propTypes = {
     name: PropTypes.string,
     course: PropTypes.string,
     location: PropTypes.string,
+    month: PropTypes.string,
+    day: PropTypes.number,
+    time: PropTypes.string,
     notes: PropTypes.string,
     picture: PropTypes.string,
     participants: PropTypes.arrayOf(PropTypes.string),
