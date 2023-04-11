@@ -35,6 +35,7 @@ const ListSessions = () => {
           </Row>
         </Col>
       </Row>
+      <Button href="../sessions">Add Session</Button>
     </Container>
   ) : <LoadingSpinner />);
 };
