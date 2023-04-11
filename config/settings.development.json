@@ -17,7 +17,7 @@
   ],
 
   "students": [
-    { "name": "John Doe", "username":  "John Doe", "description":  "Test student", "profilepic": "https://pbs.twimg.com/media/Fe7XVhoWAAANVb-.jpg", "owner": "john@foo.com" }
+    { "name": "John Doe", "username":  "John Doe", "description":  "Test student", "profilePictureLink": "https://pbs.twimg.com/media/Fe7XVhoWAAANVb-.jpg", "owner": "john@foo.com" }
   ],
 
   "sessions": [
