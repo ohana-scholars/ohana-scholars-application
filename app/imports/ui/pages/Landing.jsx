@@ -9,7 +9,7 @@ const Landing = () => (
         <h1>Welcome to Ohana Scholars!</h1>
         <h5>Looking for help in your classes? Get started by clicking below!</h5>
         <Button className="pink-btn">Create an account</Button>
-        <Button className="pink-btn">Search subjects and courses</Button>
+        <Button className="pink-btn">Browse courses</Button>
       </Col>
     </Row>
   </Container>
