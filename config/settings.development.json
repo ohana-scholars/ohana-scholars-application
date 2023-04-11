@@ -14,5 +14,9 @@
   "courses": [
     { "subject": "ICS", "title":  "314", "name":  "Software Engineering I" },
     { "subject":  "ICS", "title":  "311", "name":  "Algorithms" }
+  ],
+
+  "students": [
+    { "name": "John Doe", "username":  "John Doe", "description":  "Test student", "profilepic": "https://pbs.twimg.com/media/Fe7XVhoWAAANVb-.jpg", "owner": "john@foo.com" }
   ]
 }
