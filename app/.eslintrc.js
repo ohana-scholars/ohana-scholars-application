@@ -33,6 +33,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/no-extraneous-dependencies': 'off',
     indent: ['error', 2],
+    'react/jsx-indent': 'off',
     'linebreak-style': 'off',
     'max-len': ['error', 250],
     'meteor/eventmap-params': [2, { eventParamName: 'event', templateInstanceParamName: 'instance' }],
