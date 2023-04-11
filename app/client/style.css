@@ -4,7 +4,8 @@
 /* Set up some CSS variables to theme the application. */
 :root {
   --matr-navbar-bg: #00a8f3;
-  --matr-navbar-bg-rgb: 0, 168, 243
+  --matr-navbar-bg-rgb: 0, 168, 243;
+  --matr-btn-bg: #ee107f;
 }
 
 /* Change bootstrap variable values.
@@ -12,6 +13,8 @@
  */
 body {
   --bs-light-rgb: var(--matr-navbar-bg-rgb);
+  background: fixed center url("images/ohana-scholars-background.jpg");
+  background-size: cover;
 }
 
 /* Set the alert background on the signin and signup pages. */
@@ -25,4 +28,24 @@ body {
   color: var(--bs-dark);
   padding-top: 10px;
   padding-bottom: 20px;
+}
+
+#landing {
+  height: 450px;
+}
+
+#footer {
+  --bs-link-color: var(--bs-body-color);
+  --bs-link-hover-color: white;
+}
+
+.btn {
+  margin: 20px;
+}
+
+.pink-btn {
+  --bs-btn-bg: var(--matr-btn-bg) !important;
+  --bs-btn-border-color: var(--matr-btn-bg) !important;
+  --bs-btn-hover-bg: var(--matr-navbar-bg) !important;
+  --bs-btn-hover-border-color: var(--matr-navbar-bg) !important;
 }
