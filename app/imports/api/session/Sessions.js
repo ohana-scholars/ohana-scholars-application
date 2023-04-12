@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /**
- * The SessionsCollection. It encapsulates state and variable values for stuff.
+ * The SessionsCollection. It encapsulates state and variable values for sessions.
  */
 class SessionsCollection {
   constructor() {
@@ -27,9 +27,8 @@ class SessionsCollection {
       },
       time: String,
       notes: String,
-      picture: String,
-      participants: Array, // emails
-      'participants.$': String,
+      image: String,
+      owner: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
@@ -40,7 +39,7 @@ class SessionsCollection {
 }
 
 /**
- * The singleton instance of the SessionsCollection.
+ * The singleton instance of the StuffsCollection.
  * @type {SessionsCollection}
  */
 export const Sessions = new SessionsCollection();

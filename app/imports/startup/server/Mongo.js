@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
-import { Sessions } from '../../api/sessions/Sessions';
+import { Sessions } from '../../api/session/Sessions';
 
 /* eslint-disable no-console */
 

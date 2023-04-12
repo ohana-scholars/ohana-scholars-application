@@ -1,33 +1,38 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, Image, ListGroup } from 'react-bootstrap';
-// import _ from 'underscore';
-// import { _ } from 'underscore';
+import Card from 'react-bootstrap/Card';
+import { Image, ListGroup, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Participant from './Participant';
+import AddParticipant from './AddParticipant';
 
-/** Renders a session card. */
-const Session = ({ session }) => (
-  <Card className="h-100">
+/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+const Session = ({ session, participants }) => (
+  <Card className="h-110">
     <Card.Header>
-      <Image src={session.picture} width={75} />
+      <Row>
+        <Col><Image src={session.image} width={75} /></Col>
+        <Col />
+        <Col><Link to={`/edit/${session._id}`}>Edit</Link></Col>
+      </Row>
       <Card.Title>{session.name}</Card.Title>
-      <Card.Subtitle>{session.location}</Card.Subtitle>
-      <Card.Subtitle>Date: {session.month} {session.day}</Card.Subtitle>
-      <Card.Subtitle>Time: {session.time}</Card.Subtitle>
+      <Card.Subtitle>{session.month} {session.day} | {session.time}</Card.Subtitle>
+      <Card.Text>{session.location}</Card.Text>
     </Card.Header>
     <Card.Body>
-      <Card.Subtitle>Notes</Card.Subtitle>
       <Card.Text>{session.notes}</Card.Text>
-      <ListGroup variant="flush">
-        <Card.Subtitle>Participants</Card.Subtitle>
-        {session.participants}
-        {session.participants.map(participant => <Card.Text key={participant._id} />)}
-        {/* {session.participants.map((participant) => <Card.Text key={participant._id} />)} */}
-      </ListGroup>
+      <AddParticipant owner={session.owner} contactId={session._id} />
     </Card.Body>
+    <Card.Footer>
+      <Card.Subtitle>Participants</Card.Subtitle>
+      <ListGroup variant="flush">
+        {participants.map((participant) => <Participant key={participant._id} participant={participant} />)}
+      </ListGroup>
+    </Card.Footer>
   </Card>
 );
 
-// Require a document to be passed to this component. (ESLint error below not our problem)
+// Require a document to be passed to this component.
 // eslint-disable-next-line meteor/no-session
 Session.propTypes = {
   session: PropTypes.shape({
@@ -38,9 +43,17 @@ Session.propTypes = {
     day: PropTypes.number,
     time: PropTypes.string,
     notes: PropTypes.string,
-    picture: PropTypes.string,
-    participants: PropTypes.arrayOf(PropTypes.string),
+    image: PropTypes.string,
+    owner: PropTypes.string,
+    _id: PropTypes.string,
   }).isRequired,
+  participants: PropTypes.arrayOf(PropTypes.shape({
+    note: PropTypes.string,
+    contactId: PropTypes.string,
+    owner: PropTypes.string,
+    createdAt: PropTypes.instanceOf(Date),
+    _id: PropTypes.string,
+  })).isRequired,
 };
 
 export default Session;

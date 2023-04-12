@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
-import { AutoForm, ErrorsField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
-import { Sessions } from '../../api/sessions/Sessions';
+import { Sessions } from '../../api/session/Sessions';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
@@ -20,13 +20,11 @@ const formSchema = new SimpleSchema({
   day: {
     type: Number,
     allowedValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
-    defaultValue: 10,
+    defaultValue: 11,
   },
   time: String,
   notes: String,
-  picture: String,
-  participants: Array, // emails
-  'participants.$': String,
+  image: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -36,15 +34,15 @@ const AddSession = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { name, course, location, month, day, time, notes, picture, participants } = data;
+    const { name, course, location, month, day, time, notes, image } = data;
     const owner = Meteor.user().username;
     Sessions.collection.insert(
-      { name, course, location, month, day, time, notes, picture, participants, owner },
+      { name, course, location, month, day, time, notes, image, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Item added successfully', 'success');
+          swal('Success', 'Session added successfully', 'success');
           formRef.reset();
         }
       },
@@ -56,26 +54,25 @@ const AddSession = () => {
   return (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col xs={5}>
-          <Col className="text-center"><h2>Add Session</h2></Col>
+        <Col xs={10}>
+          <Col className="text-center"><h2>Create New Session</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <TextField name="name" />
-                <TextField name="course" />
-                <TextField name="location" />
                 <Row>
-                  <Col>
-                    <SelectField name="month" />
-                  </Col>
-                  <Col>
-                    <SelectField name="day" />
-                  </Col>
+                  <Col><TextField name="name" /></Col>
+                  <Col><TextField name="course" /></Col>
                 </Row>
-                <TextField name="time" />
-                <TextField name="notes" />
-                <TextField name="picture" />
-                <TextField name="participants" placeholder="type email" />
+                <Row>
+                  <Col><TextField name="location" /></Col>
+                  <Col><TextField name="image" /></Col>
+                </Row>
+                <Row>
+                  <Col><TextField name="month" /></Col>
+                  <Col><TextField name="day" /></Col>
+                  <Col><TextField name="time" /></Col>
+                </Row>
+                <LongTextField name="notes" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>
@@ -83,7 +80,7 @@ const AddSession = () => {
           </AutoForm>
         </Col>
       </Row>
-      <Button href="../sessions">List Sessions</Button>
+      <Button href="../list">Go to List Sessions Page</Button>
     </Container>
   );
 };

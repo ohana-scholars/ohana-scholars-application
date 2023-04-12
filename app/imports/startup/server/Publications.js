@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
-import { Sessions } from '../../api/sessions/Sessions';
+import { Sessions } from '../../api/session/Sessions';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
