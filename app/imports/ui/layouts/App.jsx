@@ -6,7 +6,6 @@ import { Roles } from 'meteor/alanning:roles';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
@@ -15,6 +14,7 @@ import SignIn from '../pages/SignIn';
 import NotAuthorized from '../pages/NotAuthorized';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ListSessions from '../pages/ListSessions';
+import ListSessionsAdmin from '../pages/ListSessionsAdmin';
 import AddSession from '../pages/AddSession';
 import EditSession from '../pages/EditSession';
 
@@ -39,7 +39,7 @@ const App = () => {
           <Route path="/list" element={<ProtectedRoute><ListSessions /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddSession /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditSession /></ProtectedRoute>} />
-          <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
+          <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListSessionsAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -18,16 +18,15 @@ if (Stuffs.collection.find().count() === 0) {
   }
 }
 
-// Initialize the database with sessions
-const addSessions = (session) => {
-  console.log(`  Adding: ${session.name}`);
-  Sessions.collection.insert(session);
+const addContact = (contact) => {
+  console.log(`  Adding: ${contact.lastName} (${contact.owner})`);
+  Sessions.collection.insert(contact);
 };
 
-// Initialize the SessionsCollection if empty
+// Initialize the StuffsCollection if empty.
 if (Sessions.collection.find().count() === 0) {
-  if (Meteor.settings.sessions) {
-    console.log('Adding Sessions.');
-    Meteor.settings.sessions.forEach(session => addSessions(session));
+  if (Meteor.settings.defaultContacts) {
+    console.log('Creating default sessions.');
+    Meteor.settings.defaultContacts.forEach(contact => addContact(contact));
   }
 }

@@ -59,7 +59,7 @@ const EditSession = () => {
                   <Col><TextField name="day" /></Col>
                   <Col><TextField name="time" /></Col>
                 </Row>
-                <LongTextField name="participants" />
+                <LongTextField name="notes" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
                 <HiddenField name="owner" />

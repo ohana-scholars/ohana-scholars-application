@@ -12,14 +12,14 @@
   ],
 
   "defaultContacts": [{
-    "name": "Henri", "course": "Casanova", "location": "POST 307, University of Hawaii", "month": "Apr", "day": 10, "time": "1:00 PM",
-    "image": "https://avatars0.githubusercontent.com/u/7494478?s=460&v=4",
-    "notes": "I am originally from France. I maintain a list of reports from my surf sessions. I have proof that I ran the Hana relay with an actual Team.",
+    "name": "ICS314 Final Exam Study Group", "course": "ICS314", "location": "Hamilton Library Basement", "month": "Apr", "day": 10, "time": "1:00 PM",
+    "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg",
+    "notes": "Bring your own laptop!",
     "owner": "john@foo.com"
   }
   ],
 
-  "sessions": [
-    { "name": "ICS314 Final Exam Study Group", "course":  "ICS314", "location":  "Hamilton Library Basement", "month": "Apr", "day": 10, "time": "1:00 PM", "notes": "Bring your own laptop!", "picture": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg", "participants": ["john@foo.com", "admin@foo.com"] }
+  "defaultSessions": [
+    { "name": "ICS314 Final Exam Study Group", "course":  "ICS314", "location":  "Hamilton Library Basement", "month": "Apr", "day": 10, "time": "1:00 PM", "notes": "Bring your own laptop!", "picture": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg", "owner": "john@foo.com" }
   ]
 }
