@@ -59,7 +59,8 @@ Meteor.publish(Stuffs.adminPublicationName, function () {
 
 Meteor.publish(Student.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Student.collection.find();
+    const username = Meteor.users.findOne(this.userId).username;
+    return Student.collection.find({ owner: username });
   }
   return this.ready();
 });
