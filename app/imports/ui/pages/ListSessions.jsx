@@ -4,7 +4,7 @@ import { Col, Container, Row, Button } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Session from '../components/Session';
-import { Sessions } from '../../api/session/Sessions';
+import { Sessions } from '../../api/sessions/Sessions';
 import { Participants } from '../../api/participant/Participants';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */

@@ -7,7 +7,7 @@ import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { useParams } from 'react-router';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { Sessions } from '../../api/session/Sessions';
+import { Sessions } from '../../api/sessions/Sessions';
 
 const bridge = new SimpleSchema2Bridge(Sessions.schema);
 
