@@ -13,7 +13,6 @@ const formSchema = new SimpleSchema({
   username: String,
   description: String,
   profilePictureLink: String,
-  owner: String,
   // courses: String,
   // interests: String,
 });
@@ -21,7 +20,7 @@ const formSchema = new SimpleSchema({
 const bridge = new SimpleSchema2Bridge(formSchema);
 
 /* Renders the AddStuff page for adding a document. */
-const AddStuff = () => {
+const AddProfile = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
@@ -67,4 +66,4 @@ const AddStuff = () => {
   );
 };
 
-export default AddStuff;
+export default AddProfile;
