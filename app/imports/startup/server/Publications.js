@@ -3,6 +3,7 @@ import { Roles } from 'meteor/alanning:roles';
 import { Stuffs } from '../../api/stuff/Stuff';
 import { Courses } from '../../api/courses/Courses';
 import { Sessions } from '../../api/sessions/Sessions';
+import { Reputation } from '../../api/reputation/Reputation';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -29,6 +30,13 @@ Meteor.publish(Sessions.userPublicationName, function () {
   return this.ready();
 });
 
+Meteor.publish(Reputation.userPublicationName, function () {
+  if (this.userId) {
+    return Reputation.collection.find();
+  }
+  return this.ready();
+});
+
 // Admin-level publication.
 // If logged in and with admin role, then publish all documents from all users. Otherwise publish nothing.
 Meteor.publish(Stuffs.adminPublicationName, function () {
@@ -41,6 +49,13 @@ Meteor.publish(Stuffs.adminPublicationName, function () {
 Meteor.publish(Sessions.adminPublicationName, function () {
   if (this.userId) {
     return Sessions.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Reputation.adminPublicationName, function () {
+  if (this.userId) {
+    return Reputation.collection.find();
   }
   return this.ready();
 });

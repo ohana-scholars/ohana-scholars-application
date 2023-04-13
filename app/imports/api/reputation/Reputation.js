@@ -12,6 +12,8 @@ class ReputationCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
+      studentFirstName: String,
+      studentLastName: String,
       rating: {
         type: Number,
         allowedValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
