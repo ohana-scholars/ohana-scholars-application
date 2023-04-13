@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import { Image, ListGroup, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import Participant from './Participant';
 import AddParticipant from './AddParticipant';
 
