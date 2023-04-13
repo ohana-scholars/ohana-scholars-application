@@ -13,6 +13,7 @@ const formSchema = new SimpleSchema({
   username: String,
   description: String,
   profilePictureLink: String,
+  owner: String,
   // courses: String,
   // interests: String,
 });
