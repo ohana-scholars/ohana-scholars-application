@@ -4,6 +4,7 @@ import { Stuffs } from '../../api/stuff/Stuff';
 import { Courses } from '../../api/courses/Courses';
 import { Sessions } from '../../api/sessions/Sessions';
 import { Student } from '../../api/student/Student';
+import { Participants } from '../../api/participant/Participants';
 
 // User-level publication.
 // If logged in, then publish documents owned by this user. Otherwise publish nothing.
@@ -33,7 +34,16 @@ Meteor.publish(Courses.userPublicationName, function () {
 
 Meteor.publish(Sessions.userPublicationName, function () {
   if (this.userId) {
-    return Sessions.collection.find();
+    // const username = Meteor.users.findOne(this.userId).username;
+    return Sessions.collection.find({});
+  }
+  return this.ready();
+});
+
+Meteor.publish(Participants.userPublicationName, function () {
+  if (this.userId) {
+    // const username = Meteor.users.findOne(this.userId).username;
+    return Participants.collection.find({});
   }
   return this.ready();
 });
@@ -55,8 +65,15 @@ Meteor.publish(Student.adminPublicationName, function () {
 });
 
 Meteor.publish(Sessions.adminPublicationName, function () {
-  if (this.userId) {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Sessions.collection.find();
+  }
+  return this.ready();
+});
+
+Meteor.publish(Participants.adminPublicationName, function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Participants.collection.find();
   }
   return this.ready();
 });

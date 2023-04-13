@@ -75,3 +75,16 @@ if (Emails.collection.find().count() === 0) {
     Meteor.settings.emails.forEach(email => addEmail(email));
   }
 }
+
+const addSession = (session) => {
+  console.log(`  Adding: ${session.note} (${session.owner})`);
+  Sessions.collection.insert(session);
+};
+
+// Initialize the StuffsCollection if empty.
+if (Sessions.collection.find().count() === 0) {
+  if (Meteor.settings.defaultSessions) {
+    console.log('Creating default sessions.');
+    Meteor.settings.defaultSessions.forEach(session => addSession(session));
+  }
+}
