@@ -9,7 +9,8 @@ import { Student } from '../../api/student/Student';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
-  name: String,
+  firstName: String,
+  lastName: String,
   username: String,
   description: String,
   profilePictureLink: String,
@@ -50,7 +51,8 @@ const AddProfile = () => {
             <Card>
               <Card.Body>
                 <TextField name="username" />
-                <TextField name="name" />
+                <TextField name="firstName" />
+                <TextField name="lastName" />
                 <TextField name="description" />
                 <TextField name="profilePictureLink" />
                 {/* <TextField name="courses" /> */}
