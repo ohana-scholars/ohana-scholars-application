@@ -4,6 +4,7 @@ import { Courses } from '../../api/courses/Courses';
 import { Student } from '../../api/student/Student';
 import { Sessions } from '../../api/sessions/Sessions';
 import { Emails } from '../../api/email/Email';
+import { Reputation } from '../../api/reputation/Reputation';
 
 /* eslint-disable no-console */
 
@@ -86,5 +87,17 @@ if (Sessions.collection.find().count() === 0) {
   if (Meteor.settings.defaultSessions) {
     console.log('Creating default sessions.');
     Meteor.settings.defaultSessions.forEach(session => addSession(session));
+  }
+}
+
+const addRep = (rep) => {
+  console.log(`  Adding reputation: ${rep.studentFirstName} ${rep.studentLastName} - ${rep.rating}/10 by ${rep.owner}`);
+  Reputation.collection.insert(rep);
+};
+
+if (Reputation.collection.find().count() === 0) {
+  if (Meteor.settings.reputation) {
+    console.log('Adding reputation.');
+    Meteor.settings.reputation.forEach(rep => addRep(rep));
   }
 }

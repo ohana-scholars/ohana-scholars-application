@@ -31,5 +31,10 @@
   
   "emails": [
     { "sender": "john@foo.com", "receiver":  "314", "date":  "1/1/20023", "title": "Schedule Study Session", "body": "The study group session will be held at ", "timePlace": "1:00 PM in UH Manoa Hamilton Library." }
+  ],
+
+  "reputation": [
+    { "studentFirstName":  "John", "studentLastName": "Doe", "rating": 9,
+      "owner": "admin@foo.com" }
   ]
 }
