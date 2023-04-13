@@ -23,6 +23,7 @@ import AddCourse from '../pages/AddCourse';
 import Profile from '../pages/Profile';
 import ListSessions from '../pages/ListSessions';
 import AddSession from '../pages/AddSession';
+import AddProfile from '../pages/AddProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -45,6 +46,7 @@ const App = () => {
           <Route path="/list" element={<ProtectedRoute><ListSessions /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddSession /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
+          <Route path="/addProfile" element={<ProtectedRoute><AddProfile /></ProtectedRoute>} />
           <Route path="/addcourse" element={<AdminProtectedRoute ready={ready}><AddCourse /></AdminProtectedRoute>} />
           <Route path="/coursesAdmin" element={<AdminProtectedRoute ready={ready}><ListCoursesAdmin /></AdminProtectedRoute>} />
           <Route path="/courses" element={<ProtectedRoute><ListCourses /></ProtectedRoute>} />
