@@ -9,7 +9,7 @@ import SessionAdmin from '../components/SessionAdmin';
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const ListSessionsAdmin = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, contacts: sessions } = useTracker(() => {
+  const { ready, sessions } = useTracker(() => {
     // Participant that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Stuff documents.

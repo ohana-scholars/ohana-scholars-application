@@ -16,16 +16,16 @@ Meteor.publish(Stuffs.userPublicationName, function () {
 
 Meteor.publish(Sessions.userPublicationName, function () {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Sessions.collection.find({ owner: username });
+    // const username = Meteor.users.findOne(this.userId).username;
+    return Sessions.collection.find({});
   }
   return this.ready();
 });
 
 Meteor.publish(Participants.userPublicationName, function () {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Participants.collection.find({ owner: username });
+    // const username = Meteor.users.findOne(this.userId).username;
+    return Participants.collection.find({});
   }
   return this.ready();
 });

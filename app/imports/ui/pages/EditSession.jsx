@@ -35,14 +35,14 @@ const EditSession = () => {
     const { name, course, location, month, day, time, participants, image } = data;
     Sessions.collection.update(_id, { $set: { name, course, location, month, day, time, participants, image } }, (error) => (error ?
       swal('Error', error.message, 'error') :
-      swal('Success', 'Item updated successfully', 'success')));
+      swal('Success', 'Session updated successfully', 'success')));
   };
 
   return ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={10}>
-          <Col className="text-center"><h2>Edit Contact</h2></Col>
+          <Col className="text-center"><h2>Edit Session</h2></Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
             <Card>
               <Card.Body>

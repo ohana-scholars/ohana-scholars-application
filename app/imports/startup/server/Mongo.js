@@ -19,7 +19,7 @@ if (Stuffs.collection.find().count() === 0) {
 }
 
 const addContact = (contact) => {
-  console.log(`  Adding: ${contact.lastName} (${contact.owner})`);
+  console.log(`  Adding: ${contact.note} (${contact.owner})`);
   Sessions.collection.insert(contact);
 };
 

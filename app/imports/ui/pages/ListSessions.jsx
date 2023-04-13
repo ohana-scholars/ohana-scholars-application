@@ -10,7 +10,7 @@ import { Participants } from '../../api/participant/Participants';
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const ListSessions = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, contacts: sessions, participants } = useTracker(() => {
+  const { ready, sessions, participants } = useTracker(() => {
     // Participant that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Stuff documents.
@@ -23,7 +23,7 @@ const ListSessions = () => {
     // Get the Participant documents
     const participantItems = Participants.collection.find({}).fetch();
     return {
-      contacts: sessionItems,
+      sessions: sessionItems,
       participants: participantItems,
       ready: rdy,
     };
