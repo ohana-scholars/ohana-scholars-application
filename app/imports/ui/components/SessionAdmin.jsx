@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import { Col, Image, ListGroup, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import AddParticipant from './AddParticipant';
 import Participant from './Participant';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
