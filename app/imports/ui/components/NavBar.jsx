@@ -52,6 +52,12 @@ const NavBar = () => {
               </NavDropdown>
             ) : (
               <NavDropdown id="navbar-current-user" title={currentUser}>
+                <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/profile">
+                  <BoxArrowRight />
+                  {' '}
+                  View
+                  Profile
+                </NavDropdown.Item>
                 <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
                   <BoxArrowRight />
                   {' '}
@@ -59,6 +65,7 @@ const NavBar = () => {
                   out
                 </NavDropdown.Item>
               </NavDropdown>
+
             )}
           </Nav>
         </Navbar.Collapse>
