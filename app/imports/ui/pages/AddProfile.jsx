@@ -24,10 +24,10 @@ const AddProfile = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { name, username, description, /* courses, interests, */ profilePictureLink } = data;
+    const { firstName, lastName, username, description, /* courses, interests, */ profilePictureLink } = data;
     const owner = Meteor.user().username;
     Student.collection.insert(
-      { name, username, description, profilePictureLink, /* courses, interests, */ owner },
+      { firstName, lastName, username, description, profilePictureLink, /* courses, interests, */ owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
