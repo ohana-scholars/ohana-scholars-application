@@ -1,7 +1,7 @@
 import React from 'react';
 import swal from 'sweetalert';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, HiddenField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField, SelectField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -32,8 +32,8 @@ const EditSession = () => {
   // console.log('EditStuff', doc, ready);
   // On successful submit, insert the data.
   const submit = (data) => {
-    const { name, course, location, month, day, time, participants, image } = data;
-    Sessions.collection.update(_id, { $set: { name, course, location, month, day, time, participants, image } }, (error) => (error ?
+    const { name, course, location, month, day, time, participants, image, notes } = data;
+    Sessions.collection.update(_id, { $set: { name, course, location, month, day, time, participants, image, notes } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Session updated successfully', 'success')));
   };
@@ -55,14 +55,13 @@ const EditSession = () => {
                   <Col><TextField name="image" /></Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="month" /></Col>
-                  <Col><TextField name="day" /></Col>
+                  <Col><SelectField name="month" /></Col>
+                  <Col><SelectField name="day" /></Col>
                   <Col><TextField name="time" /></Col>
                 </Row>
                 <LongTextField name="notes" />
                 <SubmitField value="Submit" />
                 <ErrorsField />
-                <HiddenField name="owner" />
               </Card.Body>
             </Card>
           </AutoForm>

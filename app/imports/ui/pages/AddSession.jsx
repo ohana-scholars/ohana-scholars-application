@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
-import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, LongTextField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -68,8 +68,8 @@ const AddSession = () => {
                   <Col><TextField name="image" /></Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="month" /></Col>
-                  <Col><TextField name="day" /></Col>
+                  <Col><SelectField name="month" /></Col>
+                  <Col><SelectField name="day" /></Col>
                   <Col><TextField name="time" /></Col>
                 </Row>
                 <LongTextField name="notes" />
