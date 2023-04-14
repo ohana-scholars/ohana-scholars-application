@@ -37,7 +37,7 @@ const ListCourses = () => {
     if (type === '' || searchInput === '') {
       return collection;
     }
-    return _.filter(collection, function (item) { return item.subject.includes('Algo'); });
+    return _.filter(collection, function (item) { return item[type].includes(searchInput); });
   };
 
   let filteredItems = filter(courses);
