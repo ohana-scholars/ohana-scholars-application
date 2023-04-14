@@ -13,7 +13,12 @@
 
   "courses": [
     { "subject": "ICS", "title":  "314", "name":  "Software Engineering I" },
-    { "subject":  "ICS", "title":  "311", "name":  "Algorithms" }
+    { "subject":  "ICS", "title":  "311", "name":  "Algorithms" },
+    { "subject":  "LING", "title":  "102", "name":  "Intro to the Study of Language" },
+    { "subject":  "FIL", "title":  "101", "name":  "Beginning Filipino" },
+    { "subject":  "IP", "title":  "364", "name":  "Philippine Popular Culture" },
+    { "subject":  "ENG", "title":  "100", "name":  "Composition I" },
+    { "subject":  "CHEM", "title":  "272", "name":  "Organic Chemistry I" }
   ],
 
   "students": [
