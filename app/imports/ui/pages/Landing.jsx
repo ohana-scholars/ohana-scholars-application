@@ -1,6 +1,6 @@
 import React from 'react';
-import { Col, Container, Row, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { Col, Container, Row, Button } from 'react-bootstrap';
 
 /* A simple static component to render some text for the landing page. */
 const Landing = () => (
