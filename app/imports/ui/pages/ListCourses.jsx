@@ -1,24 +1,20 @@
 import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Col, Container, Row, Table, Form } from 'react-bootstrap';
+import { Col, Container, Row, Table, Button } from 'react-bootstrap';
+import { Filter } from 'react-bootstrap-icons';
 import { useTracker } from 'meteor/react-meteor-data';
 import _ from 'underscore';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Courses } from '../../api/courses/Courses';
 import Course from '../components/Course';
-
-// function setToggle(toggle) {
-//   return !toggle;
-// }
+import CoursesFilter from '../components/CoursesFilter';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const ListCourses = () => {
-  const [toggle, setToggle] = useState(false);
+  const [showFilter, setShowFilter] = useState(false);
+  const [filter, setFilter] = useState({ subject: '', title: '', name: '' });
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, courses } = useTracker(() => { // add back courses
-    // Note that this subscription will get cleaned up
-    // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
+  const { ready, courses } = useTracker(() => {
     const subscription = Meteor.subscribe(Courses.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
@@ -31,38 +27,13 @@ const ListCourses = () => {
     };
   }, []);
 
-  let type = '';
-  let searchInput = '';
-  const filter = (collection) => {
-    if (type === '' || searchInput === '') {
-      return collection;
-    }
-    return _.filter(collection, function (item) { return item[type].includes(searchInput); });
+  const handleFilterClick = () => {
+    setShowFilter(!showFilter);
   };
 
-  let filteredItems = filter(courses);
-
-  if (toggle === false) {
-    type = '';
-    searchInput = '';
-  }
-
-  const setSearch = (string) => {
-    searchInput = string;
-  };
-
-  const handleChange = (event) => {
-    filteredItems = filter(courses);
-    setSearch(event.target.value);
-    console.log(`Type:${type}`);
-    console.log(`Search:${searchInput}`);
-    console.log(filteredItems);
-  };
-
-  function setType(event) {
-    const { value } = event.target;
-    type = value;
-  }
+  const subjects = _.uniq(_.pluck(courses, 'subject'));
+  const titles = _.pluck(courses, 'title');
+  const names = _.pluck(courses, 'name');
 
   return (ready ? (
     <Container className="py-3">
@@ -70,65 +41,22 @@ const ListCourses = () => {
         <Col md={7}>
           <Col className="text-center">
             <h2>List Courses</h2>
-          </Col>
-          <Row className="justify-content-center">
-            <Col>
-              <Form>
-                <Form.Check
-                  type="switch"
-                  id="filter-switch"
-                  label="Filter"
-                  onClick={() => setToggle(!toggle)}
+            <div>
+              <Button onClick={handleFilterClick} className="filterButton">
+                <Filter size="24px" />
+              </Button>
+              {showFilter && (
+                <CoursesFilter
+                  filter={filter}
+                  setFilter={setFilter}
+                  subjects={subjects}
+                  titles={titles}
+                  names={names}
                 />
-              </Form>
-            </Col>
-            <Col>
-              {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-              <label>
-                <input
-                  type="radio"
-                  name="type"
-                  value="subject"
-                  onChange={setType}
-                  disabled={!toggle}
-                />{' '}
-                Subject
-              </label>
-            </Col>
-            <Col>
-              {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-              <label>
-                <input
-                  type="radio"
-                  name="type"
-                  value="title"
-                  onChange={setType}
-                  disabled={!toggle}
-                />{' '}
-                Title
-              </label>
-            </Col>
-            <Col>
-              {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-              <label>
-                <input
-                  type="radio"
-                  name="type"
-                  value="name"
-                  onChange={setType}
-                  disabled={!toggle}
-                />{' '}
-                Name
-              </label>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Form>
-                <Form.Control type="text" placeholder="Search" disabled={!toggle} onChange={handleChange} />
-              </Form>
-            </Col>
-          </Row>
+              )}
+            </div>
+
+          </Col>
           <Table striped bordered hover>
             <thead>
               <tr>
@@ -137,7 +65,24 @@ const ListCourses = () => {
               </tr>
             </thead>
             <tbody>
-              {filteredItems.map((course) => <Course key={course._id} course={course} />)}
+              {/* {filteredItems.map((course) => <Course key={course._id} course={course} />)} */}
+              <div>
+                {courses.filter((course) => {
+                  if (filter.subject && !course.subjects.includes(filter.subject)) {
+                    return false;
+                  }
+                  if (filter.title && !course.titles.includes(filter.title)) {
+                    return false;
+                  }
+                  return !(filter.name && course.names !== filter.name);
+
+                })
+                  .map((course) => (
+                    <div key={course._id}>
+                      <Course course={course} />
+                    </div>
+                  ))}
+              </div>
             </tbody>
           </Table>
         </Col>
@@ -147,3 +92,4 @@ const ListCourses = () => {
 };
 
 export default ListCourses;
+// https://codesandbox.io/s/github/tanstack/table/tree/main/examples/react/filters?from-embed=&file=/src/main.tsx reference for later
