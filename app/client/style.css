@@ -40,7 +40,9 @@ body {
 }
 
 .btn {
-  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
 }
 
 .pink-btn {
@@ -48,4 +50,5 @@ body {
   --bs-btn-border-color: var(--matr-btn-bg) !important;
   --bs-btn-hover-bg: var(--matr-navbar-bg) !important;
   --bs-btn-hover-border-color: var(--matr-navbar-bg) !important;
+  --bs-btn-border-radius: 0px !important;
 }
