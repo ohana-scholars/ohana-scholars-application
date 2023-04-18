@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Col, Container, Row, Table, Button } from 'react-bootstrap';
-import { Filter } from 'react-bootstrap-icons';
 import { useTracker } from 'meteor/react-meteor-data';
 import _ from 'underscore';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -33,7 +32,7 @@ const ListCourses = () => {
 
   const subjects = _.uniq(_.pluck(courses, 'subject'));
   const titles = _.pluck(courses, 'title');
-  const names = _.pluck(courses, 'name');
+  // const names = _.pluck(courses, 'name');
 
   return (ready ? (
     <Container className="py-3">
@@ -43,15 +42,14 @@ const ListCourses = () => {
             <h2>List Courses</h2>
             <div>
               <Button onClick={handleFilterClick} className="filterButton">
-                <Filter size="24px" />
+                Filter
               </Button>
               {showFilter && (
                 <CoursesFilter
                   filter={filter}
                   setFilter={setFilter}
                   subjects={subjects}
-                  titles={titles}
-                  names={names}
+                  // names={names}
                 />
               )}
             </div>
@@ -66,23 +64,13 @@ const ListCourses = () => {
             </thead>
             <tbody>
               {/* {filteredItems.map((course) => <Course key={course._id} course={course} />)} */}
-              <div>
-                {courses.filter((course) => {
-                  if (filter.subject && !course.subjects.includes(filter.subject)) {
-                    return false;
-                  }
-                  if (filter.title && !course.titles.includes(filter.title)) {
-                    return false;
-                  }
-                  return !(filter.name && course.names !== filter.name);
-
-                })
-                  .map((course) => (
-                    <div key={course._id}>
-                      <Course course={course} />
-                    </div>
-                  ))}
-              </div>
+              {courses.filter((course) => {
+                if (filter.subject === '') {
+                  return true;
+                }
+                return course.subject === filter.subject;
+              })
+                .map((course) => <Course key={course._id} course={course} />)}
             </tbody>
           </Table>
         </Col>
