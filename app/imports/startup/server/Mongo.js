@@ -38,7 +38,7 @@ if (Courses.collection.find().count() === 0) {
 
 // Initialize the database with students
 const addStudents = (student) => {
-  console.log(`  Adding: ${student.name}`);
+  console.log(`  Adding: ${student.firstName} ${student.lastName}`);
   Student.collection.insert(student);
 };
 
