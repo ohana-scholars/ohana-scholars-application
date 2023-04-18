@@ -10,26 +10,26 @@ const Landing = () => (
       <Col xs={1} />
       <Col xs={6}>
         <h1>Welcome to Ohana Scholars!</h1>
-        <h5>Looking a study partner for your upcoming midterms and finals?</h5>
-        <Link to="/signup"><Button className="pink-btn btn-lg">Start here and create your account!</Button></Link>
+        <h5>Looking for study partners for your upcoming midterms and finals?</h5>
+        <Link to="/signup"><Button className="pink-btn btn-lg">Start here and create an account!</Button></Link>
         <p>Already have an account? <Link to="/signin">Sign in</Link></p>
       </Col>
       <Col xs={1}>
-        <Image src="/images/ohana-scholars-logo.png" width="400px" alt="placeholder picture for something" />
+        <Image rounded src="/images/ohana-scholars-logo.png" width="400px" alt="placeholder picture for something" />
       </Col>
     </Row>
     <Row id="second-row" className="py-5 align-items-center justify-content-center">
       <Col xs={3} className="px-2 text-center">
-        <Search size="100px" />
-        <h5>Browse all courses and find who else is searching for a study partner!</h5>
+        <Search size={100} />
+        <h5>Browse all courses and find who else needs help!</h5>
       </Col>
       <Col xs={3} className="px-2 text-center">
-        <Calendar2DateFill size="100px" />
+        <Calendar2DateFill size={100} />
         <h5>Create, schedule, and join study sessions!</h5>
       </Col>
       <Col xs={3} className="px-2 text-center">
-        <StarFill size="100px" />
-        <h5>Rate your study partners on how well they helped you!</h5>
+        <StarFill size={100} />
+        <h5>Rate your partners on how well they helped you!</h5>
       </Col>
     </Row>
   </Container>

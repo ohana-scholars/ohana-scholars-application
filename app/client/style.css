@@ -3,29 +3,30 @@
 
 /* Set up some CSS variables to theme the application. */
 :root {
-  --matr-navbar-bg: #00a8f3;
-  --matr-navbar-bg-rgb: 0, 168, 243;
+  --matr-blue-bg: #00a8f3;
+  --matr-blue-bg-rgb: 0, 168, 243;
+  --matr-blue-bg-rgba: rgba(0, 168, 243, 0.3);
   --matr-btn-bg: #ee107f;
-  --matr-btn-bg-rgba: rgba(238, 16, 127, 0.3);
+  --matr-pink-bg-rgba: rgba(238, 16, 127, 0.3);
 }
 
 /* Change bootstrap variable values.
  See https://getbootstrap.com/docs/5.2/customize/css-variables/
  */
 body {
-  --bs-light-rgb: var(--matr-navbar-bg-rgb);
+  --bs-light-rgb: var(--matr-blue-bg-rgb);
   background: fixed center url("images/ohana-scholars-background.jpg");
   background-size: cover;
 }
 
 /* Set the alert background on the signin and signup pages. */
 #signin-page .alert-light, #signup-page .alert-light {
-  --bs-alert-bg: var(--matr-navbar-bg);
+  --bs-alert-bg: var(--matr-blue-bg);
 }
 
 /* Define custom styles */
 .gray-background {
-  background-color: var(--matr-navbar-bg);
+  background-color: var(--matr-blue-bg);
   color: var(--bs-dark);
   padding-top: 10px;
   padding-bottom: 20px;
@@ -36,7 +37,7 @@ body {
 }
 
 #second-row {
-  background-color: var(--matr-btn-bg-rgba);
+  background-color: var(--matr-pink-bg-rgba);
 }
 
 #footer {
@@ -53,7 +54,7 @@ body {
 .pink-btn {
   --bs-btn-bg: var(--matr-btn-bg) !important;
   --bs-btn-border-color: var(--matr-btn-bg) !important;
-  --bs-btn-hover-bg: var(--matr-navbar-bg) !important;
-  --bs-btn-hover-border-color: var(--matr-navbar-bg) !important;
+  --bs-btn-hover-bg: var(--matr-blue-bg) !important;
+  --bs-btn-hover-border-color: var(--matr-blue-bg) !important;
   --bs-btn-border-radius: 0px !important;
 }
