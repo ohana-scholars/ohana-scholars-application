@@ -6,12 +6,12 @@ import _ from 'underscore';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Courses } from '../../api/courses/Courses';
 import Course from '../components/Course';
-import CoursesFilter from '../components/CoursesFilter';
+import SubjectFilter from '../components/SubjectsFilter';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const ListCourses = () => {
   const [showFilter, setShowFilter] = useState(false);
-  const [filter, setFilter] = useState({ subject: '', title: '', name: '' });
+  const [filter, setFilter] = useState({ subject: '' });
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { ready, courses } = useTracker(() => {
     const subscription = Meteor.subscribe(Courses.userPublicationName);
@@ -31,7 +31,7 @@ const ListCourses = () => {
   };
 
   const subjects = _.uniq(_.pluck(courses, 'subject'));
-  const titles = _.pluck(courses, 'title');
+  // const titles = _.pluck(courses, 'title');
   // const names = _.pluck(courses, 'name');
 
   return (ready ? (
@@ -45,10 +45,11 @@ const ListCourses = () => {
                 Filter
               </Button>
               {showFilter && (
-                <CoursesFilter
+                <SubjectFilter
                   filter={filter}
                   setFilter={setFilter}
                   subjects={subjects}
+                  // titles={titles}
                   // names={names}
                 />
               )}
