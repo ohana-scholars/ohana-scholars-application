@@ -8,7 +8,6 @@ import { Courses } from '../../api/courses/Courses';
 import Course from '../components/Course';
 import SubjectFilter from '../components/SubjectsFilter';
 
-/* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const ListCourses = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [filter, setFilter] = useState({ subject: '' });
@@ -17,9 +16,8 @@ const ListCourses = () => {
     const subscription = Meteor.subscribe(Courses.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
-    // Get the Stuff documents
+    // Get the Courses documents
     const courseItems = Courses.collection.find({}).fetch();
-    // const filterdItems = _.filter(courseItems, function (item) { return item[type].includes(searchInput); });
     return {
       courses: courseItems,
       ready: rdy,
@@ -64,7 +62,6 @@ const ListCourses = () => {
               </tr>
             </thead>
             <tbody>
-              {/* {filteredItems.map((course) => <Course key={course._id} course={course} />)} */}
               {courses.filter((course) => {
                 if (filter.subject === '') {
                   return true;
@@ -81,4 +78,3 @@ const ListCourses = () => {
 };
 
 export default ListCourses;
-// https://codesandbox.io/s/github/tanstack/table/tree/main/examples/react/filters?from-embed=&file=/src/main.tsx reference for later
