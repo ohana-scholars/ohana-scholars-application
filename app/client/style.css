@@ -6,6 +6,7 @@
   --matr-navbar-bg: #00a8f3;
   --matr-navbar-bg-rgb: 0, 168, 243;
   --matr-btn-bg: #ee107f;
+  --matr-btn-bg-rgba: rgba(238, 16, 127, 0.3);
 }
 
 /* Change bootstrap variable values.
@@ -32,6 +33,10 @@ body {
 
 #landing {
   height: 450px;
+}
+
+#second-row {
+  background-color: var(--matr-btn-bg-rgba);
 }
 
 #footer {
