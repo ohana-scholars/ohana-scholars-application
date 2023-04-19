@@ -25,6 +25,7 @@ import AddSession from '../pages/AddSession';
 import AddProfile from '../pages/AddProfile';
 import ListSessionsAdmin from '../pages/ListSessionsAdmin';
 import EditSession from '../pages/EditSession';
+import Banned from '../pages/Banned';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/signout" element={<SignOut />} />
+          <Route path="/banned" element={<Banned />} />
           <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
           <Route path="/list" element={<ProtectedRoute><ListSessions /></ProtectedRoute>} />
           <Route path="/add" element={<ProtectedRoute><AddSession /></ProtectedRoute>} />
@@ -71,6 +73,9 @@ const App = () => {
  */
 const ProtectedRoute = ({ children }) => {
   const isLogged = Meteor.userId() !== null;
+  if (Roles.userIsInRole(Meteor.userId(), 'banned') === true) {
+    return <Navigate to="/banned" />;
+  }
   return isLogged ? children : <Navigate to="/signin" />;
 };
 
@@ -81,6 +86,9 @@ const ProtectedRoute = ({ children }) => {
  */
 const AdminProtectedRoute = ({ ready, children }) => {
   const isLogged = Meteor.userId() !== null;
+  if (Roles.userIsInRole(Meteor.userId(), 'banned') === true) {
+    return <Navigate to="/banned" />;
+  }
   if (!isLogged) {
     return <Navigate to="/signin" />;
   }
