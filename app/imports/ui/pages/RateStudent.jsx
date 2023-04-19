@@ -26,7 +26,7 @@ const RateStudent = () => {
         if (error) {
           swal('Error', error.message, 'error');
         } else {
-          swal('Success', 'Course added successfully', 'success');
+          swal('Success', 'Rating received successfully. Thank you for your feedback!', 'success');
           formRef.reset();
         }
       },
