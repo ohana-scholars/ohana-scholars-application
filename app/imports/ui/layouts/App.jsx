@@ -25,6 +25,7 @@ import AddSession from '../pages/AddSession';
 import AddProfile from '../pages/AddProfile';
 import ListSessionsAdmin from '../pages/ListSessionsAdmin';
 import EditSession from '../pages/EditSession';
+import RateStudent from '../pages/RateStudent';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/add" element={<ProtectedRoute><AddSession /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/addProfile" element={<ProtectedRoute><AddProfile /></ProtectedRoute>} />
+          <Route path="/rateStudent" element={<ProtectedRoute><RateStudent /></ProtectedRoute>} />
           <Route path="/addcourse" element={<AdminProtectedRoute ready={ready}><AddCourse /></AdminProtectedRoute>} />
           <Route path="/coursesAdmin" element={<AdminProtectedRoute ready={ready}><ListCoursesAdmin /></AdminProtectedRoute>} />
           <Route path="/listadmin" element={<AdminProtectedRoute ready={ready}><ListSessionsAdmin /></AdminProtectedRoute>} />
