@@ -26,6 +26,7 @@ import AddProfile from '../pages/AddProfile';
 import ListSessionsAdmin from '../pages/ListSessionsAdmin';
 import EditSession from '../pages/EditSession';
 import Banned from '../pages/Banned';
+import Appeal from '../pages/Appeal';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -43,6 +44,7 @@ const App = () => {
           <Route exact path="/" element={<Landing />} />
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/appeal" element={<Appeal />} />
           <Route path="/signout" element={<SignOut />} />
           <Route path="/banned" element={<Banned />} />
           <Route path="/home" element={<ProtectedRoute><Home /></ProtectedRoute>} />
