@@ -3,29 +3,19 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import { Col, Image, ListGroup, Row, Button, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import swal from 'sweetalert';
-import { useParams } from 'react-router';
 import Participant from './Participant';
 import { Sessions } from '../../api/sessions/Sessions';
+
+// When the 'remove' button is clicked on a chat message, delete that message.
+const deletesCardMaybe = () => {
+  Sessions.remove(this._id);
+};
 
 const DeleteButton = () => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
-  const { _id } = useParams();
-  const deleteTask = ({ session }) => Sessions.collection.remove({ name: Sessions.findOne(session).name });
-
-  // console.log('EditStuff', doc, ready);
-  // On successful submit, insert the data.
-  const hideTask = (data) => {
-    const { name, course, location, month, day, time, notes, participants, image } = data;
-    Sessions.collection.remove({ name: Sessions.findOne().name });
-    Sessions.collection.remove(_id, { $set: { name, course, location, month, day, time, notes, participants, image } }, (error) => (error ?
-      swal('Error', error.message, 'error') :
-      swal('Success', 'Session updated successfully', 'success')));
-  };
 
   return (
     <>
@@ -46,11 +36,8 @@ const DeleteButton = () => {
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" onClick={deleteTask}>
+          <Button variant="primary" onClick={deletesCardMaybe}>
             Delete
-          </Button>
-          <Button variant="primary" onClick={hideTask}>
-            hide
           </Button>
         </Modal.Footer>
       </Modal>
@@ -76,6 +63,7 @@ const SessionAdmin = ({ session, participants }) => (
     </Card.Header>
     <Card.Body>
       <Card.Text>{session.notes}</Card.Text>
+      <Card.Text className="text-muted">created by: {session.owner}</Card.Text>
     </Card.Body>
     <Card.Footer>
       <Card.Subtitle>Participants</Card.Subtitle>
