@@ -11,7 +11,6 @@ import { Reputation } from '../../api/reputation/Reputation';
 const formSchema = new SimpleSchema({
   rating: Number,
   reason: String,
-  owner: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
