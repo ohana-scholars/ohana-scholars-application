@@ -12,13 +12,12 @@ class ReputationCollection {
     this.collection = new Mongo.Collection(this.name);
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
-      studentFirstName: String,
-      studentLastName: String,
       rating: {
         type: Number,
         allowedValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
         defaultValue: 1,
       },
+      reason: String,
       owner: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
