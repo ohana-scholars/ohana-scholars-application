@@ -7,7 +7,6 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
-import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import SignUp from '../pages/SignUp';
 import SignOut from '../pages/SignOut';
@@ -26,6 +25,7 @@ import AddSession from '../pages/AddSession';
 import AddProfile from '../pages/AddProfile';
 import ListSessionsAdmin from '../pages/ListSessionsAdmin';
 import EditSession from '../pages/EditSession';
+import EditProfile from '../pages/EditProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -49,6 +49,7 @@ const App = () => {
           <Route path="/add" element={<ProtectedRoute><AddSession /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/addProfile" element={<ProtectedRoute><AddProfile /></ProtectedRoute>} />
+          <Route path="/editProfile/:_id" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
           <Route path="/addcourse" element={<AdminProtectedRoute ready={ready}><AddCourse /></AdminProtectedRoute>} />
           <Route path="/coursesAdmin" element={<AdminProtectedRoute ready={ready}><ListCoursesAdmin /></AdminProtectedRoute>} />
           <Route path="/listadmin" element={<AdminProtectedRoute ready={ready}><ListSessionsAdmin /></AdminProtectedRoute>} />
