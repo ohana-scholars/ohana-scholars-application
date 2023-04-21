@@ -37,7 +37,6 @@ const EditProfile = () => {
       swal('Error', error.message, 'error') :
       swal('Success', 'Session updated successfully', 'success')));
   };
-console.log(_id, doc);
   return ready ? (
     <Container className="py-3">
       <Row className="justify-content-center">
