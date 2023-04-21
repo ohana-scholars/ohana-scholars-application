@@ -6,10 +6,10 @@ import { Roles } from 'meteor/alanning:roles';
 // import { Student } from '../../api/student/Student';
 // import { Link } from 'react-router-dom';
 
-const banUser = (user) => {
-  Meteor.subscribe('users');
-  // Roles.addUsersToRoles(Meteor.users.find({ email: user })._id, 'banned');
-};
+// const banUser = (user) => {
+//   Meteor.subscribe('users');
+//   // Roles.addUsersToRoles(Meteor.users.find({ email: user })._id, 'banned');
+// };
 
 /** Renders a single row in the Student Profile card. */
 const ProfileCard = ({ student }) => (
@@ -29,7 +29,8 @@ const ProfileCard = ({ student }) => (
             <Card.Text className="text-center">{student.username}</Card.Text>
             {(Roles.userIsInRole(Meteor.userId(), 'admin') === true) && (
               // <Link to={`/banuser/${student.owner}`}><Button variant="danger">Ban User</Button></Link>
-              <Button variant="danger" onClick={banUser(student.owner)}>Ban User</Button>
+              // <Button variant="danger" onClick={banUser(student.owner)}>Ban User</Button>
+              <Button variant="danger">Ban User</Button>
             )}
           </div>
         </div>
