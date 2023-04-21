@@ -67,8 +67,7 @@ Meteor.publish(Stuffs.adminPublicationName, function () {
 
 Meteor.publish(Student.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Student.collection.find({ owner: username });
+    return Student.collection.find();
   }
   return this.ready();
 });
@@ -92,6 +91,15 @@ Meteor.publish(Reputation.adminPublicationName, function () {
     return Reputation.collection.find();
   }
   return this.ready();
+});
+
+Meteor.publish('users', function () {
+  if (this.userId) {
+    console.log('YEET');
+    return Meteor.users.find({});
+  }
+  return this.ready();
+
 });
 
 // alanning:roles publication
