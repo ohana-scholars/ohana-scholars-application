@@ -93,9 +93,9 @@ Meteor.publish(Reputation.adminPublicationName, function () {
   return this.ready();
 });
 
-Meteor.publish('users', function () {
-  if (this.userId) {
-    console.log('YEET');
+// Publish all users in the database
+Meteor.publish('userList', function () {
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Meteor.users.find({});
   }
   return this.ready();
