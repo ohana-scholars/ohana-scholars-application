@@ -42,7 +42,9 @@ const Profile = () => {
                   <div className="flex-grow-1 ms-3">
                     <Card.Title className="text-center">{student[0].firstName} {student[0].lastName}</Card.Title>
                     <Card.Text className="text-center">{student[0].username}</Card.Text>
-                    <Link to="/rateStudent"><Button className="pink-btn">Rate Student</Button></Link>
+                    <div className="text-center">
+                      <Link to="/rateStudent"><Button className="pink-btn">Rate Student</Button></Link>
+                    </div>
                     {/* <Row> */}
                     {/*  <Col className="px-2 ps-5"> */}
                     {/*    <div>Interests: </div> */}
