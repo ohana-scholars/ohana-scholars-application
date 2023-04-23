@@ -49,3 +49,8 @@ body {
   --bs-btn-hover-bg: var(--matr-navbar-bg) !important;
   --bs-btn-hover-border-color: var(--matr-navbar-bg) !important;
 }
+
+#filter-stuff {
+  border: black;
+  border-width: 10px;
+}

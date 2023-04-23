@@ -1,6 +1,6 @@
 import React from 'react';
 // import { useState } from 'react';
-import { Form } from 'react-bootstrap';
+import { Col, Form, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
 const SubjectFilter = ({
@@ -26,13 +26,19 @@ const SubjectFilter = ({
     <div>
       <Form>
         <Form.Group>
-          <Form.Label>Subject</Form.Label>
-          <Form.Control as="select" value={filter.subjects} onChange={setSubject}>
-            <option value="">Any</option>
-            {subjects.map((subject, index) => (
-              <option key={index} value={subject}>{subject}</option>
-            ))}
-          </Form.Control>
+          <Row>
+            <Col md={{ offset: 9 }}>
+              <Form.Label className="mt-2"><strong>Subject</strong></Form.Label>
+            </Col>
+            <Col>
+              <Form.Control as="select" value={filter.subjects} onChange={setSubject}>
+                <option value="">Any</option>
+                {subjects.map((subject, index) => (
+                  <option key={index} value={subject}>{subject}</option>
+                ))}
+              </Form.Control>
+            </Col>
+          </Row>
         </Form.Group>
         {/* { showFilter && ( */}
         {/*  <Form.Group> */}
