@@ -9,6 +9,10 @@ import { Roles } from 'meteor/alanning:roles';
 /** Renders a single row in the Student Profile card. */
 const ProfileCard = ({ student, userID }) => {
 
+  const banStatus = Meteor.call('checkBan', userID);
+  console.log(Roles.getAllRoles({}).fetch());
+  console.log(Roles.userIsInRole(userID, 'banned'));
+
   const banUser = () => {
     console.log(userID);
     Meteor.call('setUserRole', userID);
@@ -31,8 +35,11 @@ const ProfileCard = ({ student, userID }) => {
               <Card.Text className="text-center">{student.username}</Card.Text>
               {(Roles.userIsInRole(Meteor.userId(), 'admin') === true) && (
               // <Link to={`/banuser/${student.owner}`}><Button variant="danger">Ban User</Button></Link>
-                <Button variant="danger" onClick={banUser}>Ban User</Button>
+              //   <Button variant="danger" onClick={banUser}>Ban User</Button>
               //   <Button variant="danger">Ban User</Button>
+                Roles.userIsInRole(userID, 'banned') ? (
+                  <Button variant="danger" onClick={banUser}>Unban User</Button>
+                ) : <Button variant="danger" onClick={banUser}>Ban User</Button>
               )}
             </div>
           </div>
