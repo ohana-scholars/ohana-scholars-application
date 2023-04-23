@@ -41,7 +41,6 @@
   ],
 
   "reputation": [
-    { "studentFirstName":  "John", "studentLastName": "Doe", "rating": 9,
-      "owner": "admin@foo.com" }
+    { "rating": 9, "reason": "bc he's baller like that", "owner": "admin@foo.com" }
   ]
 }

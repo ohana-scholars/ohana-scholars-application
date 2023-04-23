@@ -19,6 +19,7 @@ class StudentCollection {
       profilePictureLink: String,
       // courses: String, // Add later when collections made
       // interests: String,
+      // reputation: Number,
       owner: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.

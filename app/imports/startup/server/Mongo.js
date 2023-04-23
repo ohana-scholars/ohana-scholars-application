@@ -91,7 +91,7 @@ if (Sessions.collection.find().count() === 0) {
 }
 
 const addRep = (rep) => {
-  console.log(`  Adding reputation: ${rep.studentFirstName} ${rep.studentLastName} - ${rep.rating}/10 by ${rep.owner}`);
+  console.log(`  Adding reputation: ${rep.rating}/10 by ${rep.owner}`);
   Reputation.collection.insert(rep);
 };
 
