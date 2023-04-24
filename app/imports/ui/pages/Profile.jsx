@@ -35,7 +35,6 @@ const Profile = () => {
                     style={{ width: '200px', borderRadius: '10px' }}
                     src={student[0].profilePictureLink}
                     alt="Student Image"
-                    fluid
                   />
                 </div>
                 <div className="d-flex text-black">
@@ -60,6 +59,9 @@ const Profile = () => {
                     {/*  </Col> */}
                     {/* </Row> */}
                     <Card.Body>{student[0].description}</Card.Body>
+                    <Card.Footer>
+                      <Link to={`/editProfile/${student[0]._id}`}>Edit Profile</Link>
+                    </Card.Footer>
                   </div>
                 </div>
               </Card>
