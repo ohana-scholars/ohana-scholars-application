@@ -7,8 +7,8 @@ import Participant from './Participant';
 import { Sessions } from '../../api/sessions/Sessions';
 
 // When the 'remove' button is clicked on a chat message, delete that message.
-const deletesCardMaybe = () => {
-  Sessions.remove(this._id);
+const deletesCardMaybe = (session) => {
+  Sessions.remove(session._id);
 };
 
 const DeleteButton = () => {
