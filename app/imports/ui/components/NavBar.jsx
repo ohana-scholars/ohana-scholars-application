@@ -71,12 +71,6 @@ const NavBar = () => {
                   View
                   Profile
                 </NavDropdown.Item>
-                <NavDropdown.Item id="navbar-edit-profile" as={NavLink} to="/editProfile">
-                  <BoxArrowRight />
-                  {' '}
-                  Edit
-                  Profile
-                </NavDropdown.Item>
                 <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
                   <BoxArrowRight />
                   {' '}
