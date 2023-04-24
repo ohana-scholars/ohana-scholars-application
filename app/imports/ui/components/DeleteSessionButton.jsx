@@ -45,6 +45,15 @@ const DeleteButton = () => {
 // Require a document to be passed to this component.
 deletesCardMaybe.propTypes = {
   session: PropTypes.shape({
+    name: PropTypes.string,
+    course: PropTypes.string,
+    location: PropTypes.string,
+    month: PropTypes.string,
+    day: PropTypes.number,
+    time: PropTypes.string,
+    notes: PropTypes.string,
+    image: PropTypes.string,
+    owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
 };
