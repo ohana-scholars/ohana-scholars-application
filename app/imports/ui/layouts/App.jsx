@@ -25,6 +25,7 @@ import AddSession from '../pages/AddSession';
 import AddProfile from '../pages/AddProfile';
 import ListSessionsAdmin from '../pages/ListSessionsAdmin';
 import EditSession from '../pages/EditSession';
+import DeleteSession from '../pages/DeleteSession';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -53,6 +54,7 @@ const App = () => {
           <Route path="/listadmin" element={<AdminProtectedRoute ready={ready}><ListSessionsAdmin /></AdminProtectedRoute>} />
           <Route path="/courses" element={<ProtectedRoute><ListCourses /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditSession /></ProtectedRoute>} />
+          <Route path="/deletesession/:_id" element={<ProtectedRoute><DeleteSession /></ProtectedRoute>} />
           <Route path="/editcourse/:_id" element={<AdminProtectedRoute ready={ready}><EditCourse /></AdminProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
