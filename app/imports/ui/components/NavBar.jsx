@@ -21,7 +21,7 @@ const NavBar = () => {
             Ohana Scholars
           </Navbar.Brand>
         ) : (
-          <Navbar.Brand as={NavLink} to="/home">
+          <Navbar.Brand as={NavLink} to="/home" id="goto-home">
             <Image src="/images/ohana-scholars-logo.png" width="60px" alt="Ohana Scholars Logo" />
             Ohana Scholars
           </Navbar.Brand>
@@ -30,20 +30,20 @@ const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto justify-content-start">
             {currentUser && (Roles.userIsInRole(Meteor.userId(), 'banned') === false) ? ([
-              <Nav.Link id="add-contact-nav" as={NavLink} to="/add" key="add">Add Session</Nav.Link>,
+              <Nav.Link id="add-session-nav" as={NavLink} to="/add" key="add">Add Session</Nav.Link>,
               <Nav.Link id="list-sessions-nav" as={NavLink} to="/list" key="list">List Sessions</Nav.Link>,
             ]) : ''}
             {currentUser && (Roles.userIsInRole(Meteor.userId(), 'banned') === false) ? ([
-              <Nav.Link id="list-stuff-nav" as={NavLink} to="/courses" key="list">Courses</Nav.Link>,
+              <Nav.Link id="list-courses-nav" as={NavLink} to="/courses" key="list">Courses</Nav.Link>,
             ]) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="add-stuff-nav" as={NavLink} to="/addcourse" key="add">Add Courses</Nav.Link>
+              <Nav.Link id="add-course-nav" as={NavLink} to="/addcourse" key="add">Add Courses</Nav.Link>
             ) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="add-stuff-nav" as={NavLink} to="/listadmin" key="listadmin">List Sessions (Admin)</Nav.Link>
+              <Nav.Link id="list-sessions-admin-nav" as={NavLink} to="/listadmin" key="listadmin">List Sessions (Admin)</Nav.Link>
             ) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="list-stuff-nav" as={NavLink} to="/coursesAdmin" key="listAdmin">Courses (Admin)</Nav.Link>
+              <Nav.Link id="list-courses-admin-nav" as={NavLink} to="/coursesAdmin" key="listAdmin">Courses (Admin)</Nav.Link>
             ) : ''}
           </Nav>
           <Nav className="justify-content-end">
@@ -62,7 +62,7 @@ const NavBar = () => {
               </NavDropdown>
             ) : (
               <NavDropdown id="navbar-current-user" title={currentUser}>
-                <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/profile">
+                <NavDropdown.Item id="navbar-view-profile" as={NavLink} to="/profile">
                   <BoxArrowRight />
                   {' '}
                   View

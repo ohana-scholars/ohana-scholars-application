@@ -37,7 +37,7 @@ const AddCourse = () => {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   let fRef = null;
   return (
-    <Container className="py-3">
+    <Container className="py-3" id="add-course-page">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center"><h2>Add Course</h2></Col>
@@ -45,11 +45,11 @@ const AddCourse = () => {
             <Card>
               <Card.Body>
                 <Row>
-                  <Col><TextField name="subject" /></Col>
-                  <Col><TextField name="title" /></Col>
+                  <Col><TextField name="subject" id="addcourse-form-subject" /></Col>
+                  <Col><TextField name="title" id="addcourse-form-title" /></Col>
                 </Row>
-                <TextField name="name" />
-                <SubmitField value="Submit" />
+                <TextField name="name" id="addcourse-form-name" />
+                <SubmitField value="Submit" id="addcourse-form-submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>

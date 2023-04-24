@@ -43,21 +43,21 @@ const AddProfile = () => {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   let fRef = null;
   return (
-    <Container className="py-3">
+    <Container className="py-3" id="add-profile-page">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center"><h2>Create a Profile</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <TextField name="username" />
-                <TextField name="firstName" />
-                <TextField name="lastName" />
-                <TextField name="description" />
-                <TextField name="profilePictureLink" />
+                <TextField name="username" id="addprofile-form-username" />
+                <TextField name="firstName" id="addprofile-form-firstname" />
+                <TextField name="lastName" id="addprofile-form-lastname" />
+                <TextField name="description" id="addprofile-form-description" />
+                <TextField name="profilePictureLink" id="addprofile-form-picturelink" />
                 {/* <TextField name="courses" /> */}
                 {/* <TextField name="interests" /> */}
-                <SubmitField value="Submit" />
+                <SubmitField value="Submit" id="addprofile-form-submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>

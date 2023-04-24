@@ -39,7 +39,7 @@ const EditStuff = () => {
   };
 
   return ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="edit-course-page">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center"><h2>Edit Course</h2></Col>

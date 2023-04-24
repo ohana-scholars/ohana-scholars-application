@@ -33,13 +33,13 @@ const ListCourses = () => {
   // const names = _.pluck(courses, 'name');
 
   return (ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="list-courses-page">
       <Row className="justify-content-center">
         <Col md={7}>
           <Col className="text-center">
             <h2>List Courses</h2>
             <div>
-              <Button onClick={handleFilterClick} className="filterButton">
+              <Button onClick={handleFilterClick} className="filterButton" id="filter-courses-btn">
                 Filter
               </Button>
               {showFilter && (

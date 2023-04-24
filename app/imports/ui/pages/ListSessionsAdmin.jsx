@@ -30,7 +30,7 @@ const ListSessionsAdmin = () => {
   }, []);
 
   return (ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="list-sessions-admin-page">
       <Row className="justify-content-center">
         <Col>
           <Col className="text-center">

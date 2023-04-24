@@ -25,7 +25,7 @@ const Profile = () => {
   }, []);
   return (ready ? (
     <div className="vh-100">
-      <Container>
+      <Container id="profile-page">
         <Row className="justify-content-center">
           <Col md="9" lg="7" xl="5" className="mt-5">
             <Card style={{ borderRadius: '10px' }}>

@@ -30,7 +30,7 @@ const ListSessions = () => {
   }, []);
 
   return (ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="list-sessions-page">
       <Row className="justify-content-center">
         <Col>
           <Col className="text-center">
@@ -42,7 +42,7 @@ const ListSessions = () => {
         </Col>
       </Row>
       <Row>
-        <Button href="../add">Create New Session</Button>
+        <Button href="../add" id="goto-add-session-page">Create New Session</Button>
       </Row>
     </Container>
   ) : <LoadingSpinner />);
