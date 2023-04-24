@@ -46,15 +46,15 @@ const EditProfile = () => {
             <Card>
               <Card.Body>
                 <Row>
-                  <Col><TextField name="firstName" /></Col>
-                  <Col><TextField name="lastName" /></Col>
+                  <Col><TextField name="firstName" label="First Name" /></Col>
+                  <Col><TextField name="lastName" label="Last Name" /></Col>
                 </Row>
                 <Row>
                   <Col><TextField name="username" /></Col>
-                  <Col><TextField name="profilePictureLink" /></Col>
+                  <Col><TextField name="profilePictureLink" label="Profile Picture" /></Col>
                 </Row>
                 <Row>
-                  <Col><LongTextField name="description" /></Col>
+                  <Col><LongTextField name="description" label="Your Bio" /></Col>
                 </Row>
                 <SubmitField value="Submit" />
                 <ErrorsField />
