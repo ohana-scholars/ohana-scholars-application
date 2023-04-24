@@ -1,11 +1,11 @@
 import React from 'react';
-import { Card, Col, Container, Row, Button } from 'react-bootstrap';
+import { Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, HiddenField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { useParams } from 'react-router';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Navigate } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Sessions } from '../../api/sessions/Sessions';
 import ListSessionsAdmin from './ListSessionsAdmin';
@@ -35,7 +35,8 @@ const DeleteSession = () => {
   const submit = () => {
     Sessions.collection.remove(_id);
     <Link to="/deletesession/" />;
-    <Route path="/lsit" element={<ListSessionsAdmin />} />;
+    <Route path="/listadmin" element={<ListSessionsAdmin />} />;
+    return <Navigate to="/listadmin" />;
   };
 
   return ready ? (
@@ -60,7 +61,7 @@ const DeleteSession = () => {
                   <Col><TextField name="time" /></Col>
                 </Row>
                 <LongTextField name="notes" />
-                <SubmitField value="Delete" onClick={<Button href="../list">Go to List Sessions Page</Button>} />
+                <SubmitField value="Delete" onClick={<Navigate to="/listadmin" />} />
                 <ErrorsField />
                 <HiddenField name="owner" />
               </Card.Body>
