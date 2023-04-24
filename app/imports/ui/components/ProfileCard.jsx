@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
-import { Button, Card, Col } from 'react-bootstrap';
+import { Button, Card, Col, Image, ListGroup } from 'react-bootstrap';
 import { Roles } from 'meteor/alanning:roles';
 // import { Student } from '../../api/student/Student';
 // import { Link } from 'react-router-dom';
@@ -16,27 +16,35 @@ const ProfileCard = ({ student, userID }) => {
 
   return (
     <Col>
-      <Card style={{ borderRadius: '10px' }} className="text-center">
-        <Card className="p-4">
-          <div className="flex-shrink-0 text-center">
-            <Card.Img
-              style={{ width: '200px', borderRadius: '10px' }}
+      <Card style={{ borderRadius: '10px' }} className="text-center h-100">
+        <Card.Header className="text-center">
+          <ListGroup.Item className="p-4">
+            <Image
+              style={{
+                maxWidth: '100%',
+                width: 'auto',
+                maxHeight: '100px',
+                height: 'auto',
+                borderRadius: '10px' }}
               src={student.profilePictureLink}
               alt="Student Image"
             />
-          </div>
-          <div className="d-flex text-black">
-            <div className="flex-grow-1 ms-3">
-              <Card.Title className="text-center">{student.firstName} {student.lastName}</Card.Title>
-              <Card.Text className="text-center">{student.username}</Card.Text>
-              {(Roles.userIsInRole(Meteor.userId(), 'admin') === true) && (
-              // <Link to={`/banuser/${student.owner}`}><Button variant="danger">Ban User</Button></Link>
-                <Button variant="danger" onClick={banUser}>Ban User</Button>
+            <Card.Title className="text-center">{student.firstName} {student.lastName}</Card.Title>
+            <Card.Text className="text-center">{student.username}</Card.Text>
+          </ListGroup.Item>
+        </Card.Header>
+        <Card.Body>
+          {/* eslint-disable-next-line react/prop-types */}
+          <Card.Text>{student.description}</Card.Text>
+        </Card.Body>
+        <div className="d-flex text-black">
+          <div className="flex-grow-1 ms-3">
+            {(Roles.userIsInRole(Meteor.userId(), 'admin') === true) && (// <Link to={`/banuser/${student.owner}`}><Button variant="danger">Ban User</Button></Link>
+              <Button variant="danger" onClick={banUser}>Ban User</Button>
               //   <Button variant="danger">Ban User</Button>
-              )}
-            </div>
+            )}
           </div>
-        </Card>
+        </div>
       </Card>
     </Col>
   );
