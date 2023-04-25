@@ -59,7 +59,7 @@ const SignUp = ({ location }) => {
           <Alert variant="light">
             Already have an account? Login
             {' '}
-            <Link to="/signin">here</Link>
+            <Link to="/signin" className="white-link">here</Link>
           </Alert>
           {error === '' ? (
             ''

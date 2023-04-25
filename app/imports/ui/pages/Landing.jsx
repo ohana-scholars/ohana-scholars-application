@@ -20,15 +20,15 @@ const Landing = () => (
     </Row>
     <Row id="second-row" className="py-5 align-items-center justify-content-center">
       <Col xs={3} className="px-2 text-center">
-        <Search size={100} />
+        <Search size={110} className="py-2" />
         <h5>Browse all courses and find who else needs help!</h5>
       </Col>
       <Col xs={3} className="px-2 text-center">
-        <Calendar2DateFill size={100} />
+        <Calendar2DateFill size={110} className="py-2" />
         <h5>Create, schedule, and join study sessions!</h5>
       </Col>
       <Col xs={3} className="px-2 text-center">
-        <StarFill size={100} />
+        <StarFill size={110} className="py-2" />
         <h5>Rate your partners on how well they helped you!</h5>
       </Col>
     </Row>

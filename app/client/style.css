@@ -63,3 +63,7 @@ body {
   border: black;
   border-width: 10px;
 }
+
+.white-link {
+  color: white !important;
+}
