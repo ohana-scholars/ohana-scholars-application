@@ -43,12 +43,9 @@ const NavBar = () => {
               <Nav.Link id="list-sessions-admin-nav" as={NavLink} to="/listadmin" key="listadmin">List Sessions (Admin)</Nav.Link>
             ) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-<<<<<<< Updated upstream
-=======
               <Nav.Link id="list-users-admin-nav" as={NavLink} to="/listusersadmin" key="listusersadmin">List Users (Admin)</Nav.Link>
             ) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
->>>>>>> Stashed changes
               <Nav.Link id="list-courses-admin-nav" as={NavLink} to="/coursesAdmin" key="listAdmin">Courses (Admin)</Nav.Link>
             ) : ''}
           </Nav>
