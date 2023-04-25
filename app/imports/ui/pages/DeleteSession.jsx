@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
@@ -32,6 +32,10 @@ const DeleteSession = () => {
 
   const navigate = useNavigate();
 
+  const goToListAdmin = () => {
+    navigate('/listadmin');
+  };
+
   // console.log('EditStuff', doc, ready);
   // On successful submit, delete the data.
   const submit = () => {
@@ -62,7 +66,10 @@ const DeleteSession = () => {
                 </Row>
                 <LongTextField name="notes" />
                 <TextField name="owner" />
-                <SubmitField value="Delete" />
+                <Row>
+                  <Col><SubmitField value="Delete" /></Col>
+                  <Col><Button onClick={goToListAdmin}>Cancel</Button></Col>
+                </Row>
                 <ErrorsField />
               </Card.Body>
             </Card>
