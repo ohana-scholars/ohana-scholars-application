@@ -1,28 +1,41 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
+import _ from 'underscore';
 import { Card, Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Student } from '../../api/student/Student';
+import { Reputation } from '../../api/reputation/Reputation';
 
 /* Profile Page based on default data (Will implement renderer later) */
 const Profile = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { ready, student } = useTracker(() => {
+  // const { youAreThatStudent } = useTracker(() => ({
+  // youAreThatStudent: Meteor.user() ? Meteor.user().username : '',
+  // }}), []);
+  const { ready, student, reputation } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Stuff documents.
-    const subscription = Meteor.subscribe(Student.userPublicationName);
-    // Determine if the subscription is ready
-    const rdy = subscription.ready();
-    // Get the Student document
+    const subscription1 = Meteor.subscribe(Student.userPublicationName);
+    const subscription2 = Meteor.subscribe(Reputation.userPublicationName);
+    // Determine if the subscriptions are ready
+    const rdy = subscription1.ready() && subscription2.ready();
+    // Get the Student and Reputation documents
     const studentItems = Student.collection.find({}).fetch();
+    const repItems = Reputation.collection.find({}).fetch();
     return {
       student: studentItems,
+      reputation: repItems,
       ready: rdy,
     };
   }, []);
+
+  // underscore functions to grab average rating of student
+  const ratings = _.pluck(reputation, 'rating');
+  const avgRating = (_.reduce(ratings, function (index, key) { return index + key; }, 0) / ratings.length).toFixed(2);
+
   return (ready ? (
     <div className="vh-100">
       <Container id="profile-page">
@@ -39,9 +52,12 @@ const Profile = () => {
                 </div>
                 <div className="d-flex text-black">
                   <div className="flex-grow-1 ms-3">
-                    <Card.Title className="text-center">{student[0].firstName} {student[0].lastName}</Card.Title>
-                    <Card.Text className="text-center">{student[0].username}</Card.Text>
                     <div className="text-center">
+                      <Card.Title>{student[0].firstName} {student[0].lastName}</Card.Title>
+                      <Card.Text>{student[0].username}</Card.Text>
+                      <Card.Subtitle>Rating: {avgRating}/10</Card.Subtitle>
+                      { /* youAreThatStudent ? '' : (
+                      <Link to="/rateStudent"><Button className="pink-btn">Rate Student</Button></Link>) */ }
                       <Link to="/rateStudent"><Button className="pink-btn" id="rate-student-btn">Rate Student</Button></Link>
                     </div>
                     {/* <Row> */}

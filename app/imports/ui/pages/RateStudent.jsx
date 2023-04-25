@@ -45,8 +45,8 @@ const RateStudent = () => {
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
-                <NumField name="rating" id="ratestudent-form-rating" />
-                <LongTextField name="reason" id="ratestudent-form-reason" />
+                <NumField name="rating" id="ratestudent-form-rating" placeholder="Please enter a rating from 1 to 10." />
+                <LongTextField name="reason" id="ratestudent-form-reason" placeholder="Please give a short reason for your rating." />
                 <SubmitField value="Submit" id="ratestudent-form-submit" />
                 <ErrorsField />
               </Card.Body>
