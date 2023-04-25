@@ -66,7 +66,7 @@ const NavBar = () => {
             ) : (
               <NavDropdown id="navbar-current-user" title={currentUser}>
                 <NavDropdown.Item id="navbar-view-profile" as={NavLink} to="/profile">
-                  <BoxArrowRight />
+                  <PersonFill />
                   {' '}
                   View
                   Profile
