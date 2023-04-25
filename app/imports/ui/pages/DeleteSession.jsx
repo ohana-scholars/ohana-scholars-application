@@ -1,14 +1,13 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, HiddenField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { useParams } from 'react-router';
-import { Link, Route, Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Sessions } from '../../api/sessions/Sessions';
-import ListSessionsAdmin from './ListSessionsAdmin';
 
 const bridge = new SimpleSchema2Bridge(Sessions.schema);
 
@@ -30,13 +29,14 @@ const DeleteSession = () => {
       ready: rdy,
     };
   }, [_id]);
+
+  const navigate = useNavigate();
+
   // console.log('EditStuff', doc, ready);
   // On successful submit, delete the data.
   const submit = () => {
     Sessions.collection.remove(_id);
-    <Link to="/deletesession/" />;
-    <Route path="/listadmin" element={<ListSessionsAdmin />} />;
-    return <Navigate to="/listadmin" />;
+    navigate('/listadmin');
   };
 
   return ready ? (
@@ -61,9 +61,9 @@ const DeleteSession = () => {
                   <Col><TextField name="time" /></Col>
                 </Row>
                 <LongTextField name="notes" />
-                <SubmitField value="Delete" onClick={<Navigate to="/listadmin" />} />
+                <TextField name="owner" />
+                <SubmitField value="Delete" />
                 <ErrorsField />
-                <HiddenField name="owner" />
               </Card.Body>
             </Card>
           </AutoForm>

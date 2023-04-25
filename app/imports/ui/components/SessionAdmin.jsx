@@ -4,7 +4,6 @@ import Card from 'react-bootstrap/Card';
 import { Col, Image, ListGroup, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Participant from './Participant';
-import DeleteButton from './DeleteSessionButton';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const SessionAdmin = ({ session, participants }) => (
@@ -15,9 +14,6 @@ const SessionAdmin = ({ session, participants }) => (
         <Col />
         <Col><Link to={`/edit/${session._id}`}>Edit</Link></Col>
         <Col><Link to={`/deletesession/${session._id}`}>delete</Link></Col>
-        <Col>
-          <DeleteButton />
-        </Col>
       </Row>
       <Card.Title>{session.name}</Card.Title>
       <Card.Subtitle>{session.month} {session.day} | {session.time}</Card.Subtitle>
