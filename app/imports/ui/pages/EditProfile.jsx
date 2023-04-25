@@ -35,7 +35,7 @@ const EditProfile = () => {
     const { firstName, lastName, username, description, profilePictureLink } = data;
     Student.collection.update(_id, { $set: { firstName, lastName, username, description, profilePictureLink } }, (error) => (error ?
       swal('Error', error.message, 'error') :
-      swal('Success', 'Session updated successfully', 'success')));
+      swal('Success', 'Profile updated successfully.', 'success')));
   };
   return ready ? (
     <Container className="py-3">
