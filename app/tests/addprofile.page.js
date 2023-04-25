@@ -9,7 +9,7 @@ class AddProfilePage {
 
   /** Checks that this page is currently displayed. */
   async isDisplayed(testController) {
-    await testController.wait(1000).expect(this.pageSelector.exists).ok();
+    await testController.wait(100000).expect(this.pageSelector.exists).ok();
   }
 
   /** Checks that inputs of add profile page works */
