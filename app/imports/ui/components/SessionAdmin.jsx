@@ -12,7 +12,7 @@ const SessionAdmin = ({ session, participants }) => (
       <Row>
         <Col><Image src={session.image} width={75} /></Col>
         <Col />
-        <Col><Link to={`/edit/${session._id}`}>Edit</Link></Col>
+        <Col><Link to={`/edit/${session._id}`} id="editsession-link">Edit</Link></Col>
       </Row>
       <Card.Title>{session.name}</Card.Title>
       <Card.Subtitle>{session.month} {session.day} | {session.time}</Card.Subtitle>

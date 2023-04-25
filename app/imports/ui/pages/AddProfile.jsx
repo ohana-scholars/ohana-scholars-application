@@ -46,7 +46,7 @@ const AddProfile = () => {
   }
   let fRef = null;
   return (
-    <Container className="py-3">
+    <Container className="py-3" id="add-profile-page">
       <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center"><h2>Create a Profile</h2></Col>
@@ -54,17 +54,19 @@ const AddProfile = () => {
             <Card className="">
               <Card.Body>
                 <Row>
-                  <Col><TextField name="firstName" label="First Name" /> </Col>
-                  <Col><TextField name="lastName" label="Last Name" /></Col>
+                  <Col><TextField name="firstName" label="First Name" id="addprofile-form-firstname" /> </Col>
+                  <Col><TextField name="lastName" label="Last Name" id="addprofile-form-lastname" /></Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="username" /></Col>
-                  <Col><TextField name="profilePictureLink" label="Profile Picture" /></Col>
+                  <Col><TextField name="username" id="addprofile-form-username" /></Col>
+                  <Col><TextField name="profilePictureLink" label="Profile Picture" id="addprofile-form-picturelink" /></Col>
                 </Row>
                 <Row>
-                  <Col><LongTextField name="description" label="Your Bio" /></Col>
+                  <Col><LongTextField name="description" label="Your Bio" id="addprofile-form-description" /></Col>
                 </Row>
-                <SubmitField value="Submit" />
+                <SubmitField value="Submit" id="addprofile-form-submit" />
+                {/* <TextField name="courses" /> */}
+                {/* <TextField name="interests" /> */}
                 <ErrorsField />
               </Card.Body>
             </Card>

@@ -11,6 +11,11 @@ class LandingPage {
     // This is first test to be run. Wait 10 seconds to avoid timeouts with GitHub Actions.
     await testController.wait(10000).expect(this.pageSelector.exists).ok();
   }
+
+  async testButtons(testController) {
+    await testController.click('#goto-signup-btn');
+    await testController.expect(Selector('#signup-page')).ok();
+  }
 }
 
 export const landingPage = new LandingPage();

@@ -11,7 +11,7 @@ const Landing = () => (
       <Col xs={6}>
         <h1>Welcome to Ohana Scholars!</h1>
         <h5>Looking for study partners for your upcoming midterms and finals?</h5>
-        <Link to="/signup"><Button className="pink-btn btn-lg">Start here and create an account!</Button></Link>
+        <Link to="/signup"><Button className="pink-btn btn-lg" id="goto-signup-btn">Start here and create an account!</Button></Link>
         <p>Already have an account? <Link to="/signin">Sign in</Link></p>
       </Col>
       <Col xs={1}>

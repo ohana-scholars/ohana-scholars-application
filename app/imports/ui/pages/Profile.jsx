@@ -25,7 +25,7 @@ const Profile = () => {
   }, []);
   return (ready ? (
     <div className="vh-100">
-      <Container>
+      <Container id="profile-page">
         <Row className="justify-content-center">
           <Col md="9" lg="7" xl="5" className="mt-5">
             <Card style={{ borderRadius: '10px' }}>
@@ -42,7 +42,7 @@ const Profile = () => {
                     <Card.Title className="text-center">{student[0].firstName} {student[0].lastName}</Card.Title>
                     <Card.Text className="text-center">{student[0].username}</Card.Text>
                     <div className="text-center">
-                      <Link to="/rateStudent"><Button className="pink-btn">Rate Student</Button></Link>
+                      <Link to="/rateStudent"><Button className="pink-btn" id="rate-student-btn">Rate Student</Button></Link>
                     </div>
                     {/* <Row> */}
                     {/*  <Col className="px-2 ps-5"> */}

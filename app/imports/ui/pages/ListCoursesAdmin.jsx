@@ -25,7 +25,7 @@ const ListCoursesAdmin = () => {
   }, []);
   return (ready ? (
     <Container className="py-3">
-      <Row className="justify-content-center">
+      <Row className="justify-content-center" id="list-courses-admin-page">
         <Col md={7}>
           <Col className="text-center">
             <h2>List Courses (Admin)</h2>

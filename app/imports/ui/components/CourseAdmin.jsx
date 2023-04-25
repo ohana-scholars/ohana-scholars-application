@@ -8,7 +8,7 @@ const CourseAdmin = ({ course }) => (
     <td>{course.subject} {course.title}</td>
     <td>{course.name}</td>
     <td>
-      <Link to={`/editcourse/${course._id}`}>Edit</Link>
+      <Link to={`/editcourse/${course._id}`} id="editcourse-link">Edit</Link>
     </td>
   </tr>
 );

@@ -39,7 +39,7 @@ const EditSession = () => {
   };
 
   return ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="edit-session-page">
       <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center"><h2>Edit Session</h2></Col>

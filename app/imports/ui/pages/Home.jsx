@@ -24,13 +24,13 @@ const Home = () => {
     };
   }, []);
   return (ready ? (
-    <Container id="landing-page" fluid className="py-3">
+    <Container id="home-page" fluid className="py-3">
       <Row id="landing" className="align-items-center justify-content-center">
         <Col xs={8} className="text-center">
           <h1>Welcome, {student[0].firstName}!</h1>
-          <Link to="/add"><Button className="pink-btn">Create a session</Button></Link>
-          <Link to="/list"><Button className="pink-btn">Browse sessions</Button></Link>
-          <Link to="/courses"><Button className="pink-btn">Browse courses</Button></Link>
+          <Link to="/add"><Button className="pink-btn" id="create-session-btn">Create a session</Button></Link>
+          <Link to="/list"><Button className="pink-btn" id="view-sessions-btn">Browse sessions</Button></Link>
+          <Link to="/courses"><Button className="pink-btn" id="view-courses-btn">Browse courses</Button></Link>
         </Col>
       </Row>
     </Container>
