@@ -11,14 +11,14 @@ import { Sessions } from '../../api/sessions/Sessions';
 
 const bridge = new SimpleSchema2Bridge(Sessions.schema);
 
-/* Renders the EditStuff page for editing a single document. */
+/* Renders the DeleteSession page for deleting a single session. */
 const DeleteSession = () => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const { _id } = useParams();
   // console.log('EditStuff', _id);
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
-    // Get access to Stuff documents.
+    // Get access to sessions documents.
     const subscription = Meteor.subscribe(Sessions.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
@@ -32,11 +32,11 @@ const DeleteSession = () => {
 
   const navigate = useNavigate();
 
+  // Navigates to ListSessionsAdmin page
   const goToListAdmin = () => {
     navigate('/listadmin');
   };
 
-  // console.log('EditStuff', doc, ready);
   // On successful submit, delete the data.
   const submit = () => {
     Sessions.collection.remove(_id);
