@@ -11,9 +11,9 @@ import { Reputation } from '../../api/reputation/Reputation';
 /* Profile Page based on default data (Will implement renderer later) */
 const Profile = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  const { youAreThatStudent } = useTracker(() => ({
-    youAreThatStudent: Meteor.user() ? Meteor.user().username : '',
-  }), []);
+  // const { youAreThatStudent } = useTracker(() => ({
+  // youAreThatStudent: Meteor.user() ? Meteor.user().username : '',
+  // }}), []);
   const { ready, student, reputation } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
@@ -56,9 +56,9 @@ const Profile = () => {
                       <Card.Title>{student[0].firstName} {student[0].lastName}</Card.Title>
                       <Card.Text>{student[0].username}</Card.Text>
                       <Card.Subtitle>Rating: {avgRating}/10</Card.Subtitle>
-                      {youAreThatStudent ? '' : (
-                        <Link to="/rateStudent"><Button className="pink-btn">Rate Student</Button></Link>
-                      )}
+                      { /* youAreThatStudent ? '' : (
+                      <Link to="/rateStudent"><Button className="pink-btn">Rate Student</Button></Link>) */ }
+                      <Link to="/rateStudent"><Button className="pink-btn">Rate Student</Button></Link>
                     </div>
                     {/* <Row> */}
                     {/*  <Col className="px-2 ps-5"> */}
