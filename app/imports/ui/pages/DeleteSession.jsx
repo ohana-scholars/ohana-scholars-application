@@ -1,24 +1,24 @@
 import React from 'react';
-import swal from 'sweetalert';
-import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, HiddenField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import { useParams } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Sessions } from '../../api/sessions/Sessions';
 
 const bridge = new SimpleSchema2Bridge(Sessions.schema);
 
-/* Renders the EditStuff page for editing a single document. */
-const EditSession = () => {
+/* Renders the DeleteSession page for deleting a single session. */
+const DeleteSession = () => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const { _id } = useParams();
   // console.log('EditStuff', _id);
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
-    // Get access to Stuff documents.
+    // Get access to sessions documents.
     const subscription = Meteor.subscribe(Sessions.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
@@ -29,20 +29,25 @@ const EditSession = () => {
       ready: rdy,
     };
   }, [_id]);
-  // console.log('EditStuff', doc, ready);
-  // On successful submit, insert the data.
-  const submit = (data) => {
-    const { name, course, location, month, day, time, notes, participants, image } = data;
-    Sessions.collection.update(_id, { $set: { name, course, location, month, day, time, notes, participants, image } }, (error) => (error ?
-      swal('Error', error.message, 'error') :
-      swal('Success', 'Session updated successfully', 'success')));
+
+  const navigate = useNavigate();
+
+  // Navigates to ListSessionsAdmin page
+  const goToListAdmin = () => {
+    navigate('/listadmin');
+  };
+
+  // On successful submit, delete the data.
+  const submit = () => {
+    Sessions.collection.remove(_id);
+    navigate('/listadmin');
   };
 
   return ready ? (
-    <Container className="py-3" id="edit-session-page">
+    <Container className="py-3">
       <Row className="justify-content-center">
         <Col xs={10}>
-          <Col className="text-center"><h2>Edit Session</h2></Col>
+          <Col className="text-center"><h2>Delete this session?</h2></Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
             <Card>
               <Card.Body>
@@ -60,9 +65,12 @@ const EditSession = () => {
                   <Col><TextField name="time" /></Col>
                 </Row>
                 <LongTextField name="notes" />
-                <SubmitField value="Submit" />
+                <TextField name="owner" />
+                <Row>
+                  <Col><SubmitField value="Delete" /></Col>
+                  <Col><Button onClick={goToListAdmin}>Cancel</Button></Col>
+                </Row>
                 <ErrorsField />
-                <HiddenField name="owner" />
               </Card.Body>
             </Card>
           </AutoForm>
@@ -72,4 +80,4 @@ const EditSession = () => {
   ) : <LoadingSpinner />;
 };
 
-export default EditSession;
+export default DeleteSession;

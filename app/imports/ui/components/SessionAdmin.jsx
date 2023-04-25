@@ -13,6 +13,7 @@ const SessionAdmin = ({ session, participants }) => (
         <Col><Image src={session.image} width={75} /></Col>
         <Col />
         <Col><Link to={`/edit/${session._id}`} id="editsession-link">Edit</Link></Col>
+        <Col><Link to={`/deletesession/${session._id}`}>Delete</Link></Col>
       </Row>
       <Card.Title>{session.name}</Card.Title>
       <Card.Subtitle>{session.month} {session.day} | {session.time}</Card.Subtitle>
@@ -20,6 +21,7 @@ const SessionAdmin = ({ session, participants }) => (
     </Card.Header>
     <Card.Body>
       <Card.Text>{session.notes}</Card.Text>
+      <Card.Text className="text-muted">created by: {session.owner}</Card.Text>
     </Card.Body>
     <Card.Footer>
       <Card.Subtitle>Participants</Card.Subtitle>
