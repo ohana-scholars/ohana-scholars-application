@@ -11,13 +11,16 @@ import { Reputation } from '../../api/reputation/Reputation';
 /* Profile Page based on default data (Will implement renderer later) */
 const Profile = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
+  const { currentUser } = useTracker(() => ({
+    currentUser: Meteor.user() ? Meteor.user().username : '',
+  }), []);
   const { ready, student, reputation } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Stuff documents.
     const subscription1 = Meteor.subscribe(Student.userPublicationName);
     const subscription2 = Meteor.subscribe(Reputation.userPublicationName);
-    // Determine if the subscription is ready
+    // Determine if the subscriptions are ready
     const rdy = subscription1.ready() && subscription2.ready();
     // Get the Student and Reputation documents
     const studentItems = Student.collection.find({}).fetch();
@@ -49,11 +52,11 @@ const Profile = () => {
                 </div>
                 <div className="d-flex text-black">
                   <div className="flex-grow-1 ms-3">
-                    <Card.Title className="text-center">{student[0].firstName} {student[0].lastName}</Card.Title>
-                    <Card.Text className="text-center">{student[0].username}</Card.Text>
-                    <Card.Text className="text-center">Rating: {avgRating}/10</Card.Text>
                     <div className="text-center">
-                      <Link to="/rateStudent"><Button className="pink-btn">Rate Student</Button></Link>
+                      <Card.Title>{student[0].firstName} {student[0].lastName}</Card.Title>
+                      <Card.Text>{student[0].username}</Card.Text>
+                      <Card.Subtitle>Rating: {avgRating}/10</Card.Subtitle>
+                      {currentUser ? '' : (<Link to="/rateStudent"><Button className="pink-btn">Rate Student</Button></Link>)}
                     </div>
                     {/* <Row> */}
                     {/*  <Col className="px-2 ps-5"> */}
