@@ -34,7 +34,7 @@ const Profile = () => {
 
   // underscore functions to grab average rating of student
   const ratings = _.pluck(reputation, 'rating');
-  const avgRating = _.reduce(ratings, function (index, key) { return index + key; }, 0) / ratings.length;
+  const avgRating = (_.reduce(ratings, function (index, key) { return index + key; }, 0) / ratings.length).toFixed(2);
 
   return (ready ? (
     <div className="vh-100">
