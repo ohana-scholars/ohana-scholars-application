@@ -14,7 +14,7 @@ class LandingPage {
 
   async testButtons(testController) {
     await testController.click('#goto-signup-btn');
-    await testController.expect(Selector('#signup-page')).ok();
+    await testController.expect(Selector('#signup-page').exists).ok();
   }
 }
 

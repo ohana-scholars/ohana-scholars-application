@@ -1,8 +1,8 @@
 import { Selector } from 'testcafe';
 
-class EditCoursePage {
+class DeleteSessionPage {
   constructor() {
-    this.pageId = '#edit-course-page';
+    this.pageId = '#delete-session-page';
     this.pageSelector = Selector(this.pageId);
   }
 
@@ -11,11 +11,10 @@ class EditCoursePage {
     await testController.wait(1000).expect(this.pageSelector.exists).ok();
   }
 
-  /** Checks that course can be edited. */
-  async editCourse(testController) {
-    await this.isDisplayed(testController);
-    // Test edit course here.
+  async deleteSession(testController) {
+    await this.wait(1000).isDisplayed(testController);
+    // delete sessions form here
   }
 }
 
-export const editCoursePage = new EditCoursePage();
+export const deletesessionPage = new DeleteSessionPage();

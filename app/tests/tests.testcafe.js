@@ -15,6 +15,8 @@ import { editSessionsPage } from './editsessions.page';
 import { listCoursesAdminPage } from './listcoursesadmin.page';
 import { editCoursePage } from './editcourse.page';
 import { rateStudentPage } from './ratestudent.page';
+import { deletesessionPage } from './deletesession.page';
+import { listUsersAdminPage } from './listusersadmin.page';
 
 /* global fixture:false, test:false */
 
@@ -138,6 +140,17 @@ test('Test that edit sessions page works', async (testController) => {
   // await editSessionsPage.editSession(testController);
 });
 
+test('Test that delete sessions page works', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, admin.username, admin.password);
+  await navBar.isLoggedIn(testController, admin.username);
+  await navBar.gotoListSessionAdminPage(testController);
+  await listSessionsAdminPage.isDisplayed(testController);
+  await listSessionsAdminPage.gotoDeleteSessionPage(testController);
+  await deletesessionPage.isDisplayed(testController);
+  // await deletesessionPage.deleteSession(testController);
+});
+
 test('Test that list courses (admin) page works', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, admin.username, admin.password);
@@ -157,4 +170,12 @@ test('Test that edit courses page works', async (testController) => {
   await listCoursesAdminPage.gotoEditCoursePage(testController);
   await editCoursePage.isDisplayed(testController);
   // await editCoursePage.editCourse(testController);
+});
+
+test('Test that list users admin page shows up', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, admin.username, admin.password);
+  await navBar.isLoggedIn(testController, admin.username);
+  await navBar.gotoListUsersAdminPage(testController);
+  await listUsersAdminPage.isDisplayed(testController);
 });

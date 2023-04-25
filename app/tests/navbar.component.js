@@ -87,6 +87,10 @@ class NavBar {
   async gotoListCoursesAdminPage(testController) {
     await testController.click('#list-courses-admin-nav');
   }
+
+  async gotoListUsersAdminPage(testController) {
+    await testController.click('#list-users-admin-nav');
+  }
 }
 
 export const navBar = new NavBar();
