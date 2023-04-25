@@ -21,6 +21,7 @@ class StudentCollection {
       // interests: String,
       // reputation: Number,
       owner: String,
+      _id: String,
     });
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);

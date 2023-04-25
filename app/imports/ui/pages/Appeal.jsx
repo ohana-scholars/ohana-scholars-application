@@ -16,7 +16,7 @@ const Appeal = () => (
         <Row><Image rounded src="/images/dog-smug.jpeg" width="200px" alt="doge" /></Row>
       </Col>
       <Col>
-        <Image rounded src="/images/doge-spinning.gif" width="400px" alt="doge" />
+        <Image rounded src="/images/spindog.gif" width="400px" alt="doggo" />
       </Col>
     </Row>
   </Container>

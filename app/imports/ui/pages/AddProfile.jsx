@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
+import { Navigate } from 'react-router-dom';
 import { Student } from '../../api/student/Student';
 
 // Create a schema to specify the structure of the data to appear in the form.
@@ -20,9 +21,9 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-/* Renders the AddStuff page for adding a document. */
+/* Renders the AddProfile page for adding a document. */
 const AddProfile = () => {
-
+  const [redirectToReferer, setRedirectToRef] = useState(false);
   // On submit, insert the data.
   const submit = (data, formRef) => {
     const { firstName, lastName, username, description, /* courses, interests, */ profilePictureLink } = data;
@@ -35,29 +36,37 @@ const AddProfile = () => {
         } else {
           swal('Success', 'Profile added successfully', 'success');
           formRef.reset();
+          setRedirectToRef(true);
         }
       },
     );
   };
-
-  // Render the form. Use Uniforms: https://github.com/vazco/uniforms
+  if (redirectToReferer) {
+    return (<Navigate to="/home" />);
+  }
   let fRef = null;
   return (
     <Container className="py-3" id="add-profile-page">
       <Row className="justify-content-center">
-        <Col xs={5}>
+        <Col xs={10}>
           <Col className="text-center"><h2>Create a Profile</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
-            <Card>
+            <Card className="">
               <Card.Body>
-                <TextField name="username" id="addprofile-form-username" />
-                <TextField name="firstName" id="addprofile-form-firstname" />
-                <TextField name="lastName" id="addprofile-form-lastname" />
-                <TextField name="description" id="addprofile-form-description" />
-                <TextField name="profilePictureLink" id="addprofile-form-picturelink" />
+                <Row>
+                  <Col><TextField name="firstName" label="First Name" id="addprofile-form-firstname" /> </Col>
+                  <Col><TextField name="lastName" label="Last Name" id="addprofile-form-lastname" /></Col>
+                </Row>
+                <Row>
+                  <Col><TextField name="username" id="addprofile-form-username" /></Col>
+                  <Col><TextField name="profilePictureLink" label="Profile Picture" id="addprofile-form-picturelink" /></Col>
+                </Row>
+                <Row>
+                  <Col><LongTextField name="description" label="Your Bio" id="addprofile-form-description" /></Col>
+                </Row>
+                <SubmitField value="Submit" id="addprofile-form-submit" />
                 {/* <TextField name="courses" /> */}
                 {/* <TextField name="interests" /> */}
-                <SubmitField value="Submit" id="addprofile-form-submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>

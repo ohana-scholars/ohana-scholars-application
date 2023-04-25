@@ -21,6 +21,7 @@ const SessionAdmin = ({ session, participants }) => (
     </Card.Header>
     <Card.Body>
       <Card.Text>{session.notes}</Card.Text>
+      <Card.Text className="text-muted">created by: {session.owner}</Card.Text>
     </Card.Body>
     <Card.Footer>
       <Card.Subtitle>Participants</Card.Subtitle>

@@ -78,7 +78,6 @@ const NavBar = () => {
                   out
                 </NavDropdown.Item>
               </NavDropdown>
-
             )}
           </Nav>
         </Navbar.Collapse>

@@ -19,7 +19,6 @@ import EditCourse from '../pages/EditCourse';
 import ListCourses from '../pages/ListCourses';
 import Home from '../pages/Home';
 import AddCourse from '../pages/AddCourse';
-import Profile from '../pages/Profile';
 import ListSessions from '../pages/ListSessions';
 import AddSession from '../pages/AddSession';
 import AddProfile from '../pages/AddProfile';
@@ -28,6 +27,11 @@ import EditSession from '../pages/EditSession';
 import Banned from '../pages/Banned';
 import Appeal from '../pages/Appeal';
 import RateStudent from '../pages/RateStudent';
+import ListUsersAdmin from '../pages/ListUsersAdmin';
+// import BanUser from '../pages/BanUser';
+import EditProfile from '../pages/EditProfile';
+import Profile from '../pages/Profile';
+import DeleteSession from '../pages/DeleteSession';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -54,11 +58,15 @@ const App = () => {
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/addProfile" element={<ProtectedRoute><AddProfile /></ProtectedRoute>} />
           <Route path="/rateStudent" element={<ProtectedRoute><RateStudent /></ProtectedRoute>} />
+          <Route path="/editProfile/:_id" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
           <Route path="/addcourse" element={<AdminProtectedRoute ready={ready}><AddCourse /></AdminProtectedRoute>} />
+          <Route path="/listusersadmin" element={<AdminProtectedRoute ready={ready}><ListUsersAdmin /></AdminProtectedRoute>} />
           <Route path="/coursesAdmin" element={<AdminProtectedRoute ready={ready}><ListCoursesAdmin /></AdminProtectedRoute>} />
+          {/* <Route path="/banuser/:owner" element={<AdminProtectedRoute ready={ready}><BanUser /></AdminProtectedRoute>} /> */}
           <Route path="/listadmin" element={<AdminProtectedRoute ready={ready}><ListSessionsAdmin /></AdminProtectedRoute>} />
           <Route path="/courses" element={<ProtectedRoute><ListCourses /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditSession /></ProtectedRoute>} />
+          <Route path="/deletesession/:_id" element={<ProtectedRoute><DeleteSession /></ProtectedRoute>} />
           <Route path="/editcourse/:_id" element={<AdminProtectedRoute ready={ready}><EditCourse /></AdminProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
