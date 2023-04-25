@@ -59,3 +59,7 @@ body {
   --bs-btn-border-radius: 0px !important;
 }
 
+#filter-stuff {
+  border: black;
+  border-width: 10px;
+}

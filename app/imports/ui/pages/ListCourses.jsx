@@ -38,27 +38,29 @@ const ListCourses = () => {
         <Col md={7}>
           <Col className="text-center">
             <h2>List Courses</h2>
-            <div>
-              <Button onClick={handleFilterClick} className="filterButton" id="filter-courses-btn">
-                Filter
-              </Button>
-              {showFilter && (
-                <SubjectFilter
-                  filter={filter}
-                  setFilter={setFilter}
-                  subjects={subjects}
-                  // titles={titles}
-                  // names={names}
-                />
-              )}
-            </div>
 
+            {/* Filter */}
+            <Row>
+              <div id="filter-stuff">
+                <Row>
+                  <Col md={{ offset: 10 }}>
+                    <Button onClick={handleFilterClick} className="filterButton pink-btn">Filter</Button>
+                  </Col>
+                </Row>
+                <Col>
+                  {showFilter && (
+                    <SubjectFilter filter={filter} setFilter={setFilter} subjects={subjects} />
+                  )}
+                </Col>
+              </div>
+            </Row>
           </Col>
           <Table striped bordered hover>
             <thead>
               <tr>
                 <th>Title</th>
                 <th>Name</th>
+                <th>Sessions</th>
               </tr>
             </thead>
             <tbody>
