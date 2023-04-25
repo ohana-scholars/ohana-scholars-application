@@ -13,13 +13,18 @@ class ListSessionsAdminPage {
 
   async hasSession(testController) {
     await this.isDisplayed(testController);
-    const cardCount = Selector('SessionAdmin').count;
+    const cardCount = Selector('Card').count;
     await testController.expect(cardCount).gte(1);
   }
 
   async gotoEditSessionPage(testController) {
     await this.isDisplayed(testController);
     await testController.click('#editsession-link');
+  }
+
+  async gotoDeleteSessionPage(testController) {
+    await this.isDisplayed(testController);
+    await testController.click('#deletesession-link');
   }
 }
 

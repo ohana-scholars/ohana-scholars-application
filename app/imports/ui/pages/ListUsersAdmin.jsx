@@ -28,7 +28,7 @@ const ListUsersAdmin = () => {
     };
   }, []);
   return (ready ? (
-    <Container className="py-3">
+    <Container className="py-3" id="list-users-admin-page">
       <Row>
         <Col className="text-center">
           <h2>All Users</h2>

@@ -14,7 +14,7 @@ class ListSessionsPage {
   /** Checks that the create session button works. */
   async createSessionBtn(testController) {
     await testController.click('#goto-add-session-page');
-    await testController.expect(Selector('#add-session-page')).ok();
+    await testController.expect(Selector('#add-session-page').exists).ok();
   }
 }
 

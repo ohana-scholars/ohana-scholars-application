@@ -1,8 +1,8 @@
 import { Selector } from 'testcafe';
 
-class EditCoursePage {
+class ListUsersAdminPage {
   constructor() {
-    this.pageId = '#edit-course-page';
+    this.pageId = '#list-users-admin-page';
     this.pageSelector = Selector(this.pageId);
   }
 
@@ -11,11 +11,11 @@ class EditCoursePage {
     await testController.wait(1000).expect(this.pageSelector.exists).ok();
   }
 
-  /** Checks that course can be edited. */
-  async editCourse(testController) {
+  /** Checks that the ban user button works. */
+  async banUser(testController) {
     await this.isDisplayed(testController);
-    // Test edit course here.
+    // test ban user here
   }
 }
 
-export const editCoursePage = new EditCoursePage();
+export const listUsersAdminPage = new ListUsersAdminPage();
