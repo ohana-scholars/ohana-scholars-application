@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -21,7 +21,7 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-/* Renders the AddStuff page for adding a document. */
+/* Renders the AddProfile page for adding a document. */
 const AddProfile = () => {
   const [redirectToReferer, setRedirectToRef] = useState(false);
   // On submit, insert the data.
@@ -48,18 +48,22 @@ const AddProfile = () => {
   return (
     <Container className="py-3">
       <Row className="justify-content-center">
-        <Col xs={5}>
+        <Col xs={10}>
           <Col className="text-center"><h2>Create a Profile</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
-            <Card>
+            <Card className="">
               <Card.Body>
-                <TextField name="username" />
-                <TextField name="firstName" />
-                <TextField name="lastName" />
-                <TextField name="description" />
-                <TextField name="profilePictureLink" />
-                {/* <TextField name="courses" /> */}
-                {/* <TextField name="interests" /> */}
+                <Row>
+                  <Col><TextField name="firstName" label="First Name" /> </Col>
+                  <Col><TextField name="lastName" label="Last Name" /></Col>
+                </Row>
+                <Row>
+                  <Col><TextField name="username" /></Col>
+                  <Col><TextField name="profilePictureLink" label="Profile Picture" /></Col>
+                </Row>
+                <Row>
+                  <Col><LongTextField name="description" label="Your Bio" /></Col>
+                </Row>
                 <SubmitField value="Submit" />
                 <ErrorsField />
               </Card.Body>

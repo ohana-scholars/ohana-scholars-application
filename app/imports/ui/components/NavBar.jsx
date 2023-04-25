@@ -43,10 +43,10 @@ const NavBar = () => {
               <Nav.Link id="add-stuff-nav" as={NavLink} to="/listadmin" key="listadmin">List Sessions (Admin)</Nav.Link>
             ) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="add-stuff-nav" as={NavLink} to="/listusersadmin" key="listadmin">List Users (Admin)</Nav.Link>
+              <Nav.Link id="add-stuff-nav" as={NavLink} to="/listusersadmin" key="listusersadmin">List Users (Admin)</Nav.Link>
             ) : ''}
             {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="list-stuff-nav" as={NavLink} to="/coursesAdmin" key="listAdmin">Courses (Admin)</Nav.Link>
+              <Nav.Link id="list-stuff-nav" as={NavLink} to="/coursesAdmin" key="listcoursesAdmin">Courses (Admin)</Nav.Link>
             ) : ''}
           </Nav>
           <Nav className="justify-content-end">
@@ -69,12 +69,6 @@ const NavBar = () => {
                   <BoxArrowRight />
                   {' '}
                   View
-                  Profile
-                </NavDropdown.Item>
-                <NavDropdown.Item id="navbar-edit-profile" as={NavLink} to="/editProfile">
-                  <BoxArrowRight />
-                  {' '}
-                  Edit
                   Profile
                 </NavDropdown.Item>
                 <NavDropdown.Item id="navbar-sign-out" as={NavLink} to="/signout">
