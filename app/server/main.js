@@ -24,6 +24,7 @@ Meteor.methods({
       console.log('RETURNING True');
       return true;
     }
+    console.log('RETURNING False');
     return false;
   },
 

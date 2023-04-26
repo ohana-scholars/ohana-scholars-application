@@ -11,13 +11,9 @@ const createUser = (email, password, role) => {
     email: email,
     password: password,
   });
-  if (role === 'admin') {
+  if (role) {
     Roles.createRole(role, { unlessExists: true });
-    Roles.addUsersToRoles(userID, 'admin');
-  }
-  if (role === 'banned') {
-    Roles.createRole(role, { unlessExists: true });
-    Roles.addUsersToRoles(userID, 'banned');
+    Roles.addUsersToRoles(userID, role);
   }
 };
 

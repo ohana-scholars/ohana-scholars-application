@@ -9,9 +9,10 @@ import { Roles } from 'meteor/alanning:roles';
 /** Renders a single row in the Student Profile card. */
 const ProfileCard = ({ student, userID }) => {
 
-  const banStatus = Meteor.call('checkBan', userID);
-  console.log(Roles.getAllRoles({}).fetch());
-  console.log(Roles.userIsInRole(userID, 'banned'));
+  const banStatus = Meteor.call('checkBan', userID, function (error, result) { console.log(error); console.log(result); });
+  // console.log(banStatus);
+  // const test = 'banned';
+  // console.log(`${userID._id} is in ${test}:${Roles.userIsInRole(userID._id, test)}`);
 
   const banUser = () => {
     console.log(userID);
