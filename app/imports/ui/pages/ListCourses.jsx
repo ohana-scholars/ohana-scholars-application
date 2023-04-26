@@ -44,7 +44,7 @@ const ListCourses = () => {
               <div id="filter-stuff">
                 <Row>
                   <Col md={{ offset: 10 }}>
-                    <Button onClick={handleFilterClick} className="filterButton pink-btn">Filter</Button>
+                    <Button onClick={handleFilterClick} id="filter-courses-btn" className="filterButton pink-btn">Filter</Button>
                   </Col>
                 </Row>
                 <Col>
