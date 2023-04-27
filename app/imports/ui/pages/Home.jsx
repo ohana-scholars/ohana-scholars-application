@@ -33,9 +33,6 @@ const Home = () => {
             <PersonFill size={110} className="py-2" />
             <h3>View your profile</h3>
           </Link>
-          <Link>
-            
-          </Link>
         </Col>
       </Row>
     </Container>
