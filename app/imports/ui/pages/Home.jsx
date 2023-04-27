@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
-import { Col, Container, Row, Button } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
+import { PersonFill } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
 import { Student } from '../../api/student/Student';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -28,9 +29,13 @@ const Home = () => {
       <Row id="landing" className="align-items-center justify-content-center">
         <Col xs={8} className="text-center">
           <h1>Welcome, {student[0].firstName}!</h1>
-          <Link to="/add"><Button className="pink-btn" id="create-session-btn">Create a session</Button></Link>
-          <Link to="/list"><Button className="pink-btn" id="view-sessions-btn">Browse sessions</Button></Link>
-          <Link to="/courses"><Button className="pink-btn" id="view-courses-btn">Browse courses</Button></Link>
+          <Link to="/profile">
+            <PersonFill size={110} className="py-2" />
+            <h3>View your profile</h3>
+          </Link>
+          <Link>
+            
+          </Link>
         </Col>
       </Row>
     </Container>
