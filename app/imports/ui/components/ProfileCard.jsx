@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
 import { Button, Card, Col } from 'react-bootstrap';
@@ -9,13 +9,19 @@ import { Roles } from 'meteor/alanning:roles';
 /** Renders a single row in the Student Profile card. */
 const ProfileCard = ({ student, userID }) => {
 
-  const banStatus = Meteor.call('checkBan', userID, function (error, result) { console.log(error); console.log(result); });
+  const [banStatus, changeStatus] = useState(false);
+  if (Roles.userIsInRole(userID, 'banned') && banStatus === false) {
+    changeStatus(!banStatus);
+  }
+  // const banStatus = Meteor.call('checkBan', userID, function (error, result) { console.log(error); console.log(result); });
+  // console.log(`Banned: ${Roles.userIsInRole(userID, 'banned')}`);
   // console.log(banStatus);
   // const test = 'banned';
   // console.log(`${userID._id} is in ${test}:${Roles.userIsInRole(userID._id, test)}`);
 
   const banUser = () => {
-    console.log(userID);
+    // console.log(userID);
+    changeStatus(!banStatus);
     Meteor.call('setUserRole', userID);
   };
 
@@ -38,7 +44,7 @@ const ProfileCard = ({ student, userID }) => {
               // <Link to={`/banuser/${student.owner}`}><Button variant="danger">Ban User</Button></Link>
               //   <Button variant="danger" onClick={banUser}>Ban User</Button>
               //   <Button variant="danger">Ban User</Button>
-                Roles.userIsInRole(userID, 'banned') ? (
+                banStatus ? (
                   <Button variant="danger" onClick={banUser}>Unban User</Button>
                 ) : <Button variant="danger" onClick={banUser}>Ban User</Button>
               )}

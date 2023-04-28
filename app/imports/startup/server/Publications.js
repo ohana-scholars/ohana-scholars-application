@@ -102,6 +102,10 @@ Meteor.publish('userList', function () {
 
 });
 
+Meteor.publish('allRoles', function () {
+  return Meteor.roleAssignment.find();
+});
+
 // alanning:roles publication
 // Recommended code to publish roles for each user.
 Meteor.publish(null, function () {
