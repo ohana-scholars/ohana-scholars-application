@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import _ from 'underscore';
 import { Card, Container, Row, Col, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Student } from '../../api/student/Student';
 import { Reputation } from '../../api/reputation/Reputation';
@@ -25,6 +25,7 @@ const Profile = () => {
     // Get the Student and Reputation documents
     const studentItems = Student.collection.find({}).fetch();
     const repItems = Reputation.collection.find({}).fetch();
+    console.log(studentItems);
     return {
       student: studentItems,
       reputation: repItems,
@@ -35,7 +36,9 @@ const Profile = () => {
   // underscore functions to grab average rating of student
   const ratings = _.pluck(reputation, 'rating');
   const avgRating = (_.reduce(ratings, function (index, key) { return index + key; }, 0) / ratings.length).toFixed(2);
-
+  if (student.length === 0 && ready === true) {
+    return <Navigate to="/addProfile" />;
+  }
   return (ready ? (
     <div className="vh-100">
       <Container id="profile-page">

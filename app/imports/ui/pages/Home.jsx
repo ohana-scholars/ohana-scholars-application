@@ -2,7 +2,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Col, Container, Row, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import { Student } from '../../api/student/Student';
 import LoadingSpinner from '../components/LoadingSpinner';
 
@@ -23,6 +23,9 @@ const Home = () => {
       ready: rdy,
     };
   }, []);
+  if (student.length === 0) {
+    return <Navigate to="/addProfile" />;
+  }
   return (ready ? (
     <Container id="home-page" fluid className="py-3">
       <Row id="landing" className="align-items-center justify-content-center">
