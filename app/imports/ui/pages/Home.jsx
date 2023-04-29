@@ -6,6 +6,7 @@ import { CalendarEvent, PersonFill } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
 import { Student } from '../../api/student/Student';
 import LoadingSpinner from '../components/LoadingSpinner';
+import DateTime from '../components/DateTime';
 
 /* Try to figure out how to incorporate user's first name in home page. */
 const Home = () => {
@@ -29,6 +30,7 @@ const Home = () => {
       <Row id="landing" className="align-items-center justify-content-center">
         <Col xs={8} className="text-center">
           <h1>Welcome, {student[0].firstName}!</h1>
+          <DateTime />
           <Link to="/profile">
             <Button className="pink-btn">
               <PersonFill size={40} className="px-1" /> View your profile
@@ -36,7 +38,7 @@ const Home = () => {
           </Link>
           <Button className="pink-btn">
             <CalendarEvent size={40} className="px-2" />
-            View your sessions
+            View sessions you&apos;ve joined
           </Button>
         </Col>
       </Row>
