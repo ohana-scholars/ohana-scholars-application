@@ -58,7 +58,7 @@ const SignIn = () => {
             </Card>
           </AutoForm>
           <Alert variant="light">
-            <Link to="/signup">Click here to Register</Link>
+            <Link to="/signup" className="white-link">Click here to Register</Link>
           </Alert>
           {error === '' ? (
             ''

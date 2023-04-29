@@ -51,7 +51,7 @@ const Profile = () => {
                   />
                 </div>
                 <div className="d-flex text-black">
-                  <div className="flex-grow-1 ms-3">
+                  <div className="flex-grow-1">
                     <div className="text-center">
                       <Card.Title>{student[0].firstName} {student[0].lastName}</Card.Title>
                       <Card.Text>{student[0].username}</Card.Text>
