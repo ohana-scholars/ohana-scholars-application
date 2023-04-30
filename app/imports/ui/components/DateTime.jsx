@@ -5,10 +5,10 @@ const DateTime = () => {
   const displayDate = `Today is ${showDate.toDateString()}.`;
   const displayTime = `Right now it's ${showDate.getHours()}:${showDate.getMinutes()}.`;
   return (
-    <h2>
+    <h4>
       {displayDate} <br />
       {displayTime}
-    </h2>
+    </h4>
   );
 };
 
