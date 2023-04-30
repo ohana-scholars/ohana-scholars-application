@@ -13,6 +13,10 @@ class HomePage {
   }
 
   async testButtons(testController) {
+    await testController.click('#view-profile-btn');
+    await testController.wait(500).expect(Selector('#profile-page').exists).ok();
+    await testController.click('#goto-home');
+    await testController.wait(500).expect(Selector('#home-page').exists).ok();
     await testController.click('#create-session-btn');
     await testController.wait(500).expect(Selector('#add-session-page').exists).ok();
     await testController.click('#goto-home');

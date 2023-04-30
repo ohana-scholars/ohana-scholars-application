@@ -2,7 +2,7 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Col, Container, Row, Button } from 'react-bootstrap';
-import { CalendarEvent, PersonFill } from 'react-bootstrap-icons';
+import { BookHalf, CalendarEvent, PencilSquare, PersonFill } from 'react-bootstrap-icons';
 import { Link } from 'react-router-dom';
 import { Student } from '../../api/student/Student';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -32,14 +32,29 @@ const Home = () => {
           <h1>Welcome, {student[0].firstName}!</h1>
           <DateTime />
           <Link to="/profile">
-            <Button className="pink-btn">
-              <PersonFill size={40} className="px-1" /> View your profile
+            <Button className="pink-btn home-page-btn" id="view-profile-btn">
+              <PersonFill size={40} className="p-1" />
+              View your profile
             </Button>
           </Link>
-          <Button className="pink-btn">
-            <CalendarEvent size={40} className="px-2" />
-            View sessions you&apos;ve joined
-          </Button>
+          <Link to="/add">
+            <Button className="pink-btn home-page-btn" id="create-session-btn">
+              <PencilSquare size={40} className="p-1" />
+              Create a study session
+            </Button>
+          </Link>
+          <Link to="/list">
+            <Button className="pink-btn home-page-btn" id="view-sessions-btn">
+              <CalendarEvent size={40} className="p-2" />
+              View all available sessions
+            </Button>
+          </Link>
+          <Link to="/courses">
+            <Button className="pink-btn home-page-btn" id="view-courses-btn">
+              <BookHalf size={40} className="p-2" />
+              View all courses
+            </Button>
+          </Link>
         </Col>
       </Row>
     </Container>

@@ -45,8 +45,10 @@ body {
   --bs-link-hover-color: white;
 }
 
-.btn {
-  margin: 10px 10px 10px 10px;
+.btn-lg {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
 }
 
 .pink-btn {
@@ -55,6 +57,10 @@ body {
   --bs-btn-hover-bg: var(--matr-blue-bg) !important;
   --bs-btn-hover-border-color: var(--matr-blue-bg) !important;
   --bs-btn-border-radius: 0px !important;
+}
+
+.home-page-btn {
+  margin: 10px 10px 10px 10px;
 }
 
 #filter-stuff {
