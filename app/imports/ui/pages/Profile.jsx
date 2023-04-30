@@ -55,10 +55,12 @@ const Profile = () => {
                     <div className="text-center">
                       <Card.Title>{student[0].firstName} {student[0].lastName}</Card.Title>
                       <Card.Text>{student[0].username}</Card.Text>
-                      <Card.Subtitle>Rating: {avgRating}/10</Card.Subtitle>
+                      <Card.Subtitle>
+                        Rating: {avgRating}/10 | <Link to={`/reviews/${student[0]._id}`}>See reviews</Link>
+                      </Card.Subtitle>
                       { /* youAreThatStudent ? '' : (
                       <Link to="/rateStudent"><Button className="pink-btn">Rate Student</Button></Link>) */ }
-                      <Link to="/rateStudent"><Button className="pink-btn" id="rate-student-btn">Rate Student</Button></Link>
+                      <Link to={`/rateStudent/${student[0]._id}`}><Button className="pink-btn home-page-btn" id="rate-student-btn">Rate Student</Button></Link>
                     </div>
                     {/* <Row> */}
                     {/*  <Col className="px-2 ps-5"> */}

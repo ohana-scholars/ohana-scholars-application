@@ -32,6 +32,7 @@ import ListUsersAdmin from '../pages/ListUsersAdmin';
 import EditProfile from '../pages/EditProfile';
 import Profile from '../pages/Profile';
 import DeleteSession from '../pages/DeleteSession';
+import ListReviews from '../pages/ListReviews';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 const App = () => {
@@ -57,7 +58,7 @@ const App = () => {
           <Route path="/add" element={<ProtectedRoute><AddSession /></ProtectedRoute>} />
           <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
           <Route path="/addProfile" element={<ProtectedRoute><AddProfile /></ProtectedRoute>} />
-          <Route path="/rateStudent" element={<ProtectedRoute><RateStudent /></ProtectedRoute>} />
+          <Route path="/rateStudent/:_id" element={<ProtectedRoute><RateStudent /></ProtectedRoute>} />
           <Route path="/editProfile/:_id" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
           <Route path="/addcourse" element={<AdminProtectedRoute ready={ready}><AddCourse /></AdminProtectedRoute>} />
           <Route path="/listusersadmin" element={<AdminProtectedRoute ready={ready}><ListUsersAdmin /></AdminProtectedRoute>} />
@@ -67,6 +68,7 @@ const App = () => {
           <Route path="/courses" element={<ProtectedRoute><ListCourses /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditSession /></ProtectedRoute>} />
           <Route path="/deletesession/:_id" element={<ProtectedRoute><DeleteSession /></ProtectedRoute>} />
+          <Route path="/reviews/:_id" element={<ProtectedRoute><ListReviews /></ProtectedRoute>} />
           <Route path="/editcourse/:_id" element={<AdminProtectedRoute ready={ready}><EditCourse /></AdminProtectedRoute>} />
           <Route path="/admin" element={<AdminProtectedRoute ready={ready}><ListStuffAdmin /></AdminProtectedRoute>} />
           <Route path="/notauthorized" element={<NotAuthorized />} />
