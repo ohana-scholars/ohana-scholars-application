@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Button, Col, Container, Row, Table } from 'react-bootstrap';
 import { useTracker } from 'meteor/react-meteor-data';
-import CourseAdmin from '../components/CourseAdmin';
+import _ from 'underscore';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Courses } from '../../api/courses/Courses';
 import SubjectFilter from '../components/SubjectsFilter';
-import _ from 'underscore';
 import Course from '../components/Course';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */

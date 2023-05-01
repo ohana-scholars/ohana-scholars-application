@@ -58,7 +58,7 @@ const NavBar = () => {
                     <Nav.Link id="list-users-admin-nav" as={NavLink} to="/listusersadmin" key="listusersadmin">List Users</Nav.Link>
                   ) : ''}
                 </NavDropdown.Item>
-              </NavDropdown>
+              </NavDropdown>,
             ]) : ''}
 
           </Nav>
