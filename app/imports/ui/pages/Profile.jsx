@@ -34,10 +34,14 @@ const Profile = () => {
 
   // underscore functions to grab average rating of student
   const userId = Meteor.userId(); // Get the _id of the currently logged in user
+  const rating;
   const grabStudent = _.filter(reputation, function (key) { return key.user_id === userId; });
-  console.log(grabStudent);
-  const grabRatings = _.pluck(grabStudent, 'rating');
-  const avgRating = (_.reduce(grabRatings, function (index, key) { return index + key; }, 0) / grabRatings.length).toFixed(2);
+  if (grabStudent.length === 0) {
+    rating = 'N/A';
+  } else {
+    const grabRatings = _.pluck(grabStudent, 'rating');
+    rating = (_.reduce(grabRatings, function (index, key) { return index + key; }, 0) / grabRatings.length).toFixed(2);
+  }
 
   return (ready ? (
     <div className="vh-100">
