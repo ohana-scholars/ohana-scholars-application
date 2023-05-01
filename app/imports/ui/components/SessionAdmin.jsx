@@ -1,7 +1,8 @@
 import React from 'react';
+import { Meteor } from 'meteor/meteor';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
-import { Col, Image, ListGroup, Row } from 'react-bootstrap';
+import { Button, Col, Image, ListGroup, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Participant from './Participant';
 
@@ -21,6 +22,10 @@ const SessionAdmin = ({ session, participants }) => (
     </Card.Header>
     <Card.Body>
       <Card.Text>{session.notes}</Card.Text>
+      <Button onClick={session.participant.add(Meteor.user().username)}>
+        button
+      </Button>
+      <Card.Text>{session.participant}</Card.Text>
       <Card.Text className="text-muted">created by: {session.owner}</Card.Text>
     </Card.Body>
     <Card.Footer>
@@ -43,6 +48,7 @@ SessionAdmin.propTypes = {
     time: PropTypes.string,
     notes: PropTypes.string,
     image: PropTypes.string,
+    participant: PropTypes.arrayOf(PropTypes.string),
     owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,

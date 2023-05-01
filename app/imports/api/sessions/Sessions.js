@@ -28,6 +28,10 @@ class SessionsCollection {
       time: String,
       notes: String,
       image: String,
+      participant: Array,
+      'participant.$': {
+        type: String,
+      },
       owner: String,
       _id: String,
     });

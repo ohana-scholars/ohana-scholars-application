@@ -36,8 +36,9 @@ const AddSession = () => {
   const submit = (data, formRef) => {
     const { name, course, location, month, day, time, notes, image } = data;
     const owner = Meteor.user().username;
+    const participant = owner;
     Sessions.collection.insert(
-      { name, course, location, month, day, time, notes, image, owner },
+      { name, course, location, month, day, time, notes, image, participant, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');

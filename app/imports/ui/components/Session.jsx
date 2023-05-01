@@ -18,6 +18,7 @@ const Session = ({ session, participants }) => (
     </Card.Header>
     <Card.Body>
       <Card.Text>{session.notes}</Card.Text>
+      <Card.Text>{session.participant}</Card.Text>
       <AddParticipant owner={session.owner} contactId={session._id} />
     </Card.Body>
     <Card.Footer>
@@ -41,6 +42,7 @@ Session.propTypes = {
     time: PropTypes.string,
     notes: PropTypes.string,
     image: PropTypes.string,
+    participant: PropTypes.arrayOf(PropTypes.string),
     owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
