@@ -6,6 +6,7 @@ import { Reputation } from '../../api/reputation/Reputation';
 import { Student } from '../../api/student/Student';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Review from '../components/Review';
+import { Link } from 'react-router-dom';
 
 /* Renders the AddStuff page for adding a document. */
 const ListReviews = () => {
@@ -16,7 +17,7 @@ const ListReviews = () => {
     const rdy = subscription1.ready() && subscription2;
     // Get the Courses documents
     const studentItems = Student.collection.find({}).fetch();
-    const repItems = Reputation.collection.find({}).fetch();
+    const repItems = Reputation.collection.find({ user_id: Meteor.userId() }).fetch();
     return {
       student: studentItems,
       reviews: repItems,
@@ -29,7 +30,7 @@ const ListReviews = () => {
         <Col xs={8}>
           <Col className="text-center">
             <h2>{student[0].firstName}&apos;s Reviews</h2>
-            <Button className="pink-btn home-page-btn">Return to profile</Button>
+            <Link to="/profile"><Button className="pink-btn home-page-btn">Return to your profile</Button></Link>
           </Col>
           <Table striped bordered hover>
             <thead>
