@@ -21,7 +21,7 @@ const RateStudent = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { _id } = useParams();
+    const { user_id } = user._id;
     const { rating, reason } = data;
     const owner = Meteor.user().username;
     Reputation.collection.insert(

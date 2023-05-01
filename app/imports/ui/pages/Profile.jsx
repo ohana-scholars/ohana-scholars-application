@@ -33,8 +33,10 @@ const Profile = () => {
   }, []);
 
   // underscore functions to grab average rating of student
-  const ratings = _.pluck(reputation, 'rating');
-  const avgRating = (_.reduce(ratings, function (index, key) { return index + key; }, 0) / ratings.length).toFixed(2);
+  const userId = Meteor.userId(); // Get the _id of the currently logged in user
+  const grabStudent = _.filter(reputation, function (key) { return key.user_id === userId; });
+  const grabRatings = _.pluck(grabStudent, 'rating');
+  const avgRating = (_.reduce(grabRatings, function (index, key) { return index + key; }, 0) / grabRatings.length).toFixed(2);
 
   return (ready ? (
     <div className="vh-100">
