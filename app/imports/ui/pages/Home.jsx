@@ -23,7 +23,7 @@ const Home = () => {
       ready: rdy,
     };
   }, []);
-  if (student.length === 0) {
+  if (student.length === 0 && ready === true) {
     return <Navigate to="/addProfile" />;
   }
   return (ready ? (
