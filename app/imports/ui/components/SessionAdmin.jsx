@@ -36,7 +36,8 @@ const SessionAdmin = ({ session, participants }) => (
 SessionAdmin.propTypes = {
   session: PropTypes.shape({
     name: PropTypes.string,
-    course: PropTypes.string,
+    subject: PropTypes.string,
+    title: PropTypes.string,
     location: PropTypes.string,
     month: PropTypes.string,
     day: PropTypes.number,

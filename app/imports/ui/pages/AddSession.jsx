@@ -10,7 +10,8 @@ import { Sessions } from '../../api/sessions/Sessions';
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
   name: String,
-  course: String,
+  subject: String,
+  title: String,
   location: String,
   month: {
     type: String,
@@ -34,10 +35,10 @@ const AddSession = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { name, course, location, month, day, time, notes, image } = data;
+    const { name, subject, title, location, month, day, time, notes, image } = data;
     const owner = Meteor.user().username;
     Sessions.collection.insert(
-      { name, course, location, month, day, time, notes, image, owner },
+      { name, subject, title, location, month, day, time, notes, image, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -61,7 +62,8 @@ const AddSession = () => {
               <Card.Body>
                 <Row>
                   <Col><TextField name="name" /></Col>
-                  <Col><TextField name="course" /></Col>
+                  <Col><TextField name="subject" /></Col>
+                  <Col><TextField name="title" /></Col>
                 </Row>
                 <Row>
                   <Col><TextField name="location" /></Col>

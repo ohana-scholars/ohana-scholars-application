@@ -83,12 +83,73 @@
   ],
 
   "defaultSessions": [{
-    "name": "ICS314 Final Exam Study Group", "course": "ICS314", "location": "Hamilton Library Basement", "month": "Apr", "day": 15, "time": "1:00 PM",
+    "name": "ICS314 Final Exam Study Group", "subject": "ICS", "title": "314", "location": "Hamilton Library Basement", "month": "Apr", "day": 15, "time": "1:00 PM",
     "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg",
     "notes": "Bring your own laptop!",
     "owner": "john@foo.com"
-  }
+  },
+    {
+      "name": "ICS311 Final Exam Study Group", "subject": "ICS", "title": "311", "location": "Hamilton Library Basement", "month": "May", "day": 11, "time": "4:00 PM",
+      "image": "https://www.hawaii.edu/news/wp-content/uploads/2019/09/manoa-campus-center.jpg",
+      "notes": "We're gonna lose our minds!",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "CHEM162 Exam 3 Study Session", "subject": "CHEM", "title": "162", "location": "Campus Center", "month": "Mar", "day": 15, "time": "1:00 AM",
+      "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg",
+      "notes": "I hate chem with a passion but we gotta study still.",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "Law Debate", "subject": "LAW", "title": "521", "location": "William Richardson School of Law", "month": "Jul", "day": 23, "time": "2:00 PM",
+      "image": "https://www.hawaii.edu/news/wp-content/uploads/2019/06/manoa-law-gnrc.jpg",
+      "notes": "There's gonna be tonnes of yelling!",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "ICS241 Final Exam Study", "subject": "ICS", "title": "241", "location": "Discord", "month": "May", "day": 31, "time": "12:00 PM",
+      "image": "https://media.cybernews.com/images/featured/2020/07/Discord-privacy-tips-that-you-should-use-.jpg",
+      "notes": "pls help i'm so confused",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "Art Contest", "subject": "ART", "title": "202", "location": "Discord", "month": "Apr", "day": 1, "time": "11:00 PM",
+      "image": "https://media.cybernews.com/images/featured/2020/07/Discord-privacy-tips-that-you-should-use-.jpg",
+      "notes": "Show off your drawing skills!",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "LING Final Paper Help", "subject": "LING", "title": "102", "location": "Hamilton Library Basement", "month": "Apr", "day": 25, "time": "5:00 PM",
+      "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg",
+      "notes": "Come get help with your paper!",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "ICS Hackathon", "subject": "ICS", "title": "314", "location": "Hamilton Library Basement", "month": "Apr", "day": 25, "time": "1:37 PM",
+      "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg",
+      "notes": "Time to screw with people's websites!",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "ICS314 Final Exam Study Group 2", "subject": "ICS", "title": "314", "location": "Hamilton Library Basement", "month": "Apr", "day": 16, "time": "2:00 PM",
+      "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg",
+      "notes": "We're better than the other study group",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "CHEM161 Final Exam Study Group", "subject": "CHEM", "title": "161", "location": "Discord", "month": "Apr", "day": 5, "time": "1:11 PM",
+      "image": "https://media.cybernews.com/images/featured/2020/07/Discord-privacy-tips-that-you-should-use-.jpg",
+      "notes": "Anyone know how to do significant figures?",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "VIET101 Practice", "subject": "VIET", "title": "101", "location": "Vietnam", "month": "Apr", "day": 15, "time": "12:12 AM",
+      "image": "https://cdn.britannica.com/90/183790-050-3B1A1E1C/World-Data-Locator-Map-Vietnam.jpg",
+      "notes": "Bạn là một người tốt nếu bạn đến!",
+      "owner": "admin@foo.com"
+    }
   ],
+
   
   "emails": [
     { "sender": "john@foo.com", "receiver":  "314", "date":  "1/1/20023", "title": "Schedule Study Session", "body": "The study group session will be held at ", "timePlace": "1:00 PM in UH Manoa Hamilton Library." }
