@@ -78,7 +78,7 @@ if (Emails.collection.find().count() === 0) {
 }
 
 const addSession = (session) => {
-  console.log(`  Adding: ${session.note} (${session.owner})`);
+  console.log(`  Adding: ${session.notes} (${session.owner})`);
   Sessions.collection.insert(session);
 };
 

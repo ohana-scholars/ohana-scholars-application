@@ -14,7 +14,7 @@ const ListSessions = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const [showFilter, setShowFilter] = useState(false);
   const [filter, setFilter] = useState({ subject: '' });
-  const { ready, sessions, participants } = useTracker(() => {
+  const { ready, sessions } = useTracker(() => {
     // Participant that this subscription will get cleaned up
     // when your component is unmounted or deps change.
     // Get access to Stuff documents.
@@ -67,7 +67,7 @@ const ListSessions = () => {
                 return true;
               }
               return session.subject === filter.subject;
-            }).map((session) => (<Col key={session._id}><Session session={session} participants={participants.filter(participant => (participant.contactId === session._id))} /></Col>))}
+            }).map((session) => (<Col key={session._id}><Session session={session} /></Col>))}
           </Row>
         </Col>
       </Row>

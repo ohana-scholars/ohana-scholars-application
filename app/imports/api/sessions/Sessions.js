@@ -29,9 +29,12 @@ class SessionsCollection {
       time: String,
       notes: String,
       image: String,
+      participants: Array,
+      'participants.$': String,
       owner: String,
       _id: String,
     });
+
     // Attach the schema to the collection, so all attempts to insert a document are checked against schema.
     this.collection.attachSchema(this.schema);
     // Define names for publications and subscriptions

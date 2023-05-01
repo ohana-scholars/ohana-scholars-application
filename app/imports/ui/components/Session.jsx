@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Meteor } from 'meteor/meteor';
 import Card from 'react-bootstrap/Card';
-import { Image, ListGroup, Row, Col } from 'react-bootstrap';
-import Participant from './Participant';
-import AddParticipant from './AddParticipant';
+import { Image, ListGroup, Row, Col, Button } from 'react-bootstrap';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-const Session = ({ session, participants }) => (
+const addSession = (session) => {
+  session.participants.push(Meteor.users.findOne().username);
+  console.log(`Added: ${Meteor.users.findOne().username}`);
+};
+
+const Session = ({ session }) => (
   <Card className="h-110">
     <Card.Header>
       <Row>
@@ -18,12 +21,14 @@ const Session = ({ session, participants }) => (
     </Card.Header>
     <Card.Body>
       <Card.Text>{session.notes}</Card.Text>
-      <AddParticipant owner={session.owner} contactId={session._id} />
+      <Button onClick={addSession(session)}>Add Session</Button>
     </Card.Body>
     <Card.Footer>
       <Card.Subtitle>Participants</Card.Subtitle>
       <ListGroup variant="flush">
-        {participants.map((participant) => <Participant key={participant._id} participant={participant} />)}
+        {session.participants.map((participant) => (
+          <p>{participant}</p>
+        ))}
       </ListGroup>
     </Card.Footer>
   </Card>
@@ -42,16 +47,10 @@ Session.propTypes = {
     time: PropTypes.string,
     notes: PropTypes.string,
     image: PropTypes.string,
+    participants: PropTypes.arrayOf(String),
     owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
-  participants: PropTypes.arrayOf(PropTypes.shape({
-    note: PropTypes.string,
-    contactId: PropTypes.string,
-    owner: PropTypes.string,
-    createdAt: PropTypes.instanceOf(Date),
-    _id: PropTypes.string,
-  })).isRequired,
 };
 
 export default Session;

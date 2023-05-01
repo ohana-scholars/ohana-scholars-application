@@ -28,7 +28,6 @@ import Banned from '../pages/Banned';
 import Appeal from '../pages/Appeal';
 import RateStudent from '../pages/RateStudent';
 import ListUsersAdmin from '../pages/ListUsersAdmin';
-// import BanUser from '../pages/BanUser';
 import EditProfile from '../pages/EditProfile';
 import Profile from '../pages/Profile';
 import DeleteSession from '../pages/DeleteSession';

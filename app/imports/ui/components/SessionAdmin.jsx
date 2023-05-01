@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Participant from './Participant';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-const SessionAdmin = ({ session, participants }) => (
+const SessionAdmin = ({ session }) => (
   <Card className="h-110">
     <Card.Header>
       <Row>
@@ -26,7 +26,7 @@ const SessionAdmin = ({ session, participants }) => (
     <Card.Footer>
       <Card.Subtitle>Participants</Card.Subtitle>
       <ListGroup variant="flush">
-        {participants.map((participant) => <Participant key={participant._id} participant={participant} />)}
+        {session.participants.map((participant) => <Participant key={participant._id} participant={participant} />)}
       </ListGroup>
     </Card.Footer>
   </Card>
@@ -44,16 +44,10 @@ SessionAdmin.propTypes = {
     time: PropTypes.string,
     notes: PropTypes.string,
     image: PropTypes.string,
+    participants: PropTypes.arrayOf(String),
     owner: PropTypes.string,
     _id: PropTypes.string,
   }).isRequired,
-  participants: PropTypes.arrayOf(PropTypes.shape({
-    note: PropTypes.string,
-    contactId: PropTypes.string,
-    owner: PropTypes.string,
-    createdAt: PropTypes.instanceOf(Date),
-    _id: PropTypes.string,
-  })).isRequired,
 };
 
 export default SessionAdmin;
