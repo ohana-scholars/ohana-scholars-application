@@ -16,6 +16,12 @@ class ProfilePage {
     await this.isDisplayed(testController);
     await testController.click('#rate-student-btn');
   }
+
+  /** Checks that edit profile button works. */
+  async gotoEditProfile(testController) {
+    await this.isDisplayed(testController);
+    await testController.click('#edit-profile-btn');
+  }
 }
 
 export const profilePage = new ProfilePage();
