@@ -1,61 +1,49 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, LongTextField, NumField, SubmitField } from 'uniforms-bootstrap5';
+import { Col, Container, Row, Table } from 'react-bootstrap';
 import { Meteor } from 'meteor/meteor';
-import swal from 'sweetalert';
-import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
-import SimpleSchema from 'simpl-schema';
+import { useTracker } from 'meteor/react-meteor-data';
 import { Reputation } from '../../api/reputation/Reputation';
-
-// Create a schema to specify the structure of the data to appear in the form.
-const formSchema = new SimpleSchema({
-  rating: Number,
-  reason: String,
-});
-
-const bridge = new SimpleSchema2Bridge(formSchema);
+import { Student } from '../../api/student/Student';
+import LoadingSpinner from '../components/LoadingSpinner';
+import Review from '../components/Review';
 
 /* Renders the AddStuff page for adding a document. */
 const ListReviews = () => {
-
-  // On submit, insert the data.
-  const submit = (data, formRef) => {
-    const { rating, reason } = data;
-    const owner = Meteor.user().username;
-    Reputation.collection.insert(
-      { rating, reason, owner },
-      (error) => {
-        if (error) {
-          swal('Error', error.message, 'error');
-        } else {
-          swal('Success', 'Rating received successfully. Thank you for your feedback!', 'success');
-          formRef.reset();
-        }
-      },
-    );
-  };
-
-  // Render the form. Use Uniforms: https://github.com/vazco/uniforms
-  let fRef = null;
-  return (
+  const { ready, student, reviews } = useTracker(() => {
+    const subscription1 = Meteor.subscribe(Student.userPublicationName);
+    const subscription2 = Meteor.subscribe(Reputation.userPublicationName);
+    // Determine if the subscription is ready
+    const rdy = subscription1.ready() && subscription2;
+    // Get the Courses documents
+    const studentItems = Student.collection.find({}).fetch();
+    const repItems = Reputation.collection.find({}).fetch();
+    return {
+      student: studentItems,
+      reviews: repItems,
+      ready: rdy,
+    };
+  }, []);
+  return (ready ? (
     <Container className="py-3" id="rate-student-page">
       <Row className="justify-content-center">
         <Col xs={5}>
-          <Col className="text-center"><h2>Rate Student</h2></Col>
-          <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
-            <Card>
-              <Card.Body>
-                <NumField name="rating" id="ratestudent-form-rating" placeholder="Please enter a rating from 1 to 10." />
-                <LongTextField name="reason" id="ratestudent-form-reason" placeholder="Please give a short reason for your rating." />
-                <SubmitField value="Submit" id="ratestudent-form-submit" />
-                <ErrorsField />
-              </Card.Body>
-            </Card>
-          </AutoForm>
+          <Col className="text-center"><h2>{student[0].firstName}&apos;s Reviews</h2></Col>
+          <Table striped bordered hover>
+            <thead>
+              <tr>
+                <th>Owner</th>
+                <th>Rating</th>
+                <th>Feedback</th>
+              </tr>
+            </thead>
+            <tbody>
+              {reviews.map((review) => <Review review={review} />)}
+            </tbody>
+          </Table>
         </Col>
       </Row>
     </Container>
-  );
+  ) : <LoadingSpinner />);
 };
 
 export default ListReviews;

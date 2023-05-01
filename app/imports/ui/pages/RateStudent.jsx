@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, LongTextField, NumField, SubmitField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
+import { useParams } from 'react-router';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
@@ -20,6 +21,7 @@ const RateStudent = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
+    const { _id } = useParams();
     const { rating, reason } = data;
     const owner = Meteor.user().username;
     Reputation.collection.insert(
