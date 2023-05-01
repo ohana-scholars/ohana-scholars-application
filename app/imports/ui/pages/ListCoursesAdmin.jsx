@@ -6,7 +6,6 @@ import _ from 'underscore';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Courses } from '../../api/courses/Courses';
 import SubjectFilter from '../components/SubjectsFilter';
-import Course from '../components/Course';
 import CourseAdmin from '../components/CourseAdmin';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
