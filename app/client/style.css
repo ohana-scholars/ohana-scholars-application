@@ -63,3 +63,32 @@ body {
   border: black;
   border-width: 10px;
 }
+
+.formCSS .btn {
+  --bs-btn-bg: var(--matr-btn-bg) !important;
+  --bs-btn-border-color: var(--matr-btn-bg) !important;
+  --bs-btn-hover-bg: var(--matr-blue-bg) !important;
+  --bs-btn-hover-border-color: var(--matr-blue-bg) !important;
+  --bs-btn-border-radius: 0px !important;
+}
+
+.formCSS .card {
+  background-color: var(--matr-blue-bg) !important;
+  color: black;
+  border-color: clear;
+}
+
+.formCSS .alert {
+  background-color: var(--matr-blue-bg) !important;
+  color: black;
+  border-color: var(--matr-blue-bg) !important;
+  --bs-link-hover-color: white;
+}
+
+.link {
+  color: black;
+}
+
+.subtitle {
+  color: white;
+}

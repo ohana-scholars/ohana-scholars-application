@@ -31,7 +31,7 @@ const ListSessions = () => {
 
   return (ready ? (
     <Container className="py-3" id="list-sessions-page">
-      <Row className="justify-content-center">
+      <Row className="justify-content-center formCSS">
         <Col>
           <Col className="text-center">
             <h2>List Sessions</h2>
@@ -41,7 +41,7 @@ const ListSessions = () => {
           </Row>
         </Col>
       </Row>
-      <Row>
+      <Row className="formCSS">
         <Button href="../add" id="goto-add-session-page">Create New Session</Button>
       </Row>
     </Container>

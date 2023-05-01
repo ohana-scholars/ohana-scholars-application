@@ -41,7 +41,7 @@ const SignIn = () => {
   }
   // Otherwise return the Login form.
   return (
-    <Container id="signin-page" className="py-3">
+    <Container id="signin-page" className="py-3 formCSS">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center">
@@ -54,12 +54,12 @@ const SignIn = () => {
                 <TextField id="signin-form-password" name="password" placeholder="Password" type="password" />
                 <ErrorsField />
                 <SubmitField id="signin-form-submit" />
+                <Alert variant="light" className="p-0">
+                  <Link to="/signup" className="link">Click here to Register</Link>
+                </Alert>
               </Card.Body>
             </Card>
           </AutoForm>
-          <Alert variant="light">
-            <Link to="/signup">Click here to Register</Link>
-          </Alert>
           {error === '' ? (
             ''
           ) : (
