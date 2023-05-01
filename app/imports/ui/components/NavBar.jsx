@@ -36,21 +36,31 @@ const NavBar = () => {
             {currentUser && (Roles.userIsInRole(Meteor.userId(), 'banned') === false) ? ([
               <Nav.Link id="list-courses-nav" as={NavLink} to="/courses" key="list">Courses</Nav.Link>,
             ]) : ''}
-            {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="add-course-nav" as={NavLink} to="/addcourse" key="add">Add Courses</Nav.Link>
-            ) : ''}
-            {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="list-sessions-admin-nav" as={NavLink} to="/listadmin" key="listadmin">List Sessions (Admin)</Nav.Link>
-            ) : ''}
-            {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="list-users-admin-nav" as={NavLink} to="/listusersadmin" key="listusersadmin">List Users (Admin)</Nav.Link>
-            ) : ''}
-            {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="add-stuff-nav" as={NavLink} to="/listusersadmin" key="listusersadmin">List Users (Admin)</Nav.Link>
-            ) : ''}
-            {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
-              <Nav.Link id="list-courses-admin-nav" as={NavLink} to="/coursesAdmin" key="listAdmin">Courses (Admin)</Nav.Link>
-            ) : ''}
+            {Roles.userIsInRole(Meteor.userId(), 'admin') ? ([
+              <NavDropdown title="Admin Pages">
+                <NavDropdown.Item>
+                  {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+                    <Nav.Link id="add-course-nav" as={NavLink} to="/addcourse" key="add">Add Courses</Nav.Link>
+                  ) : ''}
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+                    <Nav.Link id="list-courses-admin-nav" as={NavLink} to="/coursesAdmin" key="listAdmin">List Courses</Nav.Link>
+                  ) : ''}
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+                    <Nav.Link id="list-sessions-admin-nav" as={NavLink} to="/listadmin" key="listadmin">List Sessions</Nav.Link>
+                  ) : ''}
+                </NavDropdown.Item>
+                <NavDropdown.Item>
+                  {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+                    <Nav.Link id="list-users-admin-nav" as={NavLink} to="/listusersadmin" key="listusersadmin">List Users</Nav.Link>
+                  ) : ''}
+                </NavDropdown.Item>
+              </NavDropdown>
+            ]) : ''}
+
           </Nav>
           <Nav className="justify-content-end">
             {currentUser === '' ? (
