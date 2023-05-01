@@ -33,12 +33,16 @@ const Profile = () => {
     };
   }, []);
 
-  // underscore functions to grab average rating of student
-  const ratings = _.pluck(reputation, 'rating');
-  const avgRating = (_.reduce(ratings, function (index, key) { return index + key; }, 0) / ratings.length).toFixed(2);
   if (student.length === 0 && ready === true) {
     return <Navigate to="/addProfile" />;
   }
+
+  // use underscore functions to get average rating
+  const userId = Meteor.userId(); // Get the _id of the currently logged in user
+  const grabStudent = _.filter(reputation, function (key) { return key.user_id === userId; });
+  const grabRatings = _.pluck(grabStudent, 'rating');
+  const avgRating = (_.reduce(grabRatings, function (index, key) { return index + key; }, 0) / grabRatings.length).toFixed(2);
+
   return (ready ? (
     <div className="vh-100">
       <Container id="profile-page">
@@ -58,10 +62,18 @@ const Profile = () => {
                     <div className="text-center">
                       <Card.Title>{student[0].firstName} {student[0].lastName}</Card.Title>
                       <Card.Text>{student[0].username}</Card.Text>
-                      <Card.Subtitle>Rating: {avgRating}/10</Card.Subtitle>
+                      { grabStudent.length === 0 ? (
+                        <Card.Subtitle>
+                          Rating: None yet
+                        </Card.Subtitle>
+                      ) : (
+                        <Card.Subtitle>
+                          Rating: {avgRating}/10 | <Link to={`/reviews/${userId}`} id="list-reviews-btn">See reviews</Link>
+                        </Card.Subtitle>
+                      )}
                       { /* youAreThatStudent ? '' : (
                       <Link to="/rateStudent"><Button className="pink-btn">Rate Student</Button></Link>) */ }
-                      <Link to="/rateStudent"><Button className="pink-btn" id="rate-student-btn">Rate Student</Button></Link>
+                      <Link to={`/rateStudent/${userId}`}><Button className="pink-btn home-page-btn" id="rate-student-btn">Rate Student</Button></Link>
                     </div>
                     {/* <Row> */}
                     {/*  <Col className="px-2 ps-5"> */}

@@ -17,6 +17,7 @@ import { editCoursePage } from './editcourse.page';
 import { rateStudentPage } from './ratestudent.page';
 import { deletesessionPage } from './deletesession.page';
 import { listUsersAdminPage } from './listusersadmin.page';
+import { listReviewsPage } from './listreviews.page';
 
 /* global fixture:false, test:false */
 
@@ -77,6 +78,16 @@ test('Test that rate student works', async (testController) => {
   await profilePage.gotoRateStudent(testController);
   await rateStudentPage.isDisplayed(testController);
   await rateStudentPage.rateStudent(testController, '10', 'gave good explanations');
+});
+
+test('Test that list reviews page shows up', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoViewProfilePage(testController);
+  await profilePage.gotoListReviews(testController);
+  await listReviewsPage.isDisplayed(testController);
+  await listReviewsPage.returnToProfilePage(testController);
 });
 
 test('Test that add sessions page shows up', async (testController) => {

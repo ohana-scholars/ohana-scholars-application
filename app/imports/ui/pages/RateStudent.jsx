@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, LongTextField, NumField, SubmitField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, HiddenField, LongTextField, NumField, SubmitField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
+import { useParams } from 'react-router';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
 import SimpleSchema from 'simpl-schema';
@@ -9,6 +10,7 @@ import { Reputation } from '../../api/reputation/Reputation';
 
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
+  user_id: String,
   rating: Number,
   reason: String,
 });
@@ -17,13 +19,14 @@ const bridge = new SimpleSchema2Bridge(formSchema);
 
 /* Renders the AddStuff page for adding a document. */
 const RateStudent = () => {
-
+  const { _id } = useParams();
+  const user_id = _id;
   // On submit, insert the data.
   const submit = (data, formRef) => {
     const { rating, reason } = data;
     const owner = Meteor.user().username;
     Reputation.collection.insert(
-      { rating, reason, owner },
+      { user_id, rating, reason, owner },
       (error) => {
         if (error) {
           swal('Error', error.message, 'error');
@@ -49,6 +52,7 @@ const RateStudent = () => {
                 <LongTextField name="reason" id="ratestudent-form-reason" placeholder="Please give a short reason for your rating." />
                 <SubmitField value="Submit" id="ratestudent-form-submit" />
                 <ErrorsField />
+                <HiddenField name="user_id" value={user_id} />
               </Card.Body>
             </Card>
           </AutoForm>
