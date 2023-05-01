@@ -17,12 +17,12 @@ const NavBar = () => {
       <Container>
         {currentUser === '' ? (
           <Navbar.Brand as={NavLink} to="/">
-            <Image src="/images/ohana-scholars-logo.png" width="60px" alt="Ohana Scholars Logo" />
+            <Image src="/images/ohana-scholars-logo-square.png" width="60px" alt="Ohana Scholars Logo" />
             Ohana Scholars
           </Navbar.Brand>
         ) : (
           <Navbar.Brand as={NavLink} to="/home" id="goto-home">
-            <Image src="/images/ohana-scholars-logo.png" width="60px" alt="Ohana Scholars Logo" />
+            <Image src="/images/ohana-scholars-logo-square.png" width="60px" alt="Ohana Scholars Logo" />
             Ohana Scholars
           </Navbar.Brand>
         )}
