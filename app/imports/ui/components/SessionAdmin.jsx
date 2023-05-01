@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 import { Col, Image, ListGroup, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Participant from './Participant';
+// import Participant from './Participant';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const SessionAdmin = ({ session }) => (
@@ -26,7 +26,7 @@ const SessionAdmin = ({ session }) => (
     <Card.Footer>
       <Card.Subtitle>Participants</Card.Subtitle>
       <ListGroup variant="flush">
-        {session.participants.map((participant) => <Participant key={participant._id} participant={participant} />)}
+        {session.participants}
       </ListGroup>
     </Card.Footer>
   </Card>

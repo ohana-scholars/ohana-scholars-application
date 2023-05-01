@@ -1,38 +1,46 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useTracker } from 'meteor/react-meteor-data';
 import { Meteor } from 'meteor/meteor';
 import Card from 'react-bootstrap/Card';
 import { Image, ListGroup, Row, Col, Button } from 'react-bootstrap';
 
-const addSession = (session) => {
-  session.participants.push(Meteor.users.findOne().username);
-  console.log(`Added: ${Meteor.users.findOne().username}`);
-};
+const Session = ({ session }) => {
 
-const Session = ({ session }) => (
-  <Card className="h-110">
-    <Card.Header>
-      <Row>
-        <Col><Image src={session.image} width={75} /></Col>
-      </Row>
-      <Card.Title>{session.name}</Card.Title>
-      <Card.Subtitle>{session.month} {session.day} | {session.time}</Card.Subtitle>
-      <Card.Text>{session.location}</Card.Text>
-    </Card.Header>
-    <Card.Body>
-      <Card.Text>{session.notes}</Card.Text>
-      <Button onClick={addSession(session)}>Add Session</Button>
-    </Card.Body>
-    <Card.Footer>
-      <Card.Subtitle>Participants</Card.Subtitle>
-      <ListGroup variant="flush">
-        {session.participants.map((participant) => (
-          <p>{participant}</p>
-        ))}
-      </ListGroup>
-    </Card.Footer>
-  </Card>
-);
+  const { currentUser } = useTracker(() => ({
+    currentUser: Meteor.user() ? Meteor.user().username : '',
+  }), []);
+
+  const addSession = () => {
+    session.participants.push(currentUser);
+    // console.log(`Added: ${Meteor.users.findOne().username}`);
+  };
+
+  return (
+    <Card className="h-110">
+      <Card.Header>
+        <Row>
+          <Col><Image src={session.image} width={75} /></Col>
+        </Row>
+        <Card.Title>{session.name}</Card.Title>
+        <Card.Subtitle>{session.month} {session.day} | {session.time}</Card.Subtitle>
+        <Card.Text>{session.location}</Card.Text>
+      </Card.Header>
+      <Card.Body>
+        <Card.Text>{session.notes}</Card.Text>
+        <Button onClick={addSession(session)}>Add Session</Button>
+      </Card.Body>
+      <Card.Footer>
+        <Card.Subtitle>Participants</Card.Subtitle>
+        <ListGroup variant="flush">
+          {session.participants.map((participant) => (
+            <p>{participant}</p>
+          ))}
+        </ListGroup>
+      </Card.Footer>
+    </Card>
+  );
+};
 
 // Require a document to be passed to this component.
 // eslint-disable-next-line meteor/no-session
