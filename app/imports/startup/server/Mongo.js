@@ -90,9 +90,17 @@ if (Sessions.collection.find().count() === 0) {
   }
 }
 
+// Find the user by email
+const user = Meteor.users.findOne({ 'emails.address': 'john@foo.com' });
+
 const addRep = (rep) => {
-  console.log(`  Adding reputation: ${rep.rating}/10 by ${rep.owner}`);
-  Reputation.collection.insert(rep);
+  console.log(`  Adding: ${rep.rating}/10 by ${rep.owner}`);
+  Reputation.collection.insert({
+    user_id: user._id,
+    rating: 9,
+    reason: 'They were a great help to me! They made sure I kept focused throughout the session, and even though it was a rigorous process, I came out of it feeling more confident about the upcoming final!',
+    owner: 'admin@foo.com',
+  });
 };
 
 if (Reputation.collection.find().count() === 0) {
