@@ -52,7 +52,7 @@ const AddSession = () => {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   let fRef = null;
   return (
-    <Container className="py-3" id="add-session-page">
+    <Container className="py-3 formCSS" id="add-session-page">
       <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="text-center"><h2>Create New Session</h2></Col>

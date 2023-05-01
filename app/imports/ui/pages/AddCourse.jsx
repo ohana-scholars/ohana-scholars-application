@@ -37,7 +37,7 @@ const AddCourse = () => {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   let fRef = null;
   return (
-    <Container className="py-3" id="add-course-page">
+    <Container className="py-3 formCSS" id="add-course-page">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center"><h2>Add Course</h2></Col>
