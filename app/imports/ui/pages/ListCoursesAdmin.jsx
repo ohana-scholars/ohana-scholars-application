@@ -7,6 +7,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import { Courses } from '../../api/courses/Courses';
 import SubjectFilter from '../components/SubjectsFilter';
 import Course from '../components/Course';
+import CourseAdmin from '../components/CourseAdmin';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 const ListCoursesAdmin = () => {
@@ -68,7 +69,7 @@ const ListCoursesAdmin = () => {
                 }
                 return course.subject === filter.subject;
               })
-                .map((course) => <Course key={course._id} course={course} />)}
+                .map((course) => <CourseAdmin key={course._id} course={course} />)}
             </tbody>
           </Table>
         </Col>

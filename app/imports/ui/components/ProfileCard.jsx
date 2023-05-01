@@ -20,7 +20,7 @@ const ProfileCard = ({ student, userID }) => {
 
   return (
     <Col>
-      <Card style={{ borderRadius: '10px' }} className="text-center h-100">
+      <Card style={{ borderRadius: '10px' }} className="text-center h-100 pb-3">
         <Card.Header className="text-center">
           <ListGroup.Item className="p-4">
             <Image
@@ -43,20 +43,13 @@ const ProfileCard = ({ student, userID }) => {
         </Card.Body>
         <div className="d-flex text-black">
           <div className="flex-grow-1 ms-3">
+            <Card.Title className="text-center">{student.firstName} {student.lastName}</Card.Title>
+            <Card.Text className="text-center">{student.username}</Card.Text>
             {(Roles.userIsInRole(Meteor.userId(), 'admin') === true) && (
-              <Button variant="danger" onClick={banUser}>Ban User</Button>
+              banStatus ? (
+                <Button variant="danger" onClick={banUser}>Unban User</Button>
+              ) : <Button variant="danger" onClick={banUser}>Ban User</Button>
             )}
-          </div>
-          <div className="d-flex text-black">
-            <div className="flex-grow-1 ms-3">
-              <Card.Title className="text-center">{student.firstName} {student.lastName}</Card.Title>
-              <Card.Text className="text-center">{student.username}</Card.Text>
-              {(Roles.userIsInRole(Meteor.userId(), 'admin') === true) && (
-                banStatus ? (
-                  <Button variant="danger" onClick={banUser}>Unban User</Button>
-                ) : <Button variant="danger" onClick={banUser}>Ban User</Button>
-              )}
-            </div>
           </div>
         </div>
       </Card>

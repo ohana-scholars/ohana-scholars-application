@@ -77,18 +77,22 @@ class NavBar {
   }
 
   async gotoAddCoursePage(testController) {
+    await testController.click('#admin-dropdown-nav');
     await testController.click('#add-course-nav');
   }
 
   async gotoListSessionAdminPage(testController) {
+    await testController.click('#admin-dropdown-nav');
     await testController.click('#list-sessions-admin-nav');
   }
 
   async gotoListCoursesAdminPage(testController) {
+    await testController.click('#admin-dropdown-nav');
     await testController.click('#list-courses-admin-nav');
   }
 
   async gotoListUsersAdminPage(testController) {
+    await testController.click('#admin-dropdown-nav');
     await testController.click('#list-users-admin-nav');
   }
 }

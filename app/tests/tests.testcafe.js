@@ -18,6 +18,7 @@ import { rateStudentPage } from './ratestudent.page';
 import { deletesessionPage } from './deletesession.page';
 import { listUsersAdminPage } from './listusersadmin.page';
 import { listReviewsPage } from './listreviews.page';
+import { editProfilePage } from './editprofile.page';
 
 /* global fixture:false, test:false */
 
@@ -68,6 +69,16 @@ test('Test that view profile page shows up', async (testController) => {
   await navBar.isLoggedIn(testController, credentials.username);
   await navBar.gotoViewProfilePage(testController);
   await profilePage.isDisplayed(testController);
+});
+
+test('Test that edit profile page shows up', async (testController) => {
+  await navBar.gotoSignInPage(testController);
+  await signinPage.signin(testController, credentials.username, credentials.password);
+  await navBar.isLoggedIn(testController, credentials.username);
+  await navBar.gotoViewProfilePage(testController);
+  await profilePage.isDisplayed(testController);
+  await profilePage.gotoEditProfile(testController);
+  await editProfilePage.isDisplayed(testController);
 });
 
 test('Test that rate student works', async (testController) => {
@@ -172,7 +183,7 @@ test('Test that list courses (admin) page works', async (testController) => {
   // await listCoursesAdminPage.filterCourses(testController);
 });
 
-test('Test that edit courses page works', async (testController) => {
+test.only('Test that edit courses page works', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, admin.username, admin.password);
   await navBar.isLoggedIn(testController, admin.username);

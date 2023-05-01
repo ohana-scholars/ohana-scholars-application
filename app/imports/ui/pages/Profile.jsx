@@ -91,7 +91,7 @@ const Profile = () => {
                     {/* </Row> */}
                     <Card.Body>{student[0].description}</Card.Body>
                     <Card.Footer>
-                      <Link to={`/editProfile/${student[0]._id}`}>Edit Profile</Link>
+                      <Link to={`/editProfile/${student[0]._id}`} id="edit-profile-btn">Edit Profile</Link>
                     </Card.Footer>
                   </div>
                 </div>
