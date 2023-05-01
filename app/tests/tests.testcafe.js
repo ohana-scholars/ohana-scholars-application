@@ -80,7 +80,7 @@ test('Test that rate student works', async (testController) => {
   await rateStudentPage.rateStudent(testController, '10', 'gave good explanations');
 });
 
-test('Test that list review page shows up', async (testController) => {
+test('Test that list reviews page shows up', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.isLoggedIn(testController, credentials.username);
