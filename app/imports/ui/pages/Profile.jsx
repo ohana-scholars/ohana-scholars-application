@@ -62,7 +62,7 @@ const Profile = () => {
                         </Card.Subtitle>
                       ) : (
                         <Card.Subtitle>
-                          Rating: {avgRating}/10 | <Link to={`/reviews/${userId}`}>See reviews</Link>
+                          Rating: {avgRating}/10 | <Link to={`/reviews/${userId}`} id="list-reviews-btn">See reviews</Link>
                         </Card.Subtitle>
                       )}
                       { /* youAreThatStudent ? '' : (

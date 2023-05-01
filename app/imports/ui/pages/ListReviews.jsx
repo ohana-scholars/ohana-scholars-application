@@ -25,12 +25,12 @@ const ListReviews = () => {
     };
   }, []);
   return (ready ? (
-    <Container className="py-3" id="rate-student-page">
+    <Container className="py-3" id="list-reviews-page">
       <Row className="justify-content-center align-items-center">
         <Col xs={8}>
           <Col className="text-center">
             <h2>{student[0].firstName}&apos;s Reviews</h2>
-            <Link to="/profile"><Button className="pink-btn home-page-btn">Return to your profile</Button></Link>
+            <Link to="/profile"><Button className="pink-btn home-page-btn" id="return-to-profile-btn">Return to your profile</Button></Link>
           </Col>
           <Table striped bordered hover>
             <thead>
