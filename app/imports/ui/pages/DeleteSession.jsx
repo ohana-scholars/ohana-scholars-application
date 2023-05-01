@@ -53,7 +53,8 @@ const DeleteSession = () => {
               <Card.Body>
                 <Row>
                   <Col><TextField name="name" /></Col>
-                  <Col><TextField name="course" /></Col>
+                  <Col><TextField name="subject" /></Col>
+                  <Col><TextField name="title" /></Col>
                 </Row>
                 <Row>
                   <Col><TextField name="location" /></Col>

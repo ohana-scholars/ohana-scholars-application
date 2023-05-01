@@ -13,7 +13,8 @@ class SessionsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
-      course: String,
+      subject: String,
+      title: String,
       location: String,
       month: {
         type: String,

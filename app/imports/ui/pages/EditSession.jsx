@@ -32,8 +32,8 @@ const EditSession = () => {
   // console.log('EditStuff', doc, ready);
   // On successful submit, insert the data.
   const submit = (data) => {
-    const { name, course, location, month, day, time, notes, participants, image } = data;
-    Sessions.collection.update(_id, { $set: { name, course, location, month, day, time, notes, participants, image } }, (error) => (error ?
+    const { name, subject, title, location, month, day, time, notes, participants, image } = data;
+    Sessions.collection.update(_id, { $set: { name, subject, title, location, month, day, time, notes, participants, image } }, (error) => (error ?
       swal('Error', error.message, 'error') :
       swal('Success', 'Session updated successfully', 'success')));
   };
@@ -48,7 +48,8 @@ const EditSession = () => {
               <Card.Body>
                 <Row>
                   <Col><TextField name="name" /></Col>
-                  <Col><TextField name="course" /></Col>
+                  <Col><TextField name="subject" /></Col>
+                  <Col><TextField name="title" /></Col>
                 </Row>
                 <Row>
                   <Col><TextField name="location" /></Col>
