@@ -1,12 +1,12 @@
 import React from 'react';
 import { Col, Container, Row, Table, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import { Reputation } from '../../api/reputation/Reputation';
 import { Student } from '../../api/student/Student';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Review from '../components/Review';
-import { Link } from 'react-router-dom';
 
 /* Renders the AddStuff page for adding a document. */
 const ListReviews = () => {
