@@ -172,7 +172,7 @@ test('Test that list courses (admin) page works', async (testController) => {
   // await listCoursesAdminPage.filterCourses(testController);
 });
 
-test.only('Test that edit courses page works', async (testController) => {
+test('Test that edit courses page works', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, admin.username, admin.password);
   await navBar.isLoggedIn(testController, admin.username);
