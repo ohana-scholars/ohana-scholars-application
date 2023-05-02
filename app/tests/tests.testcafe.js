@@ -125,7 +125,11 @@ test('Test that list courses page works', async (testController) => {
   await navBar.isLoggedIn(testController, credentials.username);
   await navBar.gotoListCoursesPage(testController);
   await listCoursesPage.isDisplayed(testController);
-//   await listCoursesPage.filterCourses(testController);
+  await listCoursesPage.gotoListSessionsPage(testController);
+  await listSessionsPage.isDisplayed(testController);
+  await navBar.gotoListCoursesPage(testController);
+  await listCoursesPage.isDisplayed(testController);
+  await listCoursesPage.filterCourses(testController);
 });
 
 test('Test that admin sign in works', async (testController) => {
