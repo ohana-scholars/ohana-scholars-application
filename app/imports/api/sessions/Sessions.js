@@ -1,5 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
+import { number } from 'prop-types';
 
 /**
  * The SessionsCollection. It encapsulates state and variable values for sessions.
@@ -16,15 +17,14 @@ class SessionsCollection {
       subject: String,
       title: String,
       location: String,
+      year: Number,
       month: {
-        type: String,
-        allowedValues: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        defaultValue: 'Apr',
+        type: Number,
+        allowedValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
       },
       day: {
         type: Number,
         allowedValues: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
-        defaultValue: 13,
       },
       time: String,
       notes: String,
