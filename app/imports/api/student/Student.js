@@ -19,7 +19,7 @@ class StudentCollection {
       profilePictureLink: String,
       // courses: String, // Add later when collections made
       // interests: String,
-      // reputation: Number,
+      // reputation: Array,
       owner: String,
       _id: String,
     });

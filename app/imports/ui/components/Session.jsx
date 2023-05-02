@@ -10,15 +10,15 @@ const Session = ({ session, participants }) => (
   <Card className="h-110">
     <Card.Header>
       <Row>
-        <Col><Image src={session.image} width={75} /></Col>
+        <Col className="py-2"><Image rounded src={session.image} width={200} /></Col>
       </Row>
       <Card.Title>{session.name}</Card.Title>
-      <Card.Subtitle>{session.month} {session.day} | {session.time}</Card.Subtitle>
+      <Card.Subtitle>{session.month} {session.day}, {session.year} | {session.time}</Card.Subtitle>
       <Card.Text>{session.location}</Card.Text>
     </Card.Header>
     <Card.Body>
       <Card.Text>{session.notes}</Card.Text>
-      <AddParticipant owner={session.owner} contactId={session._id} />
+      <AddParticipant sessionName={session.name} sessionLocation={session.location} notes={session.notes} contactId={session._id} sessionDate={new Date(session.year, session.month, session.day)} sessionTime={session.time} />
     </Card.Body>
     <Card.Footer>
       <Card.Subtitle>Participants</Card.Subtitle>
@@ -37,7 +37,8 @@ Session.propTypes = {
     subject: PropTypes.string,
     title: PropTypes.string,
     location: PropTypes.string,
-    month: PropTypes.string,
+    year: PropTypes.number,
+    month: PropTypes.number,
     day: PropTypes.number,
     time: PropTypes.string,
     notes: PropTypes.string,
@@ -46,10 +47,14 @@ Session.propTypes = {
     _id: PropTypes.string,
   }).isRequired,
   participants: PropTypes.arrayOf(PropTypes.shape({
-    note: PropTypes.string,
-    contactId: PropTypes.string,
+    notes: PropTypes.string,
     owner: PropTypes.string,
+    contactId: PropTypes.string,
     createdAt: PropTypes.instanceOf(Date),
+    sessionDate: PropTypes.instanceOf(Date),
+    sessionTime: PropTypes.string,
+    sessionName: PropTypes.string,
+    sessionLocation: PropTypes.string,
     _id: PropTypes.string,
   })).isRequired,
 };

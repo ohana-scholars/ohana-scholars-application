@@ -6,7 +6,6 @@ import _ from 'underscore';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { Courses } from '../../api/courses/Courses';
 import SubjectFilter from '../components/SubjectsFilter';
-import Course from '../components/Course';
 import CourseAdmin from '../components/CourseAdmin';
 
 /* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
@@ -36,7 +35,7 @@ const ListCoursesAdmin = () => {
     <Container className="py-3">
       <Row className="justify-content-center" id="list-courses-admin-page">
         <Col md={7}>
-          <Col className="text-center">
+          <Col className="pb-2 text-center">
             <h2>List Courses (Admin)</h2>
             {/* Filter */}
             <Row>
