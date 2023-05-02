@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Courses } from '../../api/courses/Courses';
 import { Student } from '../../api/student/Student';
 import { Sessions } from '../../api/sessions/Sessions';
@@ -63,7 +62,7 @@ if (Emails.collection.find().count() === 0) {
 }
 
 const addSession = (session) => {
-  console.log(`  Adding: ${session.note} (${session.owner})`);
+  console.log(`  Adding: ${session.name} (${session.owner})`);
   Sessions.collection.insert(session);
 };
 
