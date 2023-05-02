@@ -15,7 +15,7 @@ class SessionsCollection {
       name: String,
       subject: {
         type: String,
-        allowedValues: ['ART', 'BIOL', 'BUS', 'ECON', 'ENG', 'HIST', 'ICS', 'MATH', 'NURS', 'PHYS'],
+        allowedValues: ['ART', 'BIOL', 'BUS', 'CHEM', 'ECON', 'ENG', 'HIST', 'ICS', 'MATH', 'NURS', 'PHYS'],
       },
       title: String,
       location: String,
