@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
-import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, HiddenField, LongTextField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -10,7 +10,10 @@ import { Sessions } from '../../api/sessions/Sessions';
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
   name: String,
-  subject: String,
+  subject: {
+    type: String,
+    allowedValues: ['ART', 'BIOL', 'BUS', 'ECON', 'ENG', 'HIST', 'ICS', 'MATH', 'NURS', 'PHYS'],
+  },
   title: String,
   location: String,
   month: {
@@ -62,16 +65,16 @@ const AddSession = () => {
               <Card.Body>
                 <Row>
                   <Col><TextField name="name" /></Col>
-                  <Col><TextField name="subject" /></Col>
-                  <Col><TextField name="title" /></Col>
+                  <Col><SelectField name="subject" /></Col>
+                  <HiddenField name="title" value="101" />
                 </Row>
                 <Row>
                   <Col><TextField name="location" /></Col>
                   <Col><TextField name="image" /></Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="month" /></Col>
-                  <Col><TextField name="day" /></Col>
+                  <Col><SelectField name="month" /></Col>
+                  <Col><SelectField name="day" /></Col>
                   <Col><TextField name="time" /></Col>
                 </Row>
                 <LongTextField name="notes" />
