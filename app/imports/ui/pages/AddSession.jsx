@@ -65,7 +65,7 @@ const AddSession = () => {
               <Card.Body>
                 <Row>
                   <Col><TextField name="name" id="add-session-field-name" /></Col>
-                  <Col><SelectField name="subject" id="add-session-field-subject" /></Col>
+                  <Col><SelectField name="subject" defaultValue="ART" placeholder="ART" id="add-session-field-subject" /></Col>
                   <HiddenField name="title" value="101" />
                 </Row>
                 <Row>

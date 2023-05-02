@@ -107,6 +107,7 @@ test('Test that add sessions page shows up', async (testController) => {
   await navBar.isLoggedIn(testController, credentials.username);
   await navBar.gotoAddSessionPage(testController);
   await addSessionPage.isDisplayed(testController);
+  await addSessionPage.addSession(testController, 'Tung', 'ART', 'Campus Center', '.', '5', '2', '2023', '16:00', 'Tung is bad');
 });
 
 test('Test that list sessions page shows up', async (testController) => {
