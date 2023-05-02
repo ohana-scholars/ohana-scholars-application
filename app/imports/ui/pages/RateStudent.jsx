@@ -41,7 +41,7 @@ const RateStudent = () => {
   // Render the form. Use Uniforms: https://github.com/vazco/uniforms
   let fRef = null;
   return (
-    <Container className="py-3" id="rate-student-page">
+    <Container className="py-3 formCSS" id="rate-student-page">
       <Row className="justify-content-center">
         <Col xs={5}>
           <Col className="text-center"><h2>Rate Student</h2></Col>
