@@ -84,7 +84,7 @@ const AddSession = () => {
       </Row>
       <Row className="justify-content-center">
         <Col xs={6} className="pt-2 text-center">
-          <Button href="../list" className="pink-btn btn-lg home-page-btn">Go to List Sessions Page</Button>
+          <Button href="../coursesAdmin" className="pink-btn btn-lg home-page-btn">Go to List Sessions Page</Button>
         </Col>
       </Row>
     </Container>
