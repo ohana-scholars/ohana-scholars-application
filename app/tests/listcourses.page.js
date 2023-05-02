@@ -27,6 +27,12 @@ class ListCoursesPage {
     const rowCount = Selector('tr').count;
     await testController.expect(rowCount).lte(3);
   }
+
+  /** Checks that the View Sessions button works. */
+  async gotoListSessionsPage(testController) {
+    await this.isDisplayed(testController);
+    await testController.click('#goto-list-sessions-page');
+  }
 }
 
 export const listCoursesPage = new ListCoursesPage();

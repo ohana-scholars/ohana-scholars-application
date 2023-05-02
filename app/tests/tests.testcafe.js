@@ -118,13 +118,17 @@ test('Test that list sessions page shows up', async (testController) => {
   await listSessionsPage.createSessionBtn(testController);
 });
 
-test('Test that list courses page works', async (testController) => {
+test.only('Test that list courses page works', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.isLoggedIn(testController, credentials.username);
   await navBar.gotoListCoursesPage(testController);
   await listCoursesPage.isDisplayed(testController);
-//   await listCoursesPage.filterCourses(testController);
+  await listCoursesPage.gotoListSessionsPage(testController);
+  await listSessionsPage.isDisplayed(testController);
+  await navBar.gotoListCoursesPage(testController);
+  await listCoursesPage.isDisplayed(testController);
+  await listCoursesPage.filterCourses(testController);
 });
 
 test('Test that admin sign in works', async (testController) => {
