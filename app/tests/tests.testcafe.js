@@ -118,7 +118,7 @@ test('Test that list sessions page shows up', async (testController) => {
   await listSessionsPage.createSessionBtn(testController);
 });
 
-test.only('Test that list courses page works', async (testController) => {
+test('Test that list courses page works', async (testController) => {
   await navBar.gotoSignInPage(testController);
   await signinPage.signin(testController, credentials.username, credentials.password);
   await navBar.isLoggedIn(testController, credentials.username);

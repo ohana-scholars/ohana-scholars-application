@@ -22,7 +22,7 @@ const SubjectFilter = ({ filter, setFilter, subjects }) => {
               <Form.Control as="select" value={filter.subjects} onChange={setSubject} id="filter-dropdown">
                 <option value="">Any</option>
                 {subjects.map((subject, index) => (
-                  <option key={index} value={subject}>{subject}</option>
+                  <option key={index} value={subject} id={subject}>{subject}</option>
                 ))}
               </Form.Control>
             </Col>
