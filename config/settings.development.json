@@ -127,6 +127,96 @@
       "owner": "admin@foo.com"
     },
     {
+      "name": "ART213 Idea Brainstorming Session", "subject": "ART", "title": "213", "location": "Art Building", "month": 8, "day": 16, "year": 2023, "time": "2:00 PM",
+      "image": "https://www.staradvertiser.com/wp-content/uploads/2020/04/web1_20191122-9036-CTY-UH-STUDENTS-1280x720.jpg",
+      "notes": "We'll be meeting by the tables on the first floor of art building to brainstorm some drawing ideas.",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "BIOL171 Help", "subject": "BIOL", "title": "171", "location": "Tables outside Bale", "month": 9, "day": 19, "year": 2023, "time": "11:00 AM",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/clJKLjVn6MgTF27H1djdsQ/348s.jpg",
+      "notes": "People who have already taken the course and meeting up to help anyone who might be struggling with it currently.",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "BUS200 Jeopardy Game", "subject": "BUS", "title": "200", "location": "Shidler Building", "month": 10, "day": 7, "year": 2023, "time": "4:00 PM",
+      "image": "https://www.hawaii.edu/news/wp-content/uploads/2015/09/manoa-shidler.jpg",
+      "notes": "Playing a game of jeopardy with business related questions.",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "CHEM272 Homework Help", "subject": "CHEM", "title": "272", "location": "Sinclair Library 2nd Floor", "month": 8, "day": 13, "year": 2023, "time": "10:00 AM",
+      "image": "https://i.pinimg.com/originals/5e/b9/25/5eb9251699c57918a061adb36e44a3cc.jpg",
+      "notes": "Just meeting up to work on homework together",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "ECON120 Chapter Review", "subject": "ECON", "title": "321", "location": "Hamilton Library 1st Floor", "month": 9, "day": 25, "year": 2023, "time": "2:30 PM",
+      "image": "https://manoa.hawaii.edu/library/wp-content/uploads/2017/10/Sunny-Alcove.jpg",
+      "notes": "Reviewing the last chapter we all just learned in class",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "ECON321", "subject": "ECON", "title": "314", "location": "Paradise Palms", "month": 9, "day": 9, "year": 2023, "time": "10:30 AM",
+      "image": "https://fastly.4sqi.net/img/general/600x600/52016747_DPEndRKnwEDKHUx4GexegzRG5yh5kbtawdtX_oxZLZE.jpg",
+      "notes": "figuring out the homework together",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "BUS621 Business Stats", "subject": "BUS", "title": "621", "location": "Shidler College of Business", "month": 10, "day": 22, "year": 2023, "time": "1:00 PM",
+      "image": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fshidler.hawaii.edu%2Ftim%2Fmandatory-advising&psig=AOvVaw0l2K4RIHnPI4K7Rs-QMjEv&ust=1683093580307000&source=images&cd=vfe&ved=0CA0QjRxqFwoTCJDvmav61f4CFQAAAAAdAAAAABAD",
+      "notes": "Taking practice tests to study for the upcoming exam.",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "ENG308 Peer Editing", "subject": "ENG", "title": "308", "location": "Hamilton Bridge Area", "month": 9, "day": 23, "year": 2023, "time": "9:00 AM",
+      "image": "https://manoa.hawaii.edu/library/wp-content/uploads/2017/10/mailroom.jpg",
+      "notes": "Reviewing each others papers and peer editing for corrections.",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "ENG313 Creative Writing Brainstorming", "subject": "ENG", "title": "313", "location": "Paradise Palms Outside Tables", "month": 11, "day": 16, "year": 2023, "time": "2:00 PM",
+      "image": "https://manoa.hawaii.edu/food/wp-content/uploads/sites/37/2020/05/header2-.jpg",
+      "notes": "Coming up with writing topics",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "HIST284 Review Game", "subject": "HIST", "title": "284", "location": "Campus Center Food Court", "month": 11, "day": 8, "year": 2023, "time": "11:30 AM",
+      "image": "https://fastly.4sqi.net/img/general/200x200/493107_JMX5j_jJcvznj8RaXNXSKHI7E9np8ZNMvqmZDpIXTuU.jpg",
+      "notes": "We'll be getting into groups and doing a review game to study.",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "MATH241 Final Exam Study", "subject": "ICS", "title": "314", "location": "Brito Bowls", "month": 4, "day": 29, "year": 2023, "time": "12:00 PM",
+      "image": "https://bloximages.newyork1.vip.townnews.com/manoanow.org/content/tncms/assets/v3/editorial/f/56/f5624144-ac18-11ed-90bc-a7da60bbbc64/63eb022d94a95.image.png?resize=1200%2C787",
+      "notes": "Working together to ace the exam",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "NURS211 Study Sesh", "subject": "NURS", "title": "211", "location": "Paradise Palms", "month": 5, "day": 2, "year": 2023, "time": "12:00 PM",
+      "image": "https://s3-media0.fl.yelpcdn.com/bphoto/v8qopPpKs8kK6IUuMrohpA/l.jpg",
+      "notes": "studying for the final",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "PHYS480 Study Group", "subject": "PHYS", "title": "480", "location": "Hamilton Library", "month": 9, "day": 3, "year": 2023, "time": "1:00 PM",
+      "image": "https://manoa.hawaii.edu/library/wp-content/uploads/2017/10/1st-floor-addition-group-study.jpg",
+      "notes": "cause we be struggling",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "NURS220 homework help", "subject": "NURS", "title": "220", "location": "Tables outside Starbucks", "month": 8, "day": 16, "year": 2023, "time": "11:00 AM",
+      "image": "https://www.hawaii.edu/news/wp-content/uploads/2019/09/manoa-campus-center.jpg",
+      "notes": "working on homework together",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "ART479 Project Brainstorming", "subject": "ART", "title": "479", "location": "Art Building 3rd Floor", "month": 10, "day": 11, "year": 2023, "time": "2:00 PM",
+      "image": "https://fastly.4sqi.net/img/general/600x600/_54HvXJGGu1KM9nPRKU_foYdv3KEu4zxcd6V1h4DAaU.jpg",
+      "notes": "teamwork makes the dream work",
+      "owner": "admin@foo.com"
+    },
+    {
       "name": "CHEM161 Final Exam Study Group", "subject": "CHEM", "title": "161", "location": "Discord", "month": 4, "day": 5, "year": 2023, "time": "1:11 PM",
       "image": "https://media.cybernews.com/images/featured/2020/07/Discord-privacy-tips-that-you-should-use-.jpg",
       "notes": "how to do significant figures?",

@@ -38,7 +38,7 @@ const ListCourses = () => {
         <Col md={7}>
           <Col className="text-center">
             <h2>List Courses</h2>
-
+            <Button className="pink-btn btn-lg home-page-btn" href="../list" id="goto-list-sessions-page">View Sessions</Button>
             {/* Filter */}
             <Row>
               <div id="filter-stuff">

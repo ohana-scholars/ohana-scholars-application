@@ -20,8 +20,8 @@ const ProfileCard = ({ student, userID }) => {
 
   return (
     <Col>
-      <Card style={{ borderRadius: '10px' }} className="text-center h-100 pb-3">
-        <Card.Header className="text-center">
+      <Card style={{ borderRadius: '10px' }} className="text-center h-100 pb-3 participant">
+        <Card.Header className="text-center formCSS">
           <ListGroup.Item className="p-4">
             <Image
               style={{
@@ -39,7 +39,6 @@ const ProfileCard = ({ student, userID }) => {
         </Card.Header>
         <Card.Body>
           {/* eslint-disable-next-line react/prop-types */}
-          <Card.Text>{student.description}</Card.Text>
         </Card.Body>
         <div className="d-flex text-black">
           <div className="flex-grow-1 ms-3">
