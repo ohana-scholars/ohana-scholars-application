@@ -5,7 +5,7 @@ import { ListGroup } from 'react-bootstrap';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 const Participant = () => (
-  <ListGroup.Item>
+  <ListGroup.Item className="participant">
     <p>{Meteor.users.findOne().username}</p>
   </ListGroup.Item>
 );
