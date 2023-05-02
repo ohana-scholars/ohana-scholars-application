@@ -3,12 +3,10 @@ import { check } from 'meteor/check';
 import { Roles } from 'meteor/alanning:roles';
 import '/imports/startup/server/Accounts';
 import '/imports/startup/server/Publications';
+// import '/imports/startup/server/EmailStartup';
 import '/imports/startup/server/Mongo';
 import { Email } from 'meteor/email';
-
-Meteor.startup(function () {
-  process.env.MAIL_URL = 'smtp://postmaster@sandboxc6970605c59146f78b4e7d8b78c0de5f.mailgun.org:96606b994748626d3272ff4f6b5ce455-102c75d8-9db526c5@smtp.mailgun.org:587';
-});
+import '';
 
 Meteor.methods({
   // eslint-disable-next-line meteor/audit-argument-checks
