@@ -65,33 +65,61 @@ class NavBar {
   }
 
   async gotoAddSessionPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
     await testController.click('#add-session-nav');
   }
 
   async gotoListSessionPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
     await testController.click('#list-sessions-nav');
   }
 
   async gotoListCoursesPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
     await testController.click('#list-courses-nav');
   }
 
   async gotoAddCoursePage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
     await testController.click('#admin-dropdown-nav');
     await testController.click('#add-course-nav');
   }
 
   async gotoListSessionAdminPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
     await testController.click('#admin-dropdown-nav');
     await testController.click('#list-sessions-admin-nav');
   }
 
   async gotoListCoursesAdminPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
     await testController.click('#admin-dropdown-nav');
     await testController.click('#list-courses-admin-nav');
   }
 
   async gotoListUsersAdminPage(testController) {
+    const visible = await Selector('#basic-navbar-nav').visible;
+    if (!visible) {
+      await testController.click('button.navbar-toggler');
+    }
     await testController.click('#admin-dropdown-nav');
     await testController.click('#list-users-admin-nav');
   }

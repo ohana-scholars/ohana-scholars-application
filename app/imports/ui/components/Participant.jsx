@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { ListGroup } from 'react-bootstrap';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single row in the List Participant table. See pages/ListParticipant.jsx. */
 const Participant = () => (
   <ListGroup.Item className="participant">
     <p>{Meteor.users.findOne().username}</p>

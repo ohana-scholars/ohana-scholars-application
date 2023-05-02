@@ -15,8 +15,6 @@ const formSchema = new SimpleSchema({
   username: String,
   description: String,
   profilePictureLink: String,
-  // courses: String,
-  // interests: String,
 });
 
 const bridge = new SimpleSchema2Bridge(formSchema);
@@ -46,7 +44,7 @@ const AddProfile = () => {
   }
   let fRef = null;
   return (
-    <Container className="py-3" id="add-profile-page">
+    <Container className="py-3 formCSS" id="add-profile-page">
       <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="pb-2 text-center"><h2>Create a Profile</h2></Col>
@@ -65,8 +63,6 @@ const AddProfile = () => {
                   <Col><LongTextField name="description" label="Your Bio" id="addprofile-form-description" /></Col>
                 </Row>
                 <SubmitField value="Submit" id="addprofile-form-submit" />
-                {/* <TextField name="courses" /> */}
-                {/* <TextField name="interests" /> */}
                 <ErrorsField />
               </Card.Body>
             </Card>

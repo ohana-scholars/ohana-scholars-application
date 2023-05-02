@@ -11,14 +11,13 @@ import { Sessions } from '../../api/sessions/Sessions';
 
 const bridge = new SimpleSchema2Bridge(Sessions.schema);
 
-/* Renders the EditStuff page for editing a single document. */
+/* Renders the EditSession page for editing a single document. */
 const EditSession = () => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const { _id } = useParams();
-  // console.log('EditStuff', _id);
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
-    // Get access to Stuff documents.
+    // Get access to Session documents.
     const subscription = Meteor.subscribe(Sessions.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
@@ -29,7 +28,6 @@ const EditSession = () => {
       ready: rdy,
     };
   }, [_id]);
-  // console.log('EditStuff', doc, ready);
   // On successful submit, insert the data.
   const submit = (data) => {
     const { name, subject, title, location, month, day, time, notes, participants, image } = data;

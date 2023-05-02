@@ -8,7 +8,7 @@ import { Courses } from '../../api/courses/Courses';
 import SubjectFilter from '../components/SubjectsFilter';
 import CourseAdmin from '../components/CourseAdmin';
 
-/* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/* Renders a table containing all of the Course documents. Use <CourseItem> to render each row. */
 const ListCoursesAdmin = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [filter, setFilter] = useState({ subject: '' });
@@ -16,11 +16,11 @@ const ListCoursesAdmin = () => {
   const { ready, courses } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
+    // Get access to Course documents.
     const subscription = Meteor.subscribe(Courses.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
-    // Get the Stuff documents
+    // Get the Course documents
     const courseItems = Courses.collection.find({}).fetch();
     return {
       courses: courseItems,
@@ -39,7 +39,7 @@ const ListCoursesAdmin = () => {
             <h2>List Courses (Admin)</h2>
             {/* Filter */}
             <Row>
-              <div id="filter-stuff">
+              <div id="filter-course">
                 <Row>
                   <Col md={{ offset: 10 }}>
                     <Button onClick={handleFilterClick} id="filter-courses-btn" className="filterButton pink-btn">Filter</Button>

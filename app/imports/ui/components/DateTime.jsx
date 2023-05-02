@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Show date time for homepage
 const DateTime = () => {
   const showDate = new Date();
   const displayDate = `Today is ${showDate.toDateString()}.`;

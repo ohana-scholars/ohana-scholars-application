@@ -7,13 +7,13 @@ import { Sessions } from '../../api/sessions/Sessions';
 import SessionAdmin from '../components/SessionAdmin';
 import { Participants } from '../../api/participant/Participants';
 
-/* Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/* Renders a table containing all of the Sesssion documents. Use <SesssionItem> to render each row. */
 const ListSessionsAdmin = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { ready, sessions, participants } = useTracker(() => {
     // Participant that this subscription will get cleaned up
     // when your component is unmounted or deps change.
-    // Get access to Stuff documents.
+    // Get access to Sesssion documents.
     const subscription = Meteor.subscribe(Sessions.userPublicationName);
     const subscription2 = Meteor.subscribe(Participants.userPublicationName);
     // Determine if the subscription is ready

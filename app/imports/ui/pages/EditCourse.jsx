@@ -12,13 +12,13 @@ import { Courses } from '../../api/courses/Courses';
 const bridge = new SimpleSchema2Bridge(Courses.schema);
 
 /* Renders the EditCourse page for editing a single document. */
-const EditStuff = () => {
+const EditCourse = () => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const { _id } = useParams();
   // console.log('EditCourse', _id);
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
-    // Get access to Stuff documents.
+    // Get access to Course documents.
     const subscription = Meteor.subscribe(Courses.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription.ready();
@@ -62,4 +62,4 @@ const EditStuff = () => {
   ) : <LoadingSpinner />;
 };
 
-export default EditStuff;
+export default EditCourse;

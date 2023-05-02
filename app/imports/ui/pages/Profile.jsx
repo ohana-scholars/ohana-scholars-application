@@ -11,9 +11,6 @@ import { Reputation } from '../../api/reputation/Reputation';
 /* Profile Page based on default data (Will implement renderer later) */
 const Profile = () => {
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
-  // const { youAreThatStudent } = useTracker(() => ({
-  // youAreThatStudent: Meteor.user() ? Meteor.user().username : '',
-  // }}), []);
   const { ready, student, reputation } = useTracker(() => {
     // Note that this subscription will get cleaned up
     // when your component is unmounted or deps change.
@@ -71,24 +68,8 @@ const Profile = () => {
                           Rating: {avgRating}/10 | <Link className="link" to={`/reviews/${userId}`} id="list-reviews-btn">See reviews</Link>
                         </Card.Subtitle>
                       )}
-                      { /* youAreThatStudent ? '' : (
-                      <Link to="/rateStudent"><Button className="pink-btn">Rate Student</Button></Link>) */ }
                       <Link to={`/rateStudent/${userId}`}><Button className="pink-btn home-page-btn" id="rate-student-btn">Rate Student</Button></Link>
                     </div>
-                    {/* <Row> */}
-                    {/*  <Col className="px-2 ps-5"> */}
-                    {/*    <div>Interests: </div> */}
-                    {/*    <ul style={{ listStyle: 'none' }}> */}
-                    {/*      {student.interests.map((interest, index) => <li key={index}>{interest}</li>)} */}
-                    {/*    </ul> */}
-                    {/*  </Col> */}
-                    {/*  <Col> */}
-                    {/*    <div>Classes: </div> */}
-                    {/*    <ul style={{ listStyle: 'none' }}> */}
-                    {/*      {student.classes.map((clas, index) => <li key={index}>{clas}</li>)} */}
-                    {/*    </ul> */}
-                    {/*  </Col> */}
-                    {/* </Row> */}
                     <Card.Body>{student[0].description}</Card.Body>
                     <Card.Footer>
                       <Link className="link" to={`/editProfile/${student[0]._id}`} id="edit-profile-btn">Edit Profile</Link>

@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /**
- * The ReputationCollection. It encapsulates state and variable values for stuff.
+ * The ReputationCollection. It encapsulates state and variable values for reputation.
  */
 class ReputationCollection {
   constructor() {
@@ -30,7 +30,7 @@ class ReputationCollection {
 }
 
 /**
- * The singleton instance of the StuffsCollection.
+ * The singleton instance of the ReputationsCollection.
  * @type {ReputationCollection}
  */
 export const Reputation = new ReputationCollection();

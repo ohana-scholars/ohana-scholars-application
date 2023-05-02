@@ -8,14 +8,14 @@ import { Student } from '../../api/student/Student';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Review from '../components/Review';
 
-/* Renders the AddStuff page for adding a document. */
+/* Renders the List Review page. */
 const ListReviews = () => {
   const { ready, student, reviews } = useTracker(() => {
     const subscription1 = Meteor.subscribe(Student.userPublicationName);
     const subscription2 = Meteor.subscribe(Reputation.userPublicationName);
     // Determine if the subscription is ready
     const rdy = subscription1.ready() && subscription2;
-    // Get the Courses documents
+    // Get the student and reputation documents
     const studentItems = Student.collection.find({}).fetch();
     const repItems = Reputation.collection.find({ user_id: Meteor.userId() }).fetch();
     return {

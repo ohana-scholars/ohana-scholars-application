@@ -29,8 +29,6 @@ const ListCourses = () => {
   };
 
   const subjects = _.uniq(_.pluck(courses, 'subject'));
-  // const titles = _.pluck(courses, 'title');
-  // const names = _.pluck(courses, 'name');
 
   return (ready ? (
     <Container className="py-3" id="list-courses-page">

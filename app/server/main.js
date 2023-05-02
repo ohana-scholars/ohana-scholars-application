@@ -32,15 +32,4 @@ Meteor.methods({
     }
   },
 
-  // 'checkBan'(userID) {
-  //   check(userID, Object);
-  //   console.log('CHEKING STATUS');
-  //   if (Roles.userIsInRole(userID, 'banned') === true) {
-  //     console.log('RETURNING True');
-  //     return true;
-  //   }
-  //   console.log('RETURNING False');
-  //   return false;
-  // },
-
 });

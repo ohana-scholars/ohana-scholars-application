@@ -18,7 +18,7 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-/* Renders the AddStuff page for adding a document. */
+/* Renders the AddParticipant page for adding a document. */
 const AddParticipant = ({ sessionName, sessionLocation, notes, contactId, sessionDate, sessionTime }) => {
 
   // On submit, insert the data.
@@ -28,7 +28,6 @@ const AddParticipant = ({ sessionName, sessionLocation, notes, contactId, sessio
     const SendEmail = () => {
       Meteor.call('initialEmail', owner, sessionName, sessionLocation, sessionDate, sessionTime, notes);
     };
-    console.log(notes);
     Participants.collection.insert(
       { notes, contactId, owner, createdAt, sessionDate, sessionTime },
       (error) => {
@@ -43,7 +42,7 @@ const AddParticipant = ({ sessionName, sessionLocation, notes, contactId, sessio
     );
   };
 
-  // Render the form. Use Uniforms: https://github.com/vazco/uniforms
+  // Render the form
   let fRef = null;
   return (
     <Container className="py-3">

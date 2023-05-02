@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /**
- * The StudentCollection. It encapsulates state and variable values for stuff.
+ * The StudentCollection. It encapsulates state and variable values for student.
  */
 class StudentCollection {
   constructor() {
@@ -17,9 +17,6 @@ class StudentCollection {
       username: String,
       description: String,
       profilePictureLink: String,
-      // courses: String, // Add later when collections made
-      // interests: String,
-      // reputation: Array,
       owner: String,
       _id: String,
     });

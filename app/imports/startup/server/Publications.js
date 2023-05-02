@@ -24,14 +24,15 @@ Meteor.publish(Courses.userPublicationName, function () {
   return this.ready();
 });
 
+// Publish all sessions if logged in
 Meteor.publish(Sessions.userPublicationName, function () {
   if (this.userId) {
-    // const username = Meteor.users.findOne(this.userId).username;
     return Sessions.collection.find({});
   }
   return this.ready();
 });
 
+// Publish all participants if logged in
 Meteor.publish(Participants.userPublicationName, function () {
   if (this.userId) {
     // const username = Meteor.users.findOne(this.userId).username;
@@ -40,6 +41,7 @@ Meteor.publish(Participants.userPublicationName, function () {
   return this.ready();
 });
 
+// Publish all reputations if logged in
 Meteor.publish(Reputation.userPublicationName, function () {
   if (this.userId) {
     return Reputation.collection.find();
@@ -56,6 +58,7 @@ Meteor.publish(Student.adminPublicationName, function () {
   return this.ready();
 });
 
+// Publish all sessions if admin
 Meteor.publish(Sessions.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Sessions.collection.find();
@@ -63,6 +66,7 @@ Meteor.publish(Sessions.adminPublicationName, function () {
   return this.ready();
 });
 
+// Publish all participants if admin
 Meteor.publish(Participants.adminPublicationName, function () {
   if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
     return Participants.collection.find();
@@ -70,6 +74,7 @@ Meteor.publish(Participants.adminPublicationName, function () {
   return this.ready();
 });
 
+// Publish all reputation if logged in
 Meteor.publish(Reputation.adminPublicationName, function () {
   if (this.userId) {
     return Reputation.collection.find();
@@ -85,9 +90,12 @@ Meteor.publish('userList', function () {
   return this.ready();
 
 });
-
+// Publish all user roles
 Meteor.publish('allRoles', function () {
-  return Meteor.roleAssignment.find();
+  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+    return Meteor.roleAssignment.find();
+  }
+  return this.ready();
 });
 
 // alanning:roles publication

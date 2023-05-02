@@ -1,8 +1,8 @@
 import React from 'react';
-// import { useState } from 'react';
 import { Col, Form, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
+// Filter subject component for both courses and sessions
 const SubjectFilter = ({ filter, setFilter, subjects }) => {
 
   const setSubject = (event) => {

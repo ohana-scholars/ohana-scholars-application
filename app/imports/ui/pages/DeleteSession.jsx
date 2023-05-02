@@ -15,7 +15,6 @@ const bridge = new SimpleSchema2Bridge(Sessions.schema);
 const DeleteSession = () => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const { _id } = useParams();
-  // console.log('EditStuff', _id);
   // useTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker
   const { doc, ready } = useTracker(() => {
     // Get access to sessions documents.

@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
 import { Col, Container, Image, Row } from 'react-bootstrap';
 
 /* A simple static component to render some text for the appeal page. */

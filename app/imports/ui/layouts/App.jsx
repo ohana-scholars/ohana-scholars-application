@@ -27,7 +27,6 @@ import Banned from '../pages/Banned';
 import Appeal from '../pages/Appeal';
 import RateStudent from '../pages/RateStudent';
 import ListUsersAdmin from '../pages/ListUsersAdmin';
-// import BanUser from '../pages/BanUser';
 import EditProfile from '../pages/EditProfile';
 import Profile from '../pages/Profile';
 import DeleteSession from '../pages/DeleteSession';
@@ -62,7 +61,6 @@ const App = () => {
           <Route path="/addcourse" element={<AdminProtectedRoute ready={ready}><AddCourse /></AdminProtectedRoute>} />
           <Route path="/listusersadmin" element={<AdminProtectedRoute ready={ready}><ListUsersAdmin /></AdminProtectedRoute>} />
           <Route path="/coursesAdmin" element={<AdminProtectedRoute ready={ready}><ListCoursesAdmin /></AdminProtectedRoute>} />
-          {/* <Route path="/banuser/:owner" element={<AdminProtectedRoute ready={ready}><BanUser /></AdminProtectedRoute>} /> */}
           <Route path="/listadmin" element={<AdminProtectedRoute ready={ready}><ListSessionsAdmin /></AdminProtectedRoute>} />
           <Route path="/courses" element={<ProtectedRoute><ListCourses /></ProtectedRoute>} />
           <Route path="/edit/:_id" element={<ProtectedRoute><EditSession /></ProtectedRoute>} />

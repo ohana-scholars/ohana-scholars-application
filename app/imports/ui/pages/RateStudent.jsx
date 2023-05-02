@@ -17,7 +17,7 @@ const formSchema = new SimpleSchema({
 
 const bridge = new SimpleSchema2Bridge(formSchema);
 
-/* Renders the AddStuff page for adding a document. */
+/* Renders the AddRate page for adding a document. */
 const RateStudent = () => {
   const { _id } = useParams();
   const user_id = _id;

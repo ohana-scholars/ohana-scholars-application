@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
 
 /**
- * The CoursesCollection. It encapsulates state and variable values for stuff.
+ * The CoursesCollection. It encapsulates state and variable values for courses.
  */
 class CoursesCollection {
   constructor() {

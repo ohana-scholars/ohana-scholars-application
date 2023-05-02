@@ -43,7 +43,7 @@ class SessionsCollection {
 }
 
 /**
- * The singleton instance of the StuffsCollection.
+ * The singleton instance of the SessionsCollection.
  * @type {SessionsCollection}
  */
 export const Sessions = new SessionsCollection();

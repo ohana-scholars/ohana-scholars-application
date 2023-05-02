@@ -34,7 +34,6 @@ if (Student.collection.find().count() === 0) {
   }
 }
 
-// Initialize the database with sessions
 const addSessions = (session) => {
   console.log(`  Adding: ${session.name}`);
   Sessions.collection.insert(session);
@@ -66,7 +65,7 @@ const addSession = (session) => {
   Sessions.collection.insert(session);
 };
 
-// Initialize the StuffsCollection if empty.
+// Initialize the session collection
 if (Sessions.collection.find().count() === 0) {
   if (Meteor.settings.defaultSessions) {
     console.log('Creating default sessions.');
@@ -86,6 +85,8 @@ const addRep = (rep) => {
     owner: 'admin@foo.com',
   });
 };
+
+// Initialize Reputation Collection
 
 if (Reputation.collection.find().count() === 0) {
   if (Meteor.settings.reputation) {

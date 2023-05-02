@@ -28,7 +28,7 @@ class ParticipantsCollection {
 }
 
 /**
- * The singleton instance of the StuffsCollection.
+ * The singleton instance of the ParticipantCollection.
  * @type {ParticipantsCollection}
  */
 export const Participants = new ParticipantsCollection();

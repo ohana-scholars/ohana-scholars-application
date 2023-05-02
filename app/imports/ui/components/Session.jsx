@@ -5,7 +5,7 @@ import { Image, ListGroup, Row, Col } from 'react-bootstrap';
 import Participant from './Participant';
 import AddParticipant from './AddParticipant';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single row in the List Session table. See pages/ListSession.jsx. */
 const Session = ({ session, participants }) => (
   <Card className="h-110">
     <Card.Header>
