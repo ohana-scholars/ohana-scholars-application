@@ -27,7 +27,7 @@ const ListCoursesAdmin = () => {
     <Container className="py-3">
       <Row className="justify-content-center" id="list-courses-admin-page">
         <Col md={7}>
-          <Col className="text-center">
+          <Col className="pb-2 text-center">
             <h2>List Courses (Admin)</h2>
           </Col>
           <Table striped bordered hover>

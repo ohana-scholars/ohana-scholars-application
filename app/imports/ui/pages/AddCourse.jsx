@@ -40,7 +40,7 @@ const AddCourse = () => {
     <Container className="py-3" id="add-course-page">
       <Row className="justify-content-center">
         <Col xs={5}>
-          <Col className="text-center"><h2>Add Course</h2></Col>
+          <Col className="pb-2 text-center"><h2>Add Course</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>

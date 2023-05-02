@@ -38,7 +38,7 @@ const ProfileCard = ({ student, userID }) => {
           <Card.Text>{student.description}</Card.Text>
         </Card.Body>
         <div className="d-flex text-black">
-          <div className="flex-grow-1 ms-3">
+          <div className="flex-grow-1 pb-3">
             {(Roles.userIsInRole(Meteor.userId(), 'admin') === true) && (// <Link to={`/banuser/${student.owner}`}><Button variant="danger">Ban User</Button></Link>
               <Button variant="danger" onClick={banUser}>Ban User</Button>
               //   <Button variant="danger">Ban User</Button>

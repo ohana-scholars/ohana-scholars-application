@@ -33,8 +33,8 @@ const ListSessionsAdmin = () => {
     <Container className="py-3" id="list-sessions-admin-page">
       <Row className="justify-content-center">
         <Col>
-          <Col className="text-center">
-            <h2>List Sessions</h2>
+          <Col className="pb-2 text-center">
+            <h2>List Sessions (Admin)</h2>
           </Col>
           <Row xs={1} md={2} lg={3} className="g-4">
             {sessions.map((session) => (<Col key={session._id}><SessionAdmin session={session} participants={participants.filter(participant => (participant.contactId === session._id))} /></Col>))}

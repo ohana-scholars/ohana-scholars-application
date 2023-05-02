@@ -33,9 +33,9 @@ const ListSessions = () => {
     <Container className="py-3" id="list-sessions-page">
       <Row className="justify-content-center">
         <Col>
-          <Col className="pb-3 text-center">
+          <Col className="pb-2 text-center">
             <h2>List Sessions</h2>
-            <Button className="pink-btn btn-lg" href="../add" id="goto-add-session-page">Create New Session</Button>
+            <Button className="pink-btn btn-lg home-page-btn" href="../add" id="goto-add-session-page">Create New Session</Button>
           </Col>
           <Row xs={1} md={2} lg={3} className="g-4">
             {sessions.map((session) => (<Col key={session._id}><Session session={session} participants={participants.filter(participant => (participant.contactId === session._id))} /></Col>))}
@@ -44,7 +44,7 @@ const ListSessions = () => {
       </Row>
       <Row className="justify-content-center">
         <Col xs={6} className="pt-3 text-center">
-          <Button className="pink-btn btn-lg" href="../add">Create New Session</Button>
+          <Button className="pink-btn btn-lg home-page-btn" href="../add">Create New Session</Button>
         </Col>
       </Row>
     </Container>

@@ -30,11 +30,11 @@ const ListUsersAdmin = () => {
   return (ready ? (
     <Container className="py-3" id="list-users-admin-page">
       <Row>
-        <Col className="text-center">
+        <Col className="pb-2 text-center">
           <h2>All Users</h2>
         </Col>
       </Row>
-      <Row xs={1} md={2} lg={4} className="g-2">
+      <Row xs={1} md={2} lg={4} className="pb-3 g-2">
         {students.map((student) => (
           <ProfileCard
             key={student._id}
