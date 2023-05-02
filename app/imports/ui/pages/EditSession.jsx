@@ -1,7 +1,7 @@
 import React from 'react';
 import swal from 'sweetalert';
 import { Card, Col, Container, Row } from 'react-bootstrap';
-import { AutoForm, ErrorsField, HiddenField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, HiddenField, LongTextField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useTracker } from 'meteor/react-meteor-data';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -48,16 +48,16 @@ const EditSession = () => {
               <Card.Body>
                 <Row>
                   <Col><TextField name="name" /></Col>
-                  <Col><TextField name="subject" /></Col>
-                  <Col><TextField name="title" /></Col>
+                  <Col><SelectField name="subject" /></Col>
+                  <Col><HiddenField name="title" /></Col>
                 </Row>
                 <Row>
                   <Col><TextField name="location" /></Col>
                   <Col><TextField name="image" /></Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="month" /></Col>
-                  <Col><TextField name="day" /></Col>
+                  <Col><SelectField name="month" /></Col>
+                  <Col><SelectField name="day" /></Col>
                   <Col><TextField name="time" /></Col>
                 </Row>
                 <LongTextField name="notes" />
