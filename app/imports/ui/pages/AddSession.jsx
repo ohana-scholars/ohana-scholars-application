@@ -56,7 +56,7 @@ const AddSession = () => {
     <Container className="py-3 formCSS" id="add-session-page">
       <Row className="justify-content-center">
         <Col xs={10}>
-          <Col className="text-center"><h2>Create New Session</h2></Col>
+          <Col className="pb-2 text-center"><h2>Create New Session</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
@@ -82,7 +82,11 @@ const AddSession = () => {
           </AutoForm>
         </Col>
       </Row>
-      <Button href="../list">Go to List Sessions Page</Button>
+      <Row className="justify-content-center">
+        <Col xs={6} className="pt-2 text-center">
+          <Button href="../list" className="pink-btn btn-lg home-page-btn">Go to List Sessions Page</Button>
+        </Col>
+      </Row>
     </Container>
   );
 };
