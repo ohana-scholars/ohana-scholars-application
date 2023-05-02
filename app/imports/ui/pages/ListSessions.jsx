@@ -50,7 +50,7 @@ const ListSessions = () => {
                 <Button onClick={handleFilterClick} className="filterButton pink-btn">Filter</Button>
               </Col>
             </Row>
-            <Col>
+            <Col className="mt-4">
               {showFilter && (
                 <SubjectFilter filter={filter} setFilter={setFilter} subjects={subjects} />
               )}

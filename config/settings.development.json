@@ -103,12 +103,6 @@
       "owner": "admin@foo.com"
     },
     {
-      "name": "Law Debate", "subject": "LAW", "title": "521", "location": "William Richardson School of Law", "month": 7, "day": 23, "year": 2023, "time": "2:00 PM",
-      "image": "https://www.hawaii.edu/news/wp-content/uploads/2019/06/manoa-law-gnrc.jpg",
-      "notes": "There's gonna be tonnes of yelling!",
-      "owner": "admin@foo.com"
-    },
-    {
       "name": "ICS241 Final Exam Study", "subject": "ICS", "title": "241", "location": "Discord", "month": 5, "day": 31, "year": 2023, "time": "12:00 PM",
       "image": "https://media.cybernews.com/images/featured/2020/07/Discord-privacy-tips-that-you-should-use-.jpg",
       "notes": "pls help i'm so confused",
@@ -118,12 +112,6 @@
       "name": "Art Contest", "subject": "ART", "title": "202", "location": "Discord", "month": 4, "day": 1, "year": 2023, "time": "11:00 PM",
       "image": "https://media.cybernews.com/images/featured/2020/07/Discord-privacy-tips-that-you-should-use-.jpg",
       "notes": "Show off your drawing skills!",
-      "owner": "admin@foo.com"
-    },
-    {
-      "name": "LING Final Paper Help", "subject": "LING", "title": "102", "location": "Hamilton Library Basement", "month": 4, "day": 25, "year": 2023, "time": "5:00 PM",
-      "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg",
-      "notes": "Come get help with your paper!",
       "owner": "admin@foo.com"
     },
     {
@@ -142,12 +130,6 @@
       "name": "CHEM161 Final Exam Study Group", "subject": "CHEM", "title": "161", "location": "Discord", "month": 4, "day": 5, "year": 2023, "time": "1:11 PM",
       "image": "https://media.cybernews.com/images/featured/2020/07/Discord-privacy-tips-that-you-should-use-.jpg",
       "notes": "how to do significant figures?",
-      "owner": "admin@foo.com"
-    },
-    {
-      "name": "VIET101 Practice", "subject": "VIET", "title": "101", "location": "Vietnam", "month": "Apr", "day": 15, "year": 2023, "time": "12:12 AM",
-      "image": "https://cdn.britannica.com/90/183790-050-3B1A1E1C/World-Data-Locator-Map-Vietnam.jpg",
-      "notes": "Bạn là một người tốt nếu bạn đến!",
       "owner": "admin@foo.com"
     }
   ],
