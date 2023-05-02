@@ -1,6 +1,5 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
-import { number } from 'prop-types';
 
 /**
  * The SessionsCollection. It encapsulates state and variable values for sessions.
@@ -14,7 +13,11 @@ class SessionsCollection {
     // Define the structure of each document in the collection.
     this.schema = new SimpleSchema({
       name: String,
-      course: String,
+      subject: {
+        type: String,
+        allowedValues: ['ART', 'BIOL', 'BUS', 'CHEM', 'ECON', 'ENG', 'HIST', 'ICS', 'MATH', 'NURS', 'PHYS'],
+      },
+      title: String,
       location: String,
       year: Number,
       month: {

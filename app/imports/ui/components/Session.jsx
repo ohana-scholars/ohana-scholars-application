@@ -10,7 +10,7 @@ const Session = ({ session, participants }) => (
   <Card className="h-110">
     <Card.Header>
       <Row>
-        <Col><Image src={session.image} width={75} /></Col>
+        <Col className="py-2"><Image rounded src={session.image} width={200} /></Col>
       </Row>
       <Card.Title>{session.name}</Card.Title>
       <Card.Subtitle>{session.month} {session.day}, {session.year} | {session.time}</Card.Subtitle>
@@ -34,7 +34,8 @@ const Session = ({ session, participants }) => (
 Session.propTypes = {
   session: PropTypes.shape({
     name: PropTypes.string,
-    course: PropTypes.string,
+    subject: PropTypes.string,
+    title: PropTypes.string,
     location: PropTypes.string,
     year: PropTypes.number,
     month: PropTypes.number,

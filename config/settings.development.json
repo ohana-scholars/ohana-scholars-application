@@ -5,21 +5,76 @@
     { "email": "john@foo.com", "password": "changeme" }
   ],
 
-  "defaultData": [
-    { "name": "Basket", "quantity": 3, "owner": "john@foo.com", "condition": "excellent" },
-    { "name": "Bicycle", "quantity": 2, "owner": "john@foo.com", "condition": "poor" },
-    { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
-    { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
-  ],
-
   "courses": [
-    { "subject": "ICS", "title":  "314", "name":  "Software Engineering I" },
+    { "subject": "ART", "title": "101", "name": "Introduction to the Visual Arts" },
+    { "subject": "ART", "title": "113", "name": "Introduction to Drawing" },
+    { "subject": "ART", "title": "189", "name": "Introduction to Hawaiian Art" },
+    { "subject": "ART", "title": "201", "name": "Introduction to Electronic Arts" },
+    { "subject": "ART", "title": "202", "name": "Introduction to Digital Imaging" },
+    { "subject": "ART", "title": "213", "name": "Intermediate Drawing" },
+    { "subject": "ART", "title": "479", "name": "Art of Hawaii" },
+    { "subject": "BIOL", "title": "123", "name": "Hawaiian Environmental Science" },
+    { "subject": "BIOL", "title": "171", "name": "Introduction to Biology I" },
+    { "subject": "BIOL", "title": "171L", "name": "Introduction to Biology I Lab" },
+    { "subject": "BIOL", "title": "172", "name": "Introduction to Biology II" },
+    { "subject": "BIOL", "title": "172L", "name": "Introduction to Biology II Lab" },
+    { "subject": "BIOL", "title": "220", "name": "Biostatistics" },
+    { "subject":  "BUS", "title":  "200", "name":  "Introduction to Business" },
+    { "subject":  "BUS", "title":  "312", "name":  "Principles of Marketing" },
+    { "subject":  "BUS", "title":  "314", "name":  "Business Finance" },
+    { "subject":  "BUS", "title":  "621", "name":  "Business Statistics" },
+    { "subject":  "BUS", "title":  "623", "name":  "Marketing Management" },
+    { "subject":  "CHEM", "title":  "161", "name":  "General Chemistry I" },
+    { "subject":  "CHEM", "title":  "161L", "name":  "General Chemistry I Lab" },
+    { "subject":  "CHEM", "title":  "162", "name":  "General Chemistry II" },
+    { "subject":  "CHEM", "title":  "162L", "name":  "General Chemistry II Lab" },
+    { "subject":  "CHEM", "title":  "272", "name":  "Organic Chemistry I" },
+    { "subject":  "CHEM", "title":  "272L", "name":  "Organic Chemistry I Lab" },
+    { "subject":  "CHEM", "title":  "351", "name":  "Physical Chemistry I" },
+    { "subject":  "CHEM", "title":  "351L", "name":  "Physical Chemistry I Lab" },
+    { "subject":  "ECON", "title":  "120", "name":  "Introduction to Economics" },
+    { "subject":  "ECON", "title":  "130", "name":  "Principles of Microeconomics" },
+    { "subject":  "ECON", "title":  "131", "name":  "Principles of Macroeconomics" },
+    { "subject":  "ECON", "title":  "256", "name":  "Data Analysis and Visualization" },
+    { "subject":  "ECON", "title":  "311", "name":  "The Economy of Hawaii" },
+    { "subject":  "ECON", "title":  "321", "name":  "Introduction to Statistics" },
+    { "subject":  "ENG", "title":  "100", "name":  "Composition" },
+    { "subject":  "ENG", "title":  "200", "name":  "Composition II" },
+    { "subject":  "ENG", "title":  "209", "name":  "Business Writing" },
+    { "subject":  "ENG", "title":  "308", "name":  "Technical Writing" },
+    { "subject":  "ENG", "title":  "313", "name":  "Creative Writing" },
+    { "subject":  "HIST", "title":  "151", "name":  "World History to 1500" },
+    { "subject":  "HIST", "title":  "152", "name":  "World History since 1500" },
+    { "subject":  "HIST", "title":  "155", "name":  "Issues in World History" },
+    { "subject":  "HIST", "title":  "281", "name":  "Introduction to American History" },
+    { "subject":  "HIST", "title":  "284", "name":  "History of the Hawaiian Islands" },
+    { "subject":  "HIST", "title":  "296", "name":  "Topics in History" },
+    { "subject":  "ICS", "title":  "111", "name":  "Introduction to Computer Science" },
+    { "subject":  "ICS", "title":  "141", "name":  "Discrete Mathematics for Computer Science" },
+    { "subject":  "ICS", "title":  "211", "name":  "Introduction to Computer Science II" },
+    { "subject":  "ICS", "title":  "241", "name":  "Discrete Mathematics for Computer Science II" },
     { "subject":  "ICS", "title":  "311", "name":  "Algorithms" },
-    { "subject":  "LING", "title":  "102", "name":  "Intro to the Study of Language" },
-    { "subject":  "FIL", "title":  "101", "name":  "Beginning Filipino" },
-    { "subject":  "IP", "title":  "364", "name":  "Philippine Popular Culture" },
-    { "subject":  "ENG", "title":  "100", "name":  "Composition I" },
-    { "subject":  "CHEM", "title":  "272", "name":  "Organic Chemistry I" }
+    { "subject":  "ICS", "title":  "314", "name":  "Software Engineering I" },
+    { "subject":  "ICS", "title":  "414", "name":  "Software Engineering II" },
+    { "subject":  "ICS", "title":  "425", "name":  "Computer Security and Ethics" },
+    { "subject":  "MATH", "title":  "140", "name":  "Precalculus: Trigonometry and Analytic Geometry" },
+    { "subject":  "MATH", "title":  "241", "name":  "Calculus I" },
+    { "subject":  "MATH", "title":  "242", "name":  "Calculus II" },
+    { "subject":  "MATH", "title":  "243", "name":  "Calculus III" },
+    { "subject":  "MATH", "title":  "244", "name":  "Calculus IV" },
+    { "subject":  "NURS", "title":  "200", "name":  "Introduction to Professional Nursing I" },
+    { "subject":  "NURS", "title":  "201", "name":  "Introduction to Professional Nursing II" },
+    { "subject":  "NURS", "title":  "211", "name":  "Professionalism in Nursing" },
+    { "subject":  "NURS", "title":  "220", "name":  "Health and Illness I" },
+    { "subject":  "NURS", "title":  "220L", "name":  "Health and Illness I Lab" },
+    { "subject":  "PHYS", "title":  "170", "name":  "General Physics I" },
+    { "subject":  "PHYS", "title":  "170L", "name":  "General Physics I Lab" },
+    { "subject":  "PHYS", "title":  "272", "name":  "General Physics II" },
+    { "subject":  "PHYS", "title":  "272L", "name":  "General Physics II Lab" },
+    { "subject":  "PHYS", "title":  "274", "name":  "General Physics III" },
+    { "subject":  "PHYS", "title":  "274L", "name":  "General Physics III Lab" },
+    { "subject":  "PHYS", "title":  "480", "name":  "Quantum Mechanics I" },
+    { "subject":  "PHYS", "title":  "480L", "name":  "Advanced Physics Lab" }
   ],
 
   "students": [
@@ -29,18 +84,57 @@
   ],
 
   "defaultSessions": [{
-    "name": "ICS314 Final Exam Study Group", "course": "ICS314", "location": "Hamilton Library Basement", "year": 2023, "month": 4, "day": 15, "time": "1:00 PM",
+    "name": "ICS314 Final Exam Study Group", "subject": "ICS",
+    "title": "314", "location": "Hamilton Library Basement", "year": 2023, "month": 4, "day": 15, "time": "1:00 PM",
     "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg",
     "notes": "Bring your own laptop!",
     "owner": "john@foo.com"
-  }
-  ],
-  
-  "emails": [
-    { "sender": "john@foo.com", "receiver":  "314", "date":  "1/1/20023", "title": "Schedule Study Session", "body": "The study group session will be held at ", "timePlace": "1:00 PM in UH Manoa Hamilton Library." }
+  },
+    {
+      "name": "ICS311 Final Exam Study Group", "subject": "ICS", "title": "311", "location": "Hamilton Library Basement", "month": 5, "day": 11, "year": 2023, "time": "4:00 PM",
+      "image": "https://www.hawaii.edu/news/wp-content/uploads/2019/09/manoa-campus-center.jpg",
+      "notes": "We're gonna lose our minds!",
+      "owner": "john@foo.com"
+    },
+    {
+      "name": "CHEM162 Exam 3 Study Session", "subject": "CHEM", "title": "162", "location": "Campus Center", "month": 3, "day": 15, "year": 2023, "time": "1:00 AM",
+      "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg",
+      "notes": "I hate chem with a passion but we gotta study still.",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "ICS241 Final Exam Study", "subject": "ICS", "title": "241", "location": "Discord", "month": 5, "day": 31, "year": 2023, "time": "12:00 PM",
+      "image": "https://media.cybernews.com/images/featured/2020/07/Discord-privacy-tips-that-you-should-use-.jpg",
+      "notes": "pls help i'm so confused",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "Art Contest", "subject": "ART", "title": "202", "location": "Discord", "month": 4, "day": 1, "year": 2023, "time": "11:00 PM",
+      "image": "https://media.cybernews.com/images/featured/2020/07/Discord-privacy-tips-that-you-should-use-.jpg",
+      "notes": "Show off your drawing skills!",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "ICS Hackathon", "subject": "ICS", "title": "314", "location": "Hamilton Library Basement", "month": 4, "day": 25, "year": 2023, "time": "1:37 PM",
+      "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg",
+      "notes": "Time to screw with people's websites!",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "ICS314 Final Exam Study Group 2", "subject": "ICS", "title": "314", "location": "Hamilton Library Basement", "month": 4, "day": 16, "year": 2023, "time": "2:00 PM",
+      "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg",
+      "notes": "We're better than the other study group",
+      "owner": "admin@foo.com"
+    },
+    {
+      "name": "CHEM161 Final Exam Study Group", "subject": "CHEM", "title": "161", "location": "Discord", "month": 4, "day": 5, "year": 2023, "time": "1:11 PM",
+      "image": "https://media.cybernews.com/images/featured/2020/07/Discord-privacy-tips-that-you-should-use-.jpg",
+      "notes": "how to do significant figures?",
+      "owner": "admin@foo.com"
+    }
   ],
 
   "reputation": [
-    { "rating": 9, "reason": "bc he's baller like that", "owner": "admin@foo.com" }
+    { "rating": 9, "reason": "They were a great help to me! They made sure I kept focused throughout the session, and even though it was a rigorous process, I came out of it feeling more confident about the upcoming final!", "owner": "admin@foo.com" }
   ]
 }
