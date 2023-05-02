@@ -37,10 +37,10 @@ const AddSession = () => {
 
   // On submit, insert the data.
   const submit = (data, formRef) => {
-    const { name, subject, title, location, month, day, time, notes, image } = data;
+    const { name, subject, title, location, month, day, year, time, notes, image } = data;
     const owner = Meteor.user().username;
     Sessions.collection.insert(
-      { name, subject, title, location, month, day, time, notes, image, owner },
+      { name, subject, title, location, month, day, year, time, notes, image, owner },
 
       (error) => {
         if (error) {
@@ -64,21 +64,22 @@ const AddSession = () => {
             <Card>
               <Card.Body>
                 <Row>
-                  <Col><TextField name="name" /></Col>
-                  <Col><SelectField name="subject" /></Col>
+                  <Col><TextField name="name" id="add-session-field-name" /></Col>
+                  <Col><SelectField name="subject" defaultValue="ART" placeholder="ART" id="add-session-field-subject" /></Col>
                   <HiddenField name="title" value="101" />
                 </Row>
                 <Row>
-                  <Col><TextField name="location" /></Col>
-                  <Col><TextField name="image" /></Col>
+                  <Col><TextField name="location" id="add-session-field-location" /></Col>
+                  <Col><TextField name="image" id="add-session-field-image" /></Col>
                 </Row>
                 <Row>
-                  <Col><SelectField name="month" /></Col>
-                  <Col><SelectField name="day" /></Col>
-                  <Col><TextField name="time" /></Col>
+                  <Col><SelectField name="month" id="add-session-field-month" /></Col>
+                  <Col><SelectField name="day" id="add-session-field-day" /></Col>
+                  <Col><TextField name="year" id="add-session-field-year" /></Col>
+                  <Col><TextField name="time" id="add-session-field-time" /></Col>
                 </Row>
-                <LongTextField name="notes" />
-                <SubmitField value="Submit" />
+                <LongTextField name="notes" id="add-session-field-notes" />
+                <SubmitField value="Submit" id="add-session-submit" />
                 <ErrorsField />
               </Card.Body>
             </Card>
