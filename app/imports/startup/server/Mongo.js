@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import { Stuffs } from '../../api/stuff/Stuff.js';
 import { Courses } from '../../api/courses/Courses';
 import { Student } from '../../api/student/Student';
 import { Sessions } from '../../api/sessions/Sessions';
@@ -7,21 +6,6 @@ import { Emails } from '../../api/email/Email';
 import { Reputation } from '../../api/reputation/Reputation';
 
 /* eslint-disable no-console */
-
-// Initialize the database with a default data document.
-const addData = (data) => {
-  console.log(`  Adding: ${data.name} (${data.owner})`);
-  Stuffs.collection.insert(data);
-};
-
-// Initialize the StuffsCollection if empty.
-if (Stuffs.collection.find().count() === 0) {
-  if (Meteor.settings.defaultData) {
-    console.log('Creating default data.');
-    Meteor.settings.defaultData.forEach(data => addData(data));
-  }
-}
-
 // Initialize the database with courses
 const addCourses = (course) => {
   console.log(`  Adding: ${course.name}`);
@@ -78,7 +62,7 @@ if (Emails.collection.find().count() === 0) {
 }
 
 const addSession = (session) => {
-  console.log(`  Adding: ${session.note} (${session.owner})`);
+  console.log(`  Adding: ${session.name} (${session.owner})`);
   Sessions.collection.insert(session);
 };
 

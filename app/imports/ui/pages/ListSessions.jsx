@@ -58,8 +58,9 @@ const ListSessions = () => {
           </div>
         </Row>
         <Col>
-          <Col className="text-center">
+          <Col className="pb-2 text-center">
             <h2>List Sessions</h2>
+            <Button className="pink-btn btn-lg home-page-btn" href="../add" id="goto-add-session-page">Create New Session</Button>
           </Col>
           <Row xs={1} md={2} lg={3} className="g-4">
             {sessions.filter((session) => {
@@ -71,8 +72,10 @@ const ListSessions = () => {
           </Row>
         </Col>
       </Row>
-      <Row className="formCSS">
-        <Button href="../add" id="goto-add-session-page">Create New Session</Button>
+      <Row className="justify-content-center">
+        <Col xs={6} className="pt-3 text-center">
+          <Button className="pink-btn btn-lg home-page-btn" href="../add">Create New Session</Button>
+        </Col>
       </Row>
     </Container>
   ) : <LoadingSpinner />);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
-import { AutoForm, ErrorsField, LongTextField, SubmitField, TextField } from 'uniforms-bootstrap5';
+import { AutoForm, ErrorsField, HiddenField, LongTextField, SelectField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -10,7 +10,10 @@ import { Sessions } from '../../api/sessions/Sessions';
 // Create a schema to specify the structure of the data to appear in the form.
 const formSchema = new SimpleSchema({
   name: String,
-  subject: String,
+  subject: {
+    type: String,
+    allowedValues: ['ART', 'BIOL', 'BUS', 'ECON', 'ENG', 'HIST', 'ICS', 'MATH', 'NURS', 'PHYS'],
+  },
   title: String,
   location: String,
   year: Number,
@@ -56,23 +59,22 @@ const AddSession = () => {
     <Container className="py-3 formCSS" id="add-session-page">
       <Row className="justify-content-center">
         <Col xs={10}>
-          <Col className="text-center"><h2>Create New Session</h2></Col>
+          <Col className="pb-2 text-center"><h2>Create New Session</h2></Col>
           <AutoForm ref={ref => { fRef = ref; }} schema={bridge} onSubmit={data => submit(data, fRef)}>
             <Card>
               <Card.Body>
                 <Row>
                   <Col><TextField name="name" /></Col>
-                  <Col><TextField name="subject" /></Col>
-                  <Col><TextField name="title" /></Col>
+                  <Col><SelectField name="subject" /></Col>
+                  <HiddenField name="title" value="101" />
                 </Row>
                 <Row>
                   <Col><TextField name="location" /></Col>
                   <Col><TextField name="image" /></Col>
                 </Row>
                 <Row>
-                  <Col><TextField name="year" /></Col>
-                  <Col><TextField name="month" /></Col>
-                  <Col><TextField name="day" /></Col>
+                  <Col><SelectField name="month" /></Col>
+                  <Col><SelectField name="day" /></Col>
                   <Col><TextField name="time" /></Col>
                 </Row>
                 <LongTextField name="notes" />
@@ -83,7 +85,11 @@ const AddSession = () => {
           </AutoForm>
         </Col>
       </Row>
-      <Button href="../list">Go to List Sessions Page</Button>
+      <Row className="justify-content-center">
+        <Col xs={6} className="pt-2 text-center">
+          <Button href="../list" className="pink-btn btn-lg home-page-btn">Go to List Sessions Page</Button>
+        </Col>
+      </Row>
     </Container>
   );
 };
