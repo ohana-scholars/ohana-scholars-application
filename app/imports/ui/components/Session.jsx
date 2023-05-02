@@ -13,7 +13,7 @@ const Session = ({ session, participants }) => (
         <Col className="py-2"><Image rounded src={session.image} width={200} /></Col>
       </Row>
       <Card.Title>{session.name}</Card.Title>
-      <Card.Subtitle>{session.month} {session.day}, {session.year} | {session.time}</Card.Subtitle>
+      <Card.Subtitle>{session.month}/{session.day}/{session.year} | {session.time}</Card.Subtitle>
       <Card.Text>{session.location}</Card.Text>
     </Card.Header>
     <Card.Body>
