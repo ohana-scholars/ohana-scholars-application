@@ -10,7 +10,7 @@ const Session = ({ session, participants }) => (
   <Card className="h-110">
     <Card.Header>
       <Row>
-        <Col><Image src={session.image} width={200} /></Col>
+        <Col className="py-2"><Image rounded src={session.image} width={200} /></Col>
       </Row>
       <Card.Title>{session.name}</Card.Title>
       <Card.Subtitle>{session.month} {session.day} | {session.time}</Card.Subtitle>
