@@ -84,7 +84,7 @@
   ],
 
   "defaultSessions": [{
-    "name": "ICS314 Final Exam Study Group", "subject": "ICS314",
+    "name": "ICS314 Final Exam Study Group", "subject": "ICS",
     "title": "314", "location": "Hamilton Library Basement", "year": 2023, "month": 4, "day": 15, "time": "1:00 PM",
     "image": "https://manoa.hawaii.edu/wp/wp-content/uploads/2017/09/hamilton-library-1024x597.jpg",
     "notes": "Bring your own laptop!",
