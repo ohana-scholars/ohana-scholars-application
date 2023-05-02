@@ -7,7 +7,7 @@ import '/imports/startup/server/Mongo';
 import { Email } from 'meteor/email';
 
 Meteor.startup(function () {
-  process.env.MAIL_URL = 'smtp://postmaster@sandbox5a1be1b52d854d7086df557ce2585ea8.mailgun.org:7a1602d0396318c627cb6d08adc34ed2-102c75d8-a8fb2a03@smtp.mailgun.org:587';
+  process.env.MAIL_URL = 'smtp://postmaster@sandbox30ac8cf40c1d492faf45b43eeec2793e.mailgun.org:c225d420e08c26413f08391564fe2c81-102c75d8-7523ca7c@smtp.mailgun.org:587';
 });
 
 Meteor.methods({
