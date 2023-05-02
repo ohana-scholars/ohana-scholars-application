@@ -1,11 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
-import { Image, ListGroup, Row, Col } from 'react-bootstrap';
+import { Image, ListGroup, Row, Col, Button } from 'react-bootstrap';
 import Participant from './Participant';
 import AddParticipant from './AddParticipant';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+let disableButton = false;
+
+const addParticipantButton = (sessionowner, sessionid) => {
+  if (disableButton === false) {
+    <AddParticipant owner={sessionowner} contactId={sessionid} />;
+    disableButton = true;
+  }
+};
 const Session = ({ session, participants }) => (
   <Card className="h-110">
     <Card.Header>
@@ -19,6 +27,9 @@ const Session = ({ session, participants }) => (
     <Card.Body>
       <Card.Text>{session.notes}</Card.Text>
       <Card.Text>{session.participant}</Card.Text>
+      <Button onClick={addParticipantButton(session.owner, session._id)} disabled={disableButton}>
+        button
+      </Button>
       <AddParticipant owner={session.owner} contactId={session._id} />
     </Card.Body>
     <Card.Footer>
