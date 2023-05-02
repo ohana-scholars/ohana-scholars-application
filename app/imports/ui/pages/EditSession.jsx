@@ -42,7 +42,7 @@ const EditSession = () => {
     <Container className="py-3" id="edit-session-page">
       <Row className="justify-content-center">
         <Col xs={10}>
-          <Col className="text-center"><h2>Edit Session</h2></Col>
+          <Col className="pb-2 text-center"><h2>Edit Session</h2></Col>
           <AutoForm schema={bridge} onSubmit={data => submit(data)} model={doc}>
             <Card>
               <Card.Body>
