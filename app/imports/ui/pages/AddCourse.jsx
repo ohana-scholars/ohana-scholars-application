@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, SubmitField, TextField } from 'uniforms-bootstrap5';
 import swal from 'sweetalert';
 import SimpleSchema2Bridge from 'uniforms-bridge-simple-schema-2';
@@ -54,6 +54,11 @@ const AddCourse = () => {
               </Card.Body>
             </Card>
           </AutoForm>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col xs={6} className="pt-2 text-center">
+          <Button href="../list" className="pink-btn btn-lg home-page-btn">Go to List Courses Page</Button>
         </Col>
       </Row>
     </Container>

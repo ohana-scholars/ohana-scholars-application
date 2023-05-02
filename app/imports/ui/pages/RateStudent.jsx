@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { AutoForm, ErrorsField, HiddenField, LongTextField, NumField, SubmitField } from 'uniforms-bootstrap5';
 import { Meteor } from 'meteor/meteor';
 import { useParams } from 'react-router';
@@ -56,6 +56,11 @@ const RateStudent = () => {
               </Card.Body>
             </Card>
           </AutoForm>
+        </Col>
+      </Row>
+      <Row className="justify-content-center">
+        <Col xs={6} className="pt-2 text-center">
+          <Button href="../profile" className="pink-btn btn-lg home-page-btn">Return to Profile</Button>
         </Col>
       </Row>
     </Container>

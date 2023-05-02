@@ -20,12 +20,18 @@ class ListCoursesPage {
   /** Checks that the filter courses works */
   async filterCourses(testController) {
     const rowCountTot = Selector('tr').count;
-    await testController.expect(rowCountTot).gte(7);
+    await testController.expect(rowCountTot).gte(10);
     await testController.click('#filter-courses-btn');
     await testController.click('#filter-dropdown');
     await testController.click('#ICS');
     const rowCount = Selector('tr').count;
-    await testController.expect(rowCount).lte(3);
+    await testController.expect(rowCount).lte(9);
+  }
+
+  /** Checks that the View Sessions button works. */
+  async gotoListSessionsPage(testController) {
+    await this.isDisplayed(testController);
+    await testController.click('#goto-list-sessions-page');
   }
 }
 
