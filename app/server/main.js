@@ -7,7 +7,7 @@ import '/imports/startup/server/Mongo';
 import { Email } from 'meteor/email';
 
 Meteor.startup(function () {
-  process.env.MAIL_URL = 'smtp://postmaster@sandbox4dadc76ae99e4dd2a0434fdc12de2a17.mailgun.org:2a1f5438a0c9cc985c74a2dadc64b7a9-70c38fed-dd2ed98e@smtp.mailgun.org:587';
+  process.env.MAIL_URL = 'smtp://postmaster@sandbox5a1be1b52d854d7086df557ce2585ea8.mailgun.org:7a1602d0396318c627cb6d08adc34ed2-102c75d8-a8fb2a03@smtp.mailgun.org:587';
 });
 
 Meteor.methods({
@@ -16,7 +16,7 @@ Meteor.methods({
     Email.send({
       to: `${owner}`,
       from: 'OhanaScholar@email.com',
-      subject: 'very important Ohana Scholar stuff',
+      subject: `Joined Session: ${sessionName}`,
       // eslint-disable-next-line max-len
       text: `You have registered for the session ${sessionName} in ${sessionLocation} at ${sessionDate.getMonth() + 1}/${sessionDate.getDate()}/${sessionDate.getFullYear()} ${sessionTime}. Please remember to ${notes}`,
     });
