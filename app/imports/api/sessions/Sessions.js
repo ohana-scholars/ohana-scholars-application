@@ -1,6 +1,5 @@
 import { Mongo } from 'meteor/mongo';
 import SimpleSchema from 'simpl-schema';
-import { number } from 'prop-types';
 
 /**
  * The SessionsCollection. It encapsulates state and variable values for sessions.
