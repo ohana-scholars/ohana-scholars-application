@@ -106,3 +106,8 @@ body {
 #sign-out {
   height: 450px;
 }
+
+.participant {
+  background-color: var(--matr-blue-bg) !important;
+  color: black;
+}

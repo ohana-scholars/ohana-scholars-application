@@ -38,7 +38,7 @@ const EditProfile = () => {
       swal('Success', 'Profile updated successfully.', 'success')));
   };
   return ready ? (
-    <Container className="py-3" id="edit-profile-page">
+    <Container className="py-3 formCSS" id="edit-profile-page">
       <Row className="justify-content-center">
         <Col xs={10}>
           <Col className="pb-2 text-center"><h2>Edit Profile</h2></Col>

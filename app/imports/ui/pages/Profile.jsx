@@ -45,7 +45,7 @@ const Profile = () => {
 
   return (ready ? (
     <div className="vh-100">
-      <Container id="profile-page">
+      <Container id="profile-page" className="formCSS">
         <Row className="justify-content-center">
           <Col md="9" lg="7" xl="5" className="mt-5">
             <Card style={{ borderRadius: '10px' }}>
@@ -68,7 +68,7 @@ const Profile = () => {
                         </Card.Subtitle>
                       ) : (
                         <Card.Subtitle>
-                          Rating: {avgRating}/10 | <Link to={`/reviews/${userId}`} id="list-reviews-btn">See reviews</Link>
+                          Rating: {avgRating}/10 | <Link className="link" to={`/reviews/${userId}`} id="list-reviews-btn">See reviews</Link>
                         </Card.Subtitle>
                       )}
                       { /* youAreThatStudent ? '' : (
@@ -91,7 +91,7 @@ const Profile = () => {
                     {/* </Row> */}
                     <Card.Body>{student[0].description}</Card.Body>
                     <Card.Footer>
-                      <Link to={`/editProfile/${student[0]._id}`} id="edit-profile-btn">Edit Profile</Link>
+                      <Link className="link" to={`/editProfile/${student[0]._id}`} id="edit-profile-btn">Edit Profile</Link>
                     </Card.Footer>
                   </div>
                 </div>
