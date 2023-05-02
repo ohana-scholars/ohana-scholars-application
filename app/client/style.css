@@ -74,6 +74,10 @@ body {
   color: white !important;
 }
 
+.form-control {
+  border-radius: 0 !important;
+}
+
 .formCSS .btn {
   --bs-btn-bg: var(--matr-btn-bg) !important;
   --bs-btn-border-color: var(--matr-btn-bg) !important;
