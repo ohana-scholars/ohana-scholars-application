@@ -3,10 +3,9 @@ import { check } from 'meteor/check';
 import { Roles } from 'meteor/alanning:roles';
 import '/imports/startup/server/Accounts';
 import '/imports/startup/server/Publications';
-// import '/imports/startup/server/EmailStartup';
+import '/imports/startup/server/EmailStartup';
 import '/imports/startup/server/Mongo';
 import { Email } from 'meteor/email';
-import '';
 
 Meteor.methods({
   // eslint-disable-next-line meteor/audit-argument-checks
